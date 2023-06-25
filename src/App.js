@@ -3,16 +3,17 @@ import {
   BrowserRouter as Router,
   Route,
   Routes,
-  Navigate
+  Navigate,
 } from "react-router-dom";
 import "./style.css";
 import "./App.css";
 import "bootstrap/dist/css/bootstrap.min.css";
-import NavBar from './Components/Navbar';
-import Footer from './Components/Footer';
-import Home from './Components/HomeSection/Home';
-import Pre from './Components/Pre';
-import ScrollToTop from './Components/ScrollToTop';
+import NavBar from "./Components/Navbar";
+import Footer from "./Components/Footer";
+import Home from "./Components/HomeSection/Home";
+import Pre from "./Components/Pre";
+import ScrollToTop from "./Components/ScrollToTop";
+import Projects from "./Components/ProjectsSection/Projects";
 
 function App() {
   const [load, upadateLoad] = useState(true);
@@ -33,8 +34,8 @@ function App() {
         <ScrollToTop />
         <Routes>
           <Route path="/" element={<Home />} />
-          {/* <Route path="/project" element={<Projects />} /> */}
-          <Route path="*" element={<Navigate to="/"/>} />
+          <Route path="/project" element={<Projects />} />
+          <Route path="*" element={<Navigate to="/" />} />
         </Routes>
         <Footer />
       </div>
