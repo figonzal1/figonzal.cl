@@ -13,7 +13,6 @@ import {
   SiPhp,
   SiSpring,
   SiRedis,
-  SiUnity,
   SiCsharp,
 } from "react-icons/si";
 

@@ -3,6 +3,7 @@ import { Container, Row } from "react-bootstrap";
 import Particle from "../../Particle";
 import Techstack from "./Techstack";
 import Toolstack from "./Toolstack";
+import Github from "./Github";
 
 function Technical() {
   return (
@@ -20,8 +21,8 @@ function Technical() {
             <strong className="purple">Herramientas</strong> que uso
           </h1>
           <Toolstack />
-          {/*
-  <Github />*/}
+
+          <Github />
         </Row>
       </Container>
     </Container>

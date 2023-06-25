@@ -4,13 +4,11 @@ import {
   SiLinux,
   SiVisualstudiocode,
   SiHeroku,
-  SiInsomnia,
   SiAndroidstudio,
   SiIntellijidea,
   SiGithub,
   SiUnity,
   SiPostman,
-  SiSpring
 } from "react-icons/si";
 
 function Toolstack() {
