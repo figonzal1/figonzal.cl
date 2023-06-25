@@ -1,11 +1,18 @@
-import "./App.css";
-import { useEffect, useState } from "react";
-import Home from "./Components/HomeSection/Home";
+import React, { useState, useEffect } from "react";
+import {
+  BrowserRouter as Router,
+  Route,
+  Routes,
+  Navigate
+} from "react-router-dom";
 import "./style.css";
 import "./App.css";
 import "bootstrap/dist/css/bootstrap.min.css";
+import NavBar from './Components/Navbar';
 import Footer from './Components/Footer';
-
+import Home from './Components/HomeSection/Home';
+import Pre from './Components/Pre';
+import ScrollToTop from './Components/ScrollToTop';
 
 function App() {
   const [load, upadateLoad] = useState(true);
@@ -19,10 +26,19 @@ function App() {
   }, []);
 
   return (
-    <div className="App">
-      <Home />
-      <Footer />
-    </div>
+    <Router>
+      <Pre load={load} />
+      <div className="App" id={load ? "no-scroll" : "scroll"}>
+        <NavBar />
+        <ScrollToTop />
+        <Routes>
+          <Route path="/" element={<Home />} />
+          {/* <Route path="/project" element={<Projects />} /> */}
+          <Route path="*" element={<Navigate to="/"/>} />
+        </Routes>
+        <Footer />
+      </div>
+    </Router>
   );
 }
 
