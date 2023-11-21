@@ -1,16 +1,51 @@
 ---
-
+import {
+  AiOutlineHome,
+  AiOutlineFundProjectionScreen,
+  AiOutlineStar,
+  AiOutlineFork,
+} from "react-icons/ai";
+import { ImBlog } from "react-icons/im";
+import "../styles/tailwind.css";
 ---
 
 <html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<h1>Astro</h1>
-	</body>
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="generator" content={Astro.generator} />
+    <title>Astro</title>
+  </head>
+  <body>
+    <main>
+      <div class="flex bg-slate-500 px-24 py-4">
+        <div class="">
+          <img class="h-7" src="logo.png" alt="" />
+        </div>
+        <div class="flex justify-between items-center ms-auto gap-10">
+          <a href="/" class="flex">
+            <AiOutlineHome size={24} />
+            <p class="ps-2 antialiased">Inicio</p>
+          </a>
+
+          <a href="" class="flex">
+            <AiOutlineFundProjectionScreen size={24} />
+            <p class="ps-2 antialiased">Proyectos</p>
+          </a>
+
+          <a href="#" class="flex">
+            <ImBlog size={24} />
+            <p class="ps-2 antialiased">Blog</p>
+          </a>
+          <button
+            class="flex justify-center items-center border-[#934cce5e] bg-[#623686] border-spacing-12 p-2 rounded-lg gap-1 px-4 py-2"
+          >
+            <AiOutlineFork size={18} color="white" />
+            <AiOutlineStar size={18} color="white" />
+          </button>
+        </div>
+      </div>
+    </main>
+  </body>
 </html>
