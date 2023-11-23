@@ -7,6 +7,8 @@ import {
 } from "react-icons/ai";
 import { ImBlog } from "react-icons/im";
 import "../styles/tailwind.css";
+import Particle from "../components/Particle.astro";
+import Typewriter from "typewriter-effect";
 ---
 
 <html lang="en">
@@ -17,26 +19,26 @@ import "../styles/tailwind.css";
     <meta name="generator" content={Astro.generator} />
     <title>Astro</title>
   </head>
-  <body>
+  <body class="dark:bg-black">
     <main>
-      <div class="flex bg-slate-500 px-24 py-4">
+      <nav class="flex px-24 py-4 mt-0 z-50">
         <div class="">
-          <img class="h-7" src="logo.png" alt="" />
+          <img class="h-7" src="images/logo.png" alt="" />
         </div>
         <div class="flex justify-between items-center ms-auto gap-10">
           <a href="/" class="flex">
-            <AiOutlineHome size={24} />
-            <p class="ps-2 antialiased">Inicio</p>
+            <AiOutlineHome size={24} color="white" />
+            <p class="ps-2 dark:text-white antialiased">Inicio</p>
           </a>
 
           <a href="" class="flex">
-            <AiOutlineFundProjectionScreen size={24} />
-            <p class="ps-2 antialiased">Proyectos</p>
+            <AiOutlineFundProjectionScreen size={24} color="white" />
+            <p class="ps-2 dark:text-white antialiased">Proyectos</p>
           </a>
 
           <a href="#" class="flex">
-            <ImBlog size={24} />
-            <p class="ps-2 antialiased">Blog</p>
+            <ImBlog size={24} color="white" />
+            <p class="ps-2 dark:text-white antialiased">Blog</p>
           </a>
           <button
             class="flex justify-center items-center border-[#934cce5e] bg-[#623686] border-spacing-12 p-2 rounded-lg gap-1 px-4 py-2"
@@ -45,7 +47,47 @@ import "../styles/tailwind.css";
             <AiOutlineStar size={18} color="white" />
           </button>
         </div>
-      </div>
+      </nav>
+
+      <section>
+        <div class="fixed">
+          <Particle />
+        </div>
+        <div class="flex justify-between items-start mt-20 py-2 bg-red-500/40">
+          <div class="text-left text-white text-4xl p-20">
+            <h1 class="pb-7">
+              Hola{" "}
+              <span class="wave" role="img" aria-labelledby="wave"> 👋🏻</span>
+            </h1>
+
+            <h1 class="pb-14">
+              Soy <strong class="text-[#26d6ad]">Felipe González</strong>
+            </h1>
+            <Typewriter
+              options={{
+                strings: [
+                  "Apasionado por la tecnología e innnovación",
+                  "Desarrollador Android & AR",
+                  "Ingeniero Informático",
+                  "Colaborador Open Source",
+                ],
+                autoStart: true,
+                loop: true,
+                delay: "natural",
+                deleteSpeed: 10,
+              }}
+              client:load
+            />
+          </div>
+          <div class="flex-shrink-0 pe-20">
+            <img
+              src="images/home-main.svg"
+              alt="home pic"
+              class="max-h-[450px]"
+            />
+          </div>
+        </div>
+      </section>
     </main>
   </body>
 </html>
