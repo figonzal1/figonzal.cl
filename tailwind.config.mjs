@@ -12,6 +12,12 @@ export default {
       fontWeight: {
         500: "500",
       },
+      colors: {
+        fgreen: "#26d6ad",
+        fpurple: "#623686",
+        "fpurple-border": "#5919cff8",
+        "fpurple-box-shadow": "#5919cf80",
+      },
     },
   },
   plugins: [],

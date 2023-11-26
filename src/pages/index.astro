@@ -5,10 +5,58 @@ import {
   AiOutlineStar,
   AiOutlineFork,
 } from "react-icons/ai";
-import { ImBlog } from "react-icons/im";
 import "../styles/tailwind.css";
+import { ImBlog } from "react-icons/im";
 import Particle from "../components/Particle.astro";
 import Typewriter from "typewriter-effect";
+import Tilt from "react-parallax-tilt";
+
+import { DiGit, DiJava, DiPhp, DiGithubFull } from "react-icons/di";
+import {
+  SiKotlin,
+  SiDocker,
+  SiCsharp,
+  SiJavascript,
+  SiAndroid,
+  SiAndroidstudio,
+  SiTypescript,
+  SiSonarqube,
+  SiIntellijidea,
+  SiVisualstudiocode,
+  SiPostman,
+  SiLinux,
+  SiUnity,
+  SiTeamcity,
+  SiSpringboot,
+  SiNextdotjs,
+  SiAdonisjs,
+} from "react-icons/si";
+import ToolCard from "../components/ToolCard.astro";
+import Github from "../components/Github";
+
+const labels = {
+  months: [
+    "Ene",
+    "Feb",
+    "Mar",
+    "Abr",
+    "May",
+    "Jun",
+    "Jul",
+    "Ago",
+    "Sep",
+    "Oct",
+    "Nov",
+    "Dic",
+  ],
+  weekdays: ["Lun", "Mar", "Mie", "Jue", "Vie", "Sab", "D"],
+  totalCount: "{{count}} commits en 12 meses",
+  legend: {
+    less: "Menos",
+    more: "Más",
+  },
+};
+
 ---
 
 <html lang="en">
@@ -19,7 +67,7 @@ import Typewriter from "typewriter-effect";
     <meta name="generator" content={Astro.generator} />
     <title>Astro</title>
   </head>
-  <body class="dark:bg-black">
+  <body class="dark:bg-black antialiased">
     <main>
       <nav class="flex px-24 py-4 mt-0 z-50">
         <div class="">
@@ -28,17 +76,17 @@ import Typewriter from "typewriter-effect";
         <div class="flex justify-between items-center ms-auto gap-10">
           <a href="/" class="flex">
             <AiOutlineHome size={24} color="white" />
-            <p class="ps-2 dark:text-white antialiased">Inicio</p>
+            <p class="ps-2 dark:text-white">Inicio</p>
           </a>
 
           <a href="" class="flex">
             <AiOutlineFundProjectionScreen size={24} color="white" />
-            <p class="ps-2 dark:text-white antialiased">Proyectos</p>
+            <p class="ps-2 dark:text-white">Proyectos</p>
           </a>
 
           <a href="#" class="flex">
             <ImBlog size={24} color="white" />
-            <p class="ps-2 dark:text-white antialiased">Blog</p>
+            <p class="ps-2 dark:text-white">Blog</p>
           </a>
           <button
             class="flex justify-center items-center border-[#934cce5e] bg-[#623686] border-spacing-12 p-2 rounded-lg gap-1 px-4 py-2"
@@ -53,15 +101,17 @@ import Typewriter from "typewriter-effect";
         <div class="fixed">
           <Particle />
         </div>
-        <div class="flex justify-between items-start mt-20 py-2 bg-red-500/40">
-          <div class="text-left text-white text-4xl p-20">
+        <div
+          class="flex flex-col lg:flex-row justify-between items-start mt-20 py-2 bg-red-500/40"
+        >
+          <div class="text-left dark:text-white text-4xl p-20 flex-grow-0">
             <h1 class="pb-7">
-              Hola{" "}
-              <span class="wave" role="img" aria-labelledby="wave"> 👋🏻</span>
+              Hola
+              <span class="wave">👋🏻</span>
             </h1>
 
             <h1 class="pb-14">
-              Soy <strong class="text-[#26d6ad]">Felipe González</strong>
+              Soy <strong class="text-fgreen">Felipe González</strong>
             </h1>
             <Typewriter
               options={{
@@ -86,6 +136,103 @@ import Typewriter from "typewriter-effect";
               class="max-h-[450px]"
             />
           </div>
+        </div>
+      </section>
+
+      <section>
+        <div
+          class="flex justify-evenly items-center pt-56 px-20 gap-20 dark:text-white"
+        >
+          <div class="flex flex-col justify-center items-center gap-10">
+            <h1 class="text-4xl">
+              Una pequeña <span class="text-fgreen">reseña</span> sobre mí
+            </h1>
+
+            <div
+              class="flex flex-col justify-center items-start pl-10 gap-5 text-lg"
+            >
+              <p>
+                Hace 10 años conocí la programación y ha sido lo mejor que me ha
+                pasado ... 😍
+              </p>
+
+              <p>
+                Tengo experiencia en los lenguages clásicos como: <span
+                  class="text-fgreen font-extrabold italic"
+                  >Java, Kotlin, Python & C++</span
+                ><br />(Aunque los dos últimos estoy bastante oxidado 😅)
+              </p>
+
+              <p>
+                Mis áreas de interés son:&nbsp; <span
+                  class="text-fgreen font-extrabold italic"
+                  >Android, Backend & Blockchain</span
+                >
+              </p>
+
+              <p>
+                Últimamente he estado interactuando con nuevas herramientas y
+                áreas como:&nbsp;
+                <span class="text-fgreen italic font-extrabold"
+                  >UE5, Unity & AR/VR</span
+                >
+              </p>
+            </div>
+          </div>
+
+          <div class="px-10">
+            <Tilt client:load>
+              <img src="images/avatar.svg" alt="avatar" />
+            </Tilt>
+          </div>
+        </div>
+      </section>
+      <section>
+        <div class="pt-56">
+          <h1 class="text-4xl dark:text-white text-center">
+            Mis <span class="text-fgreen font-extrabold"
+              >Lenguajes & Frameworks</span
+            >
+          </h1>
+
+          <div class="flex flex-wrap justify-center gap-5 pt-10 px-64">
+            <ToolCard icon={SiAndroid} alt="Android" />
+            <ToolCard icon={SiKotlin} alt="" />
+            <ToolCard icon={DiJava} />
+            <ToolCard icon={DiPhp} />
+            <ToolCard icon={SiCsharp} />
+            <ToolCard icon={SiJavascript} />
+            <ToolCard icon={SiTypescript} />
+            <ToolCard icon={SiSpringboot} />
+            <ToolCard icon={SiNextdotjs} />
+            <ToolCard icon={SiAdonisjs} />
+          </div>
+        </div>
+        <div class="pt-24">
+          <h1 class="text-4xl dark:text-white text-center">
+            Mis dev <span class="text-fgreen font-extrabold">Tools</span>
+          </h1>
+
+          <div class="flex flex-wrap justify-center gap-5 pt-10 px-64">
+            <ToolCard icon={SiAndroidstudio} alt="Android Studio" />
+            <ToolCard icon={SiIntellijidea} />
+            <ToolCard icon={SiTeamcity} />
+            <ToolCard icon={SiVisualstudiocode} />
+            <ToolCard icon={DiGit} />
+            <ToolCard icon={DiGithubFull} />
+            <ToolCard icon={SiDocker} />
+            <ToolCard icon={SiPostman} />
+            <ToolCard icon={SiLinux} />
+            <ToolCard icon={SiUnity} />
+            <ToolCard icon={SiSonarqube} />
+          </div>
+        </div>
+
+        <div class="flex flex-col justify-center items-center py-24 gap-5">
+          <h1 class="text-4xl dark:text-white text-center">
+            Días <span class="text-fgreen font-extrabold">Codeando</span>
+          </h1>
+          <Github client:visible />
         </div>
       </section>
     </main>
