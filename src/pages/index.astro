@@ -4,9 +4,12 @@ import {
   AiOutlineFundProjectionScreen,
   AiOutlineStar,
   AiOutlineFork,
+  AiFillGithub,
+  AiFillInstagram,
+AiFillFacebook,
 } from "react-icons/ai";
 import "../styles/tailwind.css";
-import { ImBlog } from "react-icons/im";
+import { ImBlog, ImFacebook, ImFacebook2, ImLinkedin, ImLinkedin2 } from "react-icons/im";
 import Particle from "../components/Particle.astro";
 import Typewriter from "typewriter-effect";
 import Tilt from "react-parallax-tilt";
@@ -30,9 +33,14 @@ import {
   SiSpringboot,
   SiNextdotjs,
   SiAdonisjs,
+  SiGoogleplay,
+SiInstagram,
+SiFacebook,
+SiLinkedin,
 } from "react-icons/si";
 import ToolCard from "../components/ToolCard.astro";
 import Github from "../components/Github";
+import SocialLink from "../components/SocialLink.astro";
 
 const labels = {
   months: [
@@ -56,7 +64,6 @@ const labels = {
     more: "Más",
   },
 };
-
 ---
 
 <html lang="en">
@@ -233,6 +240,46 @@ const labels = {
             Días <span class="text-fgreen font-extrabold">Codeando</span>
           </h1>
           <Github client:visible />
+        </div>
+      </section>
+
+      <section>
+        <div class="py-10">
+          <h1 class="text-4xl dark:text-white text-center">
+            Mis <span class="text-fgreen font-extrabold">Redes</span>
+          </h1>
+
+          <p class="text-center dark:text-white py-3">
+            Siéntase libre de <span class="text-fgreen">conectarse</span>
+             conmigo
+          </p>
+
+          <div class="flex justify-center items-center py-8 gap-8">
+            <SocialLink
+              icon={AiFillGithub}
+              link="https://github.com/figonzal1"
+            />
+
+            <SocialLink
+              icon={SiGoogleplay}
+              link="https://play.google.com/store/apps/dev?id=4650587366054768148"
+            />
+
+            <SocialLink
+              icon={SiInstagram}
+              link="https://www.instagram.com/figonzal.cl"
+            />
+
+            <SocialLink
+              icon={ImFacebook}
+              link="https://facebook.com/figonzal1"
+            />
+
+            <SocialLink
+              icon={ImLinkedin2}
+              link="https://facebook.com/figonzal1"
+            />
+          </div>
         </div>
       </section>
     </main>
