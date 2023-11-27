@@ -14,10 +14,15 @@ export default {
       },
       colors: {
         fgreen: "#26d6ad",
-        fpurple: "#623686",
+        fpurple: "#5919cff8",
+        "social-button": "#5919cff8",
+        "social-button-border": "#26d6ad",
         "fpurple-border": "#5919cff8",
         "fpurple-box-shadow": "#5919cf80",
       },
+      boxShadow: {
+        'social': '0 0 20px #26d6ad',
+      }
     },
   },
   plugins: [],
