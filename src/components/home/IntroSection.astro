@@ -1,0 +1,44 @@
+---
+import Particle from "../common/Particle.astro";
+import Typewriter from "typewriter-effect";
+---
+
+<section>
+  <div>
+    <Particle />
+  </div>
+  <div class="flex flex-col lg:flex-row justify-between items-start mt-20 py-2">
+    <div class="text-left dark:text-white text-4xl p-20 flex-grow-0">
+      <h1 class="pb-7">
+        Hola
+        <span class="wave">👋🏻</span>
+      </h1>
+
+      <h1 class="pb-14">
+        Soy <strong class="text-fgreen">Felipe González</strong>
+      </h1>
+      <Typewriter
+        options={{
+          strings: [
+            "Apasionado por la tecnología e innnovación",
+            "Desarrollador Android & AR",
+            "Ingeniero Informático",
+            "Colaborador Open Source",
+          ],
+          autoStart: true,
+          loop: true,
+          delay: "natural",
+          deleteSpeed: 10,
+        }}
+        client:load
+      />
+    </div>
+    <div class="flex-shrink-0 pe-20">
+      <img
+        src="images/home-main.svg"
+        alt="home pic"
+        class="max-h-[450px] opacity-90"
+      />
+    </div>
+  </div>
+</section>

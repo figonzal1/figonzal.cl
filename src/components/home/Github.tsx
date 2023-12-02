@@ -3,7 +3,7 @@ import GitHubCalendar from "react-github-calendar";
 import { Tooltip as ReactTooltip } from "react-tooltip";
 import "react-tooltip/dist/react-tooltip.css";
 
-function Github() {
+const Github = () => {
   const labels = {
     months: [
       "Ene",

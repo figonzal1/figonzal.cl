@@ -1,0 +1,35 @@
+---
+import { AiOutlineFork, AiOutlineFundProjectionScreen, AiOutlineHome, AiOutlineStar } from "react-icons/ai";
+import { ImBlog } from "react-icons/im";
+
+---
+
+<nav
+  class="flex items-center px-24 py-4 mt-0 z-50 backdrop-blur-md fixed w-full"
+>
+  <div>
+    <img class="h-7" src="images/logo.png" alt="" />
+  </div>
+  <div class="flex justify-between items-center ms-auto gap-10">
+    <a href="/" class="flex">
+      <AiOutlineHome size={24} color="white" />
+      <p class="ps-2 dark:text-white">Inicio</p>
+    </a>
+
+    <a href="" class="flex">
+      <AiOutlineFundProjectionScreen size={24} color="white" />
+      <p class="ps-2 dark:text-white">Proyectos</p>
+    </a>
+
+    <a href="#" class="flex">
+      <ImBlog size={24} color="white" />
+      <p class="ps-2 dark:text-white">Blog</p>
+    </a>
+    <button
+      class="flex justify-center items-center border-fpurple border-2 bg-fpurple-box border-spacing-12 p-2 rounded-lg gap-1 px-4 py-2"
+    >
+      <AiOutlineFork size={18} color="white" />
+      <AiOutlineStar size={18} color="white" />
+    </button>
+  </div>
+</nav>

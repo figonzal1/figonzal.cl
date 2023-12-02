@@ -1,0 +1,51 @@
+---
+import Tilt from "react-parallax-tilt";
+
+---
+
+<section>
+  <div
+    class="flex justify-evenly items-center pt-56 px-20 gap-20 dark:text-white"
+  >
+    <div class="flex flex-col justify-center items-center gap-10">
+      <h1 class="text-4xl">
+        Una pequeña <span class="text-fgreen">reseña</span> sobre mí
+      </h1>
+
+      <div class="flex flex-col justify-center items-start pl-10 gap-5 text-lg">
+        <p>
+          Hace 10 años conocí la programación y ha sido lo mejor que me ha
+          pasado ... 😍
+        </p>
+
+        <p>
+          Tengo experiencia en los lenguages clásicos como: <span
+            class="text-fgreen font-extrabold italic"
+            >Java, Kotlin, Python & C++</span
+          ><br />(Aunque los dos últimos estoy bastante oxidado 😅)
+        </p>
+
+        <p>
+          Mis áreas de interés son:&nbsp; <span
+            class="text-fgreen font-extrabold italic"
+            >Android, Backend & Blockchain</span
+          >
+        </p>
+
+        <p>
+          Últimamente he estado interactuando con nuevas herramientas y áreas
+          como:&nbsp;
+          <span class="text-fgreen italic font-extrabold"
+            >UE5, Unity & AR/VR</span
+          >
+        </p>
+      </div>
+    </div>
+
+    <div class="px-10">
+      <Tilt client:load>
+        <img src="images/avatar.svg" alt="avatar" />
+      </Tilt>
+    </div>
+  </div>
+</section>
