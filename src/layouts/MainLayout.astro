@@ -1,0 +1,41 @@
+---
+import Footer from "../components/common/Footer.astro";
+import Navbar from "../components/common/Navbar.astro";
+import "../styles/tailwind.css";
+---
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="description"
+      content="Sitio profesional de felipe gonzález - figonzal.cl"
+    />
+    <meta name="generator" content={Astro.generator} />
+
+    <title>figonzal.cl | Portafolio</title>
+
+    <!-- Facebook Meta Tags -->
+    <meta property="fb:app_id" content="740961793640508" />
+    <meta property="og:url" content="https://www.figonzal.cl" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="figonzal.cl | Portafolio" />
+    <meta
+      property="og:description"
+      content="Sitio profesional de felipe gonzález - figonzal.cl"
+    />
+    <meta
+      property="og:image"
+      content="https://raw.githubusercontent.com/figonzal1/Portfolio/master/Images/og-image.png"
+    />
+  </head>
+  <body
+    class="min-h-screen dark:bg-black bg-gradient-to-br from-fgreen/20 to-fpurple/40 antialiased"
+  >
+    <Navbar />
+    <slot />
+    <Footer />
+  </body>
+</html>
