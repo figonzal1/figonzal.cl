@@ -1,8 +1,9 @@
 ---
-import { AiOutlineFork, AiOutlineFundProjectionScreen, AiOutlineHome, AiOutlineStar } from "react-icons/ai";
-import { ImBlog } from "react-icons/im";
+import { FaHome } from "react-icons/fa/index.js";
+import { GoProjectSymlink } from "react-icons/go/index.js";
+import { BiGitRepoForked ,BiStar } from "react-icons/bi/index.js";
+import { ImBlog } from "react-icons/im/index.js";
 import NavbarLink from "./NavbarLink.astro";
-
 ---
 
 <nav
@@ -11,17 +12,20 @@ import NavbarLink from "./NavbarLink.astro";
   <div>
     <img class="h-7" src="images/logo.png" alt="Figonzal.cl logo" />
   </div>
-  <div class="flex justify-between items-center ms-auto gap-10 ">
-
-    <NavbarLink icon={AiOutlineHome} name="Inicio" link="/" />
-    <NavbarLink icon={AiOutlineFundProjectionScreen} name="Proyectos" link="/proyectos" />
-    <NavbarLink icon={ImBlog} name="Blog" link="https://figonzal.hashnode.dev/" />
+  <div class="flex justify-between items-center ms-auto gap-10">
+    <NavbarLink icon={FaHome} name="Inicio" link="/" />
+    <NavbarLink icon={GoProjectSymlink} name="Proyectos" link="/proyectos" />
+    <NavbarLink
+      icon={ImBlog}
+      name="Blog"
+      link="https://figonzal.hashnode.dev/"
+    />
 
     <button
       class="flex justify-center items-center border-2 border-fpurple bg-fpurple-box hover:bg-fpurple/30 p-2 rounded-lg gap-1 px-4 py-2 transition-colors duration-150 ease-in-out"
     >
-      <AiOutlineFork size={18} color="white" />
-      <AiOutlineStar size={18} color="white" />
+      <BiGitRepoForked size={18} color="white" />
+      <BiStar size={18} color="white" />
     </button>
   </div>
 </nav>

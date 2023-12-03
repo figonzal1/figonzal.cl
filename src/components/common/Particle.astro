@@ -45,10 +45,17 @@ const options: ISourceOptions = {
     },
   },
 };
+
+declare global {
+  interface Window {
+    particlesLoaded: any;
+    particlesInit: any;
+  }
+}
 ---
 
 <script>
-  import { type Container, type Engine, tsParticles } from "tsparticles-engine";
+  import { type Container, type Engine } from "tsparticles-engine";
   import { loadFull } from "tsparticles";
 
   // the function name is the parameter passed to the init attribute
@@ -61,7 +68,7 @@ const options: ISourceOptions = {
   // the function name is the parameter passed to the loaded attribute
   // optional
   // add the function to window is mandatory, it will be searched there
-  window.particlesLoaded = function (container: Container) {
+  window.particlesLoaded = function (_: Container) {
     console.log("particlesLoaded callback");
   };
 </script>
