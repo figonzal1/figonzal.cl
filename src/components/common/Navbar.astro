@@ -1,6 +1,7 @@
 ---
 import { AiOutlineFork, AiOutlineFundProjectionScreen, AiOutlineHome, AiOutlineStar } from "react-icons/ai";
 import { ImBlog } from "react-icons/im";
+import NavbarLink from "./NavbarLink.astro";
 
 ---
 
@@ -10,23 +11,14 @@ import { ImBlog } from "react-icons/im";
   <div>
     <img class="h-7" src="images/logo.png" alt="Figonzal.cl logo" />
   </div>
-  <div class="flex justify-between items-center ms-auto gap-10">
-    <a href="/" class="flex">
-      <AiOutlineHome size={24} color="white" />
-      <p class="ps-2 dark:text-white">Inicio</p>
-    </a>
+  <div class="flex justify-between items-center ms-auto gap-10 ">
 
-    <a href="" class="flex">
-      <AiOutlineFundProjectionScreen size={24} color="white" />
-      <p class="ps-2 dark:text-white">Proyectos</p>
-    </a>
+    <NavbarLink icon={AiOutlineHome} name="Inicio" link="/" />
+    <NavbarLink icon={AiOutlineFundProjectionScreen} name="Proyectos" link="/proyectos" />
+    <NavbarLink icon={ImBlog} name="Blog" link="https://figonzal.hashnode.dev/" />
 
-    <a href="#" class="flex">
-      <ImBlog size={24} color="white" />
-      <p class="ps-2 dark:text-white">Blog</p>
-    </a>
     <button
-      class="flex justify-center items-center border-fpurple border-2 bg-fpurple-box border-spacing-12 p-2 rounded-lg gap-1 px-4 py-2"
+      class="flex justify-center items-center border-2 border-fpurple bg-fpurple-box hover:bg-fpurple/30 p-2 rounded-lg gap-1 px-4 py-2 transition-colors duration-150 ease-in-out"
     >
       <AiOutlineFork size={18} color="white" />
       <AiOutlineStar size={18} color="white" />
