@@ -14,9 +14,26 @@ export default {
       },
       colors: {
         fgreen: "#26d6ad",
-        fpurple: "#623686",
-        "fpurple-border": "#5919cff8",
-        "fpurple-box-shadow": "#5919cf80",
+        fpurple: "#5919cff8",
+        "fpurple-box": "#5919cf80",
+      },
+      boxShadow: {
+        fgreen: "0 0 25px #26d6ad",
+      },
+      animation: {
+        wave: "wave 2.1s infinite",
+      },
+      keyframes: {
+        wave: {
+          "0%": { transform: "rotate(0deg)" },
+          "10%": { transform: "rotate(20deg)" },
+          "20%": { transform: "rotate(-8deg)" },
+          "30%": { transform: "rotate(20deg)" },
+          "40%": { transform: "rotate(-4deg)" },
+          "50%": { transform: "rotate(10deg)" },
+          "60%": { transform: "rotate(0deg)" },
+          "100%": { transform: "rotate(0deg)" },
+        },
       },
     },
   },

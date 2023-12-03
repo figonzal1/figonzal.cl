@@ -1,0 +1,12 @@
+---
+const { icon: Icon, link } = Astro.props;
+---
+
+<a
+  href={link}
+  target="_blank"
+  rel="noreferrer"
+  class="bg-social-button bg-fpurple border-2 border-transparent hover:border-fgreen hover:shadow-fgreen p-3 rounded-full duration-150 ease-in-out"
+>
+  <Icon color="white" size={21} />
+</a>
