@@ -7,7 +7,7 @@ import Tilt from "react-parallax-tilt";
   <div
     class="flex justify-evenly items-center pt-56 px-20 gap-20 dark:text-white"
   >
-    <div class="flex flex-col justify-center items-center gap-10">
+    <div class="flex flex-col justify-center items-center gap-10 backdrop-blur-sm bg-fgreen/5 p-5 rounded-lg">
       <h1 class="text-4xl">
         Una pequeña <span class="text-fgreen">reseña</span> sobre mí
       </h1>
@@ -44,7 +44,7 @@ import Tilt from "react-parallax-tilt";
 
     <div class="px-10">
       <Tilt client:load>
-        <img src="images/avatar.svg" alt="avatar" />
+        <img src="images/profile.png" class="rounded-full border-2 border-fgreen border-solid hover:shadow-fgreen duration-150 ease-in-out hover:scale-105" alt="avatar" />
       </Tilt>
     </div>
   </div>
