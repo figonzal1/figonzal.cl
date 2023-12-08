@@ -45,3 +45,24 @@
     transform: rotate(0deg);
   }
 }
+
+::-webkit-scrollbar {
+  width: 7px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #13322b;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: rgba(38, 214, 173, 0.959);
+  border-radius: 12px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(99, 250, 190, 0.911);
+  border-radius: 12px;
+}

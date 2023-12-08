@@ -1,0 +1,12 @@
+---
+const { link } = Astro.props;
+---
+
+<a
+  class="flex justify-center items-center border-2 border-fpurple bg-fpurple-box hover:bg-fpurple/30 p-2 rounded-lg gap-1 px-4 py-2 transition-colors duration-150 ease-in-out"
+  href={link}
+  target="_blank"
+  referrerpolicy="no-referrer"
+>
+  <slot />
+</a>
