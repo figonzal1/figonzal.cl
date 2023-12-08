@@ -57,12 +57,12 @@
 
 /* Handle */
 ::-webkit-scrollbar-thumb {
-  background: rgba(38, 214, 173, 0.959);
+  background: rgba(38, 214, 173, 0.8);
   border-radius: 12px;
 }
 
 /* Handle on hover */
 ::-webkit-scrollbar-thumb:hover {
-  background: rgba(99, 250, 190, 0.911);
+  background: rgba(38, 214, 173, 1);
   border-radius: 12px;
 }

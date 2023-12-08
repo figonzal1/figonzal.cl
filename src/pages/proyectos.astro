@@ -1,10 +1,12 @@
 ---
 import MainLayout from "../layouts/MainLayout.astro";
-import ProjectCard from "../components/projects/ProjectCard.astro";
 import { FaGithub } from "react-icons/fa6/index.js";
-import { SiGoogleplay, SiInstagram } from "react-icons/si/index.js";
-import PurpleButton from "../components/common/PurpleButton.astro";
-import Particle from "../components/common/Particle.astro";
+import { SiGoogleplay } from "react-icons/si/index.js";
+import ProjectCard from "@components/projects/ProjectCard.astro";
+import Particle from "@components/common/Particle.astro";
+import PurpleButton from "@components/common/PurpleButton.astro";
+
+import Projects from "@components/projects/Projects.astro";
 ---
 
 <MainLayout>
@@ -16,66 +18,10 @@ import Particle from "../components/common/Particle.astro";
       Mis <span class="text-fgreen font-extrabold">Proyectos</span>
     </h1>
 
-    <div class="p-24 grid grid-cols-3 gap-10">
-      <ProjectCard
-        image="images/Projects/lqch.png"
-        title="LastQuakeChile - Sismos en Chile"
-        description="Es una app donde podrás conocer los últimos sismos ocurridos en Chile y recibir notificaciones rápidamente en tu celular. Cada vez que ocurra un sismo, el servicio lastQuakeChile enviará una alerta y podrás obtener todos los detalles del sismo con sólo presionar la notificación."
-      >
-        <PurpleButton link="https://www.github.com/figonzal1/LastQuakeChile" slot="project-buttons">
-          <FaGithub color="white" size={21} />
-          <h2 class="text-white ps-1">Github</h2>
-        </PurpleButton>
-
-        <PurpleButton
-          link="https://play.google.com/store/apps/details?id=cl.figonzal.lastquakechile"
-          slot="project-buttons"
-        >
-          <SiGoogleplay color="white" size={21} />
-          <h2 class="text-white ps-1">App</h2>
-        </PurpleButton>
-      </ProjectCard>
-
-
-      <ProjectCard
-        image="images/Projects/evalua.png"
-        title="EvalúaTool - Calculadora v2 cL"
-        description="Aplicación móvil que facilita el cálculo de puntuaciones de evaluaciones pertenecientes a la batería de evaluaciones psicopedagógicas Evalúa - Chile Versión 2.0"
-      >
-        <PurpleButton link="https://github.com/figonzal1/Evaluatool" slot="project-buttons">
-          <FaGithub color="white" size={21} />
-          <h2 class="text-white ps-1">Github</h2>
-        </PurpleButton>
-
-        <PurpleButton
-          link="https://play.google.com/store/apps/details?id=cl.figonzal.evaluatool"
-          slot="project-buttons"
-        >
-          <SiGoogleplay color="white" size={21} />
-          <h2 class="text-white ps-1">App</h2>
-        </PurpleButton>
-      </ProjectCard>
-
-
-      <ProjectCard
-        image="images/Projects/aaid.png"
-        title="AAID"
-        description="Esta aplicación permite al usuario encontrar el código AAID de su dispositivo Android con la opción de copiarlo fácilmente y compartirlo a través de otras aplicaciones."
-      >
-        <PurpleButton link="https://github.com/figonzal1/AAID" slot="project-buttons">
-          <FaGithub color="white" size={21} />
-          <h2 class="text-white ps-1">Github</h2>
-        </PurpleButton>
-
-        <PurpleButton
-          link="https://play.google.com/store/apps/details?id=cl.figonzal.aaidl"
-          slot="project-buttons"
-        >
-          <SiGoogleplay color="white" size={21} />
-          <h2 class="text-white ps-1">App</h2>
-        </PurpleButton>
-      </ProjectCard>
+    <div
+      class="p-10 lg:p-24 grid grid-cols-1 lg:grid-cols-2 2xl:grid-cols-3 gap-10"
+    >
+      <Projects />
     </div>
   </div>
-
 </MainLayout>
