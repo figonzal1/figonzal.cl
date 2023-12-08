@@ -6,7 +6,7 @@ const projectSeed: ProjectProp[] = [
   {
     title: "LastQuakeChile - Sismos en Chile",
     description:
-      "Es una app donde podrás conocer los últimos sismos ocurridos en Chile y recibir notificaciones rápidamente en tu celular. Cada vez que ocurra un sismo, el servicio lastQuakeChile enviará una alerta y podrás obtener todos los detalles del sismo con sólo presionar la notificación.",
+      "Es una app donde podrás conocer los últimos sismos ocurridos en Chile y recibir notificaciones rápidamente en tu celular.",
     image: "images/Projects/lqch.png",
     buttons: [
       {
