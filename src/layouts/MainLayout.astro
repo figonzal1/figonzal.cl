@@ -1,13 +1,15 @@
 ---
 import Footer from "../components/common/Footer.astro";
-import Navbar from "../components/common/Navbar.astro";
+import Navbar from "../components/common/Navbar.tsx";
 import "../styles/tailwind.css";
+
+import favicon from "@assets/favicon.png";
 ---
 
-<html lang="en">
+<html lang="es">
   <head>
     <meta charset="utf-8" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="icon" href={favicon.src} />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta
       name="description"
@@ -34,7 +36,7 @@ import "../styles/tailwind.css";
   <body
     class="flex flex-col min-h-screen dark:bg-black bg-gradient-to-br from-fgreen/20 to-fpurple/40 antialiased"
   >
-    <Navbar />
+    <Navbar client:load />
     <slot />
     <Footer />
   </body>
