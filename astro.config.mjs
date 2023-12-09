@@ -7,9 +7,9 @@ import tailwind from "@astrojs/tailwind";
 export default defineConfig({
   integrations: [react(), tailwind()],
   //Disable 4 dev
-  /*vite: {
+  vite: {
     ssr: {
       noExternal: ["react-github-calendar"],
     },
-  },*/
+  },
 });

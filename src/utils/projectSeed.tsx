@@ -1,5 +1,5 @@
-import { FaGithub } from "react-icons/fa6";
-import { SiGoogleplay } from "react-icons/si";
+import { FaGithub } from "react-icons/fa6/index.js";
+import { SiGoogleplay } from "react-icons/si/index.js";
 import type { ProjectProp } from "./types";
 import lqch from "@assets/Projects/lqch.png";
 import aaid from "@assets/Projects/aaid.png";
