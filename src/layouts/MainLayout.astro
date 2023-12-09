@@ -2,14 +2,13 @@
 import Footer from "../components/common/Footer.astro";
 import Navbar from "../components/common/Navbar.tsx";
 import "../styles/tailwind.css";
-
-import favicon from "@assets/favicon.png";
+import { ViewTransitions } from "astro:transitions";
 ---
 
 <html lang="es">
   <head>
     <meta charset="utf-8" />
-    <link rel="icon" href={favicon.src} />
+    <link rel="icon" href="favicon.png" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta
       name="description"
@@ -32,6 +31,8 @@ import favicon from "@assets/favicon.png";
       property="og:image"
       content="https://raw.githubusercontent.com/figonzal1/Portfolio/master/Images/og-image.png"
     />
+    <ViewTransitions />
+    
   </head>
   <body
     class="flex flex-col min-h-screen dark:bg-black bg-gradient-to-br from-fgreen/20 to-fpurple/40 antialiased"

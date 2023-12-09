@@ -1,5 +1,6 @@
 ---
 import Tilt from "react-parallax-tilt";
+import profile from "@assets/profile.png";
 ---
 
 <section>
@@ -15,8 +16,8 @@ import Tilt from "react-parallax-tilt";
 
       <div class="flex flex-col justify-center items-start pl-5 gap-5 text-lg">
         <p>
-          Hace <span id="year_ago"></span> años conocí la programación y ha sido lo
-          mejor que me ha pasado ... 😍
+          Hace <span id="year_ago"></span> años conocí la programación y ha sido
+          lo mejor que me ha pasado ... 😍
         </p>
 
         <p>
@@ -46,9 +47,9 @@ import Tilt from "react-parallax-tilt";
     <div class="px-10">
       <Tilt client:load>
         <img
-          src="images/profile.png"
+          src={profile.src}
           class="rounded-full border-2 border-fgreen border-solid hover:shadow-fgreen duration-150 ease-in-out hover:scale-105"
-          alt="avatar"
+          alt="Avatar"
         />
       </Tilt>
     </div>
