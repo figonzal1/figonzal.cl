@@ -31,33 +31,44 @@ const Github = () => {
 
   return (
     <>
-      <select value={year} onChange={handleChange} className="rounded w-52">
-        {years.map((option) => (
-          <option key={option.value} value={option.value}>
-            {option.label}
-          </option>
-        ))}
-      </select>
+      <div className="flex justify-center">
+        <div className="flex flex-col items-center gap-5 w-full max-w-screen-md xl:max-w-screen-xl">
+          <div className="w-3/4 md:w-5/6">
+            <select
+              value={year}
+              onChange={handleChange}
+              className="rounded w-24"
+            >
+              {years.map((option) => (
+                <option key={option.value} value={option.value}>
+                  {option.label}
+                </option>
+              ))}
+            </select>
+          </div>
 
-      <GitHubCalendar
-        username="figonzal1"
-        blockSize={15}
-        blockMargin={5}
-        year={year}
-        colorScheme="dark"
-        blockRadius={20}
-        fontSize={16}
-        labels={labels}
-        style={{ color: "white" }}
-        renderBlock={(block, activity) =>
-          React.cloneElement(block, {
-            "data-tooltip-id": "react-tooltip",
-            "data-tooltip-html": `${activity.count} commits el ${activity.date}`,
-          })
-        }
-      />
-
-      <ReactTooltip id="react-tooltip" />
+          <div className="w-3/4 md:w-5/6">
+            <GitHubCalendar
+              username="figonzal1"
+              blockSize={15}
+              blockMargin={5}
+              year={year}
+              colorScheme="dark"
+              blockRadius={20}
+              fontSize={16}
+              labels={labels}
+              style={{ color: "white" }}
+              renderBlock={(block, activity) =>
+                React.cloneElement(block, {
+                  "data-tooltip-id": "react-tooltip",
+                  "data-tooltip-html": `${activity.count} commits el ${activity.date}`,
+                })
+              }
+            />
+            <ReactTooltip id="react-tooltip" />
+          </div>
+        </div>
+      </div>
     </>
   );
 };
