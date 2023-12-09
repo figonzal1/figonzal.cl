@@ -32,10 +32,9 @@ import { ViewTransitions } from "astro:transitions";
       content="https://raw.githubusercontent.com/figonzal1/Portfolio/master/Images/og-image.png"
     />
     <ViewTransitions />
-    
   </head>
   <body
-    class="flex flex-col min-h-screen dark:bg-black bg-gradient-to-br from-fgreen/20 to-fpurple/40 antialiased"
+    class="flex flex-col min-h-screen bg-black bg-gradient-to-br from-fgreen/20 to-fpurple/40 antialiased w-full"
   >
     <Navbar client:load />
     <slot />

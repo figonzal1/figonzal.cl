@@ -1,15 +1,15 @@
 ---
-import Particle from "../common/Particle.astro";
 import Typewriter from "typewriter-effect";
-import introLogo from  '@assets/home-main.svg'
+import introLogo from "@assets/home-main.svg";
 ---
 
 <section>
-  <div class="w-0 h-0">
-    <Particle />
-  </div>
-  <div class="flex flex-col lg:flex-row justify-center items-start mt-32 py-2gap-10">
-    <div class="w-1/2 h-full text-left text-white text-4xl p-20 ">
+  <div
+    class="flex flex-col lg:flex-row justify-center items-start mt-32 py-2 gap-10"
+  >
+    <div
+      class="h-80 w-full text-left text-white text-2xl p-10 sm:p-16 lg:p-20 lg:w-1/2 lg:text-4xl"
+    >
       <h1 class="pb-7">
         Hola
         <span class="inline-block animate-wave pe-4">👋🏻</span>
@@ -36,12 +36,8 @@ import introLogo from  '@assets/home-main.svg'
         />
       </div>
     </div>
-    <div class="pe-20">
-      <img
-        src={introLogo.src}
-        alt="Imagen inicio"
-        class="max-h-[450px] opacity-90"
-      />
+    <div class="lg:pe-20 hidden lg:block">
+      <img src={introLogo.src} alt="Home" class="max-h-[450px] opacity-90" />
     </div>
   </div>
 </section>
