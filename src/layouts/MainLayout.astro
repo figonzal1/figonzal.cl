@@ -2,7 +2,10 @@
 import Footer from "../components/common/Footer.astro";
 import Navbar from "../components/common/Navbar.tsx";
 import "../styles/tailwind.css";
-import { ViewTransitions } from "astro:transitions";
+
+const title = "figonzal.cl | Portafolio";
+const description = "Sitio profesional de felipe gonzález - figonzal.cl";
+const ogImage = "og.png";
 ---
 
 <html lang="es">
@@ -16,22 +19,60 @@ import { ViewTransitions } from "astro:transitions";
     />
     <meta name="generator" content={Astro.generator} />
 
-    <title>figonzal.cl | Portafolio</title>
+    <title>{title}</title>
 
     <!-- Facebook Meta Tags -->
     <meta property="fb:app_id" content="740961793640508" />
     <meta property="og:url" content="https://www.figonzal.cl" />
     <meta property="og:type" content="website" />
-    <meta property="og:title" content="figonzal.cl | Portafolio" />
-    <meta
-      property="og:description"
-      content="Sitio profesional de felipe gonzález - figonzal.cl"
-    />
-    <meta
-      property="og:image"
-      content="https://raw.githubusercontent.com/figonzal1/Portfolio/master/Images/og-image.png"
-    />
-    <ViewTransitions />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:image" content={ogImage} />
+    <meta property="og:site_name" content="figonzal.cl" />
+
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={ogImage} />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:site" content="@_figonzal" />
+
+    <!-- Meta Pixel Code -->
+    <script type="application/javascript">
+      !(function (f, b, e, v, n, t, s) {
+        if (f.fbq) return;
+        n = f.fbq = function () {
+          n.callMethod
+            ? n.callMethod.apply(n, arguments)
+            : n.queue.push(arguments);
+        };
+        if (!f._fbq) f._fbq = n;
+        n.push = n;
+        n.loaded = !0;
+        n.version = "2.0";
+        n.queue = [];
+        t = b.createElement(e);
+        t.async = !0;
+        t.src = v;
+        s = b.getElementsByTagName(e)[0];
+        s.parentNode.insertBefore(t, s);
+      })(
+        window,
+        document,
+        "script",
+        "https://connect.facebook.net/en_US/fbevents.js"
+      );
+      fbq("init", "895033351960723");
+      fbq("track", "PageView");
+    </script>
+    <noscript
+      ><img
+        height="1"
+        width="1"
+        style="display:none"
+        src="https://www.facebook.com/tr?id=895033351960723&ev=PageView&noscript=1"
+      /></noscript
+    >
+    <!-- End Meta Pixel Code -->
   </head>
   <body
     class="flex flex-col min-h-screen bg-black bg-gradient-to-br from-fgreen/20 to-fpurple/40 antialiased w-full"
