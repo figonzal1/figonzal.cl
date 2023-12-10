@@ -2,9 +2,9 @@ import { FaGithub } from "react-icons/fa6/index.js";
 import { SiGoogleplay } from "react-icons/si/index.js";
 import type { ProjectProp } from "./types";
 
-const lqch = "Projects/lqch.png";
-const aaid = "Projects/aaid.png";
-const evalua = "Projects/evalua.png";
+const lqch = "images/projects/lqch.png";
+const aaid = "images/projects/aaid.png";
+const evalua = "images/projects/evalua.png";
 
 const projectSeed: ProjectProp[] = [
   {
