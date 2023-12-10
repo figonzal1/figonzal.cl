@@ -10,7 +10,7 @@ const projectSeed: ProjectProp[] = [
     title: "LastQuakeChile - Sismos en Chile",
     description:
       "Es una app donde podrás conocer los últimos sismos ocurridos en Chile y recibir notificaciones rápidamente en tu celular.",
-    image: lqch.src,
+    image: lqch,
     buttons: [
       {
         title: "Github",
@@ -28,7 +28,7 @@ const projectSeed: ProjectProp[] = [
     title: "AAID",
     description:
       "Esta aplicación permite al usuario encontrar el código AAID de su dispositivo Android con la opción de copiarlo fácilmente y compartirlo a través de otras aplicaciones.",
-    image: aaid.src,
+    image: aaid,
     buttons: [
       {
         title: "Github",
@@ -46,7 +46,7 @@ const projectSeed: ProjectProp[] = [
     title: "EvalúaTool - Calculadora v2 cL",
     description:
       "Aplicación móvil que facilita el cálculo de puntuaciones de evaluaciones pertenecientes a la batería de evaluaciones psicopedagógicas Evalúa - Chile Versión 2.0",
-    image: evalua.src,
+    image: evalua,
     buttons: [
       {
         title: "Github",

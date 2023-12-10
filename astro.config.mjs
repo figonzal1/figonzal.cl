@@ -8,9 +8,9 @@ export default defineConfig({
   integrations: [react(), tailwind()],
   site: "https://www.figonzal.cl",
   //Disable 4 dev
-  vite: {
+  /*vite: {
     ssr: {
       noExternal: ["react-github-calendar"],
     },
-  },
+  },*/
 });

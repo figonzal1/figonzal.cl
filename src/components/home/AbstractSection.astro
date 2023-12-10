@@ -1,6 +1,6 @@
 ---
 import Tilt from "react-parallax-tilt";
-
+import { Picture } from "astro:assets";
 import profile from "@assets/images/profile.png";
 ---
 
@@ -49,10 +49,12 @@ import profile from "@assets/images/profile.png";
 
     <div class="px-20">
       <Tilt client:load>
-        <img
-          src={profile.src}
+        <Picture
+          src={profile}
+          formats={['webp','png']}
           class="rounded-full border-2 border-fgreen border-solid hover:shadow-fgreen duration-150 ease-in-out hover:scale-105"
           alt="Avatar"
+          fallbackFormat="png"
         />
       </Tilt>
     </div>

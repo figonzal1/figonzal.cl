@@ -1,11 +1,14 @@
 ---
+import { Picture } from "astro:assets";
 const { image, title, description } = Astro.props;
 ---
 
 <div>
-  <img
+  <Picture
     src={image}
-    alt="Portada proyecto"
+    alt=`Portada proyecto ${title}`
+    formats={["webp", "png"]}
+    fallbackFormat="png"
     class="object-cover object-center rounded-lg shadow-lg opacity-90"
   />
   <div class="relative px-5 lg:px-10 -mt-5 lg:-mt-16 w-full">
