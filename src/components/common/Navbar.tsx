@@ -4,7 +4,6 @@ import { BiGitRepoForked, BiStar } from "react-icons/bi/index.js";
 import { ImBlog } from "react-icons/im/index.js";
 import { useState } from "react";
 import NavbarLink from "./NavbarLink";
-import logo from "@assets/logo.png";
 import { MdClose } from "react-icons/md/index.js";
 import { FiMenu } from "react-icons/fi/index.js";
 
@@ -16,7 +15,7 @@ const Navbar = () => {
   return (
     <nav className="flex flex-col md:flex-row md:items-center px-16 md:px-24 py-6 mt-0 z-50 backdrop-blur-md fixed w-full">
       <div className="flex justify-between items-center">
-        <img className="h-7" src={logo.src} alt="Figonzal.cl logo" />
+        <img className="h-7" src="logo.png" alt="Figonzal.cl logo" />
         <button
           className="md:hidden"
           onClick={() => {

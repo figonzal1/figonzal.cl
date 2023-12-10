@@ -1,7 +1,6 @@
 ---
-import Footer from "../components/common/Footer.astro";
-import Navbar from "../components/common/Navbar.tsx";
-import "../styles/tailwind.css";
+import Navbar from "@components/common/Navbar";
+import Footer from "@components/common/Footer.astro";
 
 const title = "figonzal.cl | Portafolio";
 const description = "Sitio profesional de felipe gonzález - figonzal.cl";
@@ -26,7 +25,7 @@ const ogImage = "og.png";
     <!-- End Google Tag Manager -->
 
     <meta charset="utf-8" />
-    <link rel="icon" href="favicon.png" />
+    <link rel="icon" href="favicon.ico" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta
       name="description"
@@ -50,6 +49,8 @@ const ogImage = "og.png";
     <meta name="twitter:image" content={ogImage} />
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:site" content="@_figonzal" />
+
+    <link rel="stylesheet" href="tailwind.css">
   </head>
   <body
     class="flex flex-col min-h-screen bg-black bg-gradient-to-br from-fgreen/20 to-fpurple/40 antialiased w-full"

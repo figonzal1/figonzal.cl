@@ -1,13 +1,13 @@
 {
   "name": "figonzal.cl",
   "type": "module",
-  "version": "0.0.1",
+  "version": "1.0.0",
+  "private": true,
+  "homepage": "https://figonzal.cl",
   "scripts": {
     "dev": "astro dev",
     "build": "astro check && astro build",
-    "preview": "astro preview",
-    "predeploy": "pnpm run build",
-    "deploy": "gh-pages -d dist"
+    "preview": "astro preview"
   },
   "dependencies": {
     "@astrojs/check": "^0.3.1",
