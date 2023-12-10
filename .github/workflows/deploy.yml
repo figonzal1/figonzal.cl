@@ -4,7 +4,7 @@ on:
   # Activa el workflow cada vez que hay un push a la rama `main`
   # ¿Estás usando un nombre diferente de rama? Reemplaza `main` con el nombre de tu rama
   push:
-    branches: [ main ]
+    branches: [ gh-pages ]
   # Te permite ejecutar este workflow manualmente desde la pestaña Actions en GitHub.
   workflow_dispatch:
 
