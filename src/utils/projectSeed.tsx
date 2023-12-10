@@ -1,17 +1,16 @@
 import { FaGithub } from "react-icons/fa6/index.js";
 import { SiGoogleplay } from "react-icons/si/index.js";
 import type { ProjectProp } from "./types";
-
-const lqch = "images/projects/lqch.png";
-const aaid = "images/projects/aaid.png";
-const evalua = "images/projects/evalua.png";
+import lqch  from "@assets/images/projects/lqch.png";
+import aaid from "@assets/images/projects/aaid.png";
+import evalua from "@assets/images/projects/evalua.png";
 
 const projectSeed: ProjectProp[] = [
   {
     title: "LastQuakeChile - Sismos en Chile",
     description:
       "Es una app donde podrás conocer los últimos sismos ocurridos en Chile y recibir notificaciones rápidamente en tu celular.",
-    image: lqch,
+    image: lqch.src,
     buttons: [
       {
         title: "Github",
@@ -29,7 +28,7 @@ const projectSeed: ProjectProp[] = [
     title: "AAID",
     description:
       "Esta aplicación permite al usuario encontrar el código AAID de su dispositivo Android con la opción de copiarlo fácilmente y compartirlo a través de otras aplicaciones.",
-    image: aaid,
+    image: aaid.src,
     buttons: [
       {
         title: "Github",
@@ -47,7 +46,7 @@ const projectSeed: ProjectProp[] = [
     title: "EvalúaTool - Calculadora v2 cL",
     description:
       "Aplicación móvil que facilita el cálculo de puntuaciones de evaluaciones pertenecientes a la batería de evaluaciones psicopedagógicas Evalúa - Chile Versión 2.0",
-    image: evalua,
+    image: evalua.src,
     buttons: [
       {
         title: "Github",
