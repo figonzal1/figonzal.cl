@@ -5,8 +5,9 @@
   "private": true,
   "homepage": "https://figonzal.cl",
   "scripts": {
+    "tailwind": "npx tailwind build -i ./src/styles/tailwind.css -o public/styles.css -m",
     "dev": "astro dev",
-    "build": "astro check && astro build",
+    "build": "pnpm run tailwind && astro check && astro build",
     "preview": "astro preview"
   },
   "dependencies": {

@@ -15,7 +15,7 @@ const Navbar = () => {
   return (
     <nav className="flex flex-col md:flex-row md:items-center px-16 md:px-24 py-6 mt-0 z-50 backdrop-blur-md fixed w-full">
       <div className="flex justify-between items-center">
-        <img className="h-7" src="logo.png" alt="Figonzal.cl logo" />
+        <img className="h-7" src="images/logo.png" alt="Figonzal.cl logo" />
         <button
           className="md:hidden"
           onClick={() => {
@@ -54,7 +54,7 @@ const Navbar = () => {
 
         <a
           className="flex justify-center items-center border-2 border-fpurple bg-fpurple-box hover:bg-fpurple/30 p-2 rounded-lg gap-1 px-4 py-2 transition-colors duration-150 ease-in-out"
-          href="#"
+          href="https://github.com/figonzal1/figonzal.cl"
           target="_blank"
           referrerPolicy="no-referrer"
         >
