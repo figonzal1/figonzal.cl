@@ -1,0 +1,72 @@
+---
+import Tilt from "react-parallax-tilt";
+import { Picture } from "astro:assets";
+import profile from "@assets/images/profile.png";
+---
+
+<section>
+  <div
+    class="flex flex-col xl:flex-row justify-evenly items-center p-10 md:pt-56 md:px-20 gap-10 md:gap-20 text-white"
+  >
+    <div
+      class="w-full xl:w-3/4 flex flex-col justify-center items-start gap-10 backdrop-blur-sm bg-fgreen/5 p-5 rounded-lg "
+    >
+      <h1 class="text-2xl md:text-4xl text-center xl:text-left px-5 w-full">
+        A little <span class="text-fgreen">review</span> about me
+      </h1>
+
+      <div
+        class="flex flex-col justify-center items-start text-justify px-5 gap-2 md:gap-5 md:text-lg"
+      >
+        <p>
+          <span id="year_ago"></span> years ago I discovered programming and it has been the best thing that has happened to me ... 😍
+        </p>
+
+        <p>
+          I have experience in classical languages ​​such as: <span
+            class="text-fgreen font-extrabold italic"
+            >Java, Kotlin, Python & C++</span
+          ><br />(Though the last two I'm pretty rusty 😅)
+        </p>
+
+        <p>
+          My areas of interest are:&nbsp; <span
+            class="text-fgreen font-extrabold italic"
+            >Android, Backend & Blockchain</span
+          >
+        </p>
+
+        <p>
+          Lately I've been interacting with new tools and areas
+          like:&nbsp;
+          <span class="text-fgreen italic font-extrabold"
+            >UE5, Unity & AR/VR</span
+          >
+        </p>
+      </div>
+    </div>
+
+    <div class="px-20">
+      <Tilt client:load>
+        <Picture
+          src={profile}
+          formats={['webp','png']}
+          class="rounded-full border-2 border-fgreen border-solid hover:shadow-fgreen duration-150 ease-in-out hover:scale-105"
+          alt="Avatar"
+          fallbackFormat="png"
+        />
+      </Tilt>
+    </div>
+  </div>
+
+  <script>
+    let diffAnno = new Date().getFullYear() - 2013;
+
+    const yearElement = document.getElementById("year_ago");
+    if (yearElement) {
+      yearElement.textContent = diffAnno.toString();
+    } else {
+      console.log('No se encontró el elemento con id "year"');
+    }
+  </script>
+</section>
