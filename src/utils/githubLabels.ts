@@ -21,4 +21,27 @@ const labels = {
   },
 };
 
-export default labels;
+const labelsEn = {
+  months: [
+    "Jan",
+    "Feb",
+    "Mar",
+    "Apr",
+    "May",
+    "Jun",
+    "Jul",
+    "Aug",
+    "Sep",
+    "Oct",
+    "Nov",
+    "Dic",
+  ],
+  weekdays: ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"],
+  totalCount: "{{count}} commits in 12 month",
+  legend: {
+    less: "Less",
+    more: "More",
+  },
+};
+
+export { labels, labelsEn };
