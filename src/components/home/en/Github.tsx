@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import GitHubCalendar from "react-github-calendar";
 import { Tooltip as ReactTooltip } from "react-tooltip";
 import "react-tooltip/dist/react-tooltip.css";
-import { labels } from "src/utils/githubLabels";
+import { labelsEn } from "src/utils/githubLabels";
 
 const Github = () => {
   const actualYear = new Date().getFullYear();
@@ -56,7 +56,7 @@ const Github = () => {
               colorScheme="dark"
               blockRadius={20}
               fontSize={16}
-              labels={labels}
+              labels={labelsEn}
               style={{ color: "white" }}
               renderBlock={(block, activity) =>
                 React.cloneElement(block, {
