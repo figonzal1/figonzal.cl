@@ -7,7 +7,8 @@
   "scripts": {
     "tailwind": "npx tailwind build -i ./src/styles/tailwind.css -o public/styles.css -m",
     "dev": "astro dev",
-    "build": "pnpm run tailwind && astro check && astro build",
+    "format": "prettier --write . --plugin=prettier-plugin-astro",
+    "build": "pnpm run tailwind && pnpm run format && astro check && astro build",
     "preview": "astro preview"
   },
   "dependencies": {
@@ -34,6 +35,8 @@
     "typewriter-effect": "^2.21.0"
   },
   "devDependencies": {
-    "gh-pages": "^6.1.0"
+    "gh-pages": "^6.1.0",
+    "prettier": "^3.1.1",
+    "prettier-plugin-astro": "^0.12.2"
   }
 }
