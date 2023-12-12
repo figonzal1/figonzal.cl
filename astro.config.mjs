@@ -19,5 +19,5 @@ export default defineConfig({
     ssr: {
       noExternal: ["react-github-calendar"],
     },
-  }
+  },
 });

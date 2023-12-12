@@ -7,7 +7,9 @@
   "scripts": {
     "tailwind": "npx tailwind build -i ./src/styles/tailwind.css -o public/styles.css -m",
     "dev": "astro dev",
-    "build": "pnpm run tailwind && astro check && astro build",
+    "format": "npx prettier --write . --plugin=prettier-plugin-astro",
+    "lint": "npx eslint --ext .astro src",
+    "build": "pnpm run lint && pnpm run tailwind && pnpm run format && astro check && astro build",
     "preview": "astro preview"
   },
   "dependencies": {
@@ -18,6 +20,7 @@
     "@types/react-dom": "^18.2.17",
     "astro": "^3.6.4",
     "astro-particles": "^2.10.0",
+    "astro-tooltips": "^0.6.2",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-github-calendar": "^4.0.7",
@@ -33,6 +36,11 @@
     "typewriter-effect": "^2.21.0"
   },
   "devDependencies": {
-    "gh-pages": "^6.1.0"
+    "@typescript-eslint/parser": "^6.14.0",
+    "eslint": "^8.55.0",
+    "eslint-plugin-astro": "^0.30.0",
+    "gh-pages": "^6.1.0",
+    "prettier": "^3.1.1",
+    "prettier-plugin-astro": "^0.12.2"
   }
 }
