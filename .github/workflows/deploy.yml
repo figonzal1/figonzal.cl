@@ -4,7 +4,7 @@ on:
   # Activa el workflow cada vez que hay un push a la rama `main`
   # ¿Estás usando un nombre diferente de rama? Reemplaza `main` con el nombre de tu rama
   push:
-    branches: [ gh-pages ]
+    branches: [gh-pages]
   # Te permite ejecutar este workflow manualmente desde la pestaña Actions en GitHub.
   workflow_dispatch:
 
@@ -25,7 +25,6 @@ jobs:
         with:
           node-version: 20 # La versión específica de Node que debe utilizarse para compilar tu proyecto. Por defecto es la 18. (opcional)
           package-manager: pnpm@latest # El gestor de paquetes de Node que debe instalar las dependencias y compilar tu proyecto. Automáticamente detectadas con base en tu archivo lockfile. (opcional)
-
 
   deploy:
     needs: build

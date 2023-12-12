@@ -10,7 +10,7 @@ const Github = () => {
 
   const [year, setYear] = useState(actualYear);
   const [years, setYears] = useState<Array<{ value: number; label: string }>>(
-    []
+    [],
   );
 
   useEffect(() => {
@@ -19,7 +19,7 @@ const Github = () => {
       (_, i) => ({
         value: actualYear - i,
         label: (actualYear - i).toString(),
-      })
+      }),
     );
 
     setYears(yearsArray);
