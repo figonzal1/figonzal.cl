@@ -30,46 +30,44 @@ const Github = () => {
   };
 
   return (
-    <>
-      <div className="flex justify-center">
-        <div className="flex flex-col items-center gap-5 w-full max-w-screen-lg xl:max-w-screen-xl">
-          <div className="w-3/4 md:w-5/6">
-            <select
-              value={year}
-              onChange={handleChange}
-              className="w-24 border-2 border-fpurple text-sm rounded-lg block p-2.5 bg-fpurple-box text-white"
-            >
-              {years.map((option) => (
-                <option key={option.value} value={option.value}>
-                  {option.label}
-                </option>
-              ))}
-            </select>
-          </div>
+    <div className="flex justify-center">
+      <div className="flex flex-col items-center gap-5 w-full max-w-screen-lg xl:max-w-screen-xl">
+        <div className="w-3/4 md:w-5/6">
+          <select
+            value={year}
+            onChange={handleChange}
+            className="w-24 border-2 border-fpurple text-sm rounded-lg block p-2.5 bg-fpurple-box text-white"
+          >
+            {years.map((option) => (
+              <option key={option.value} value={option.value}>
+                {option.label}
+              </option>
+            ))}
+          </select>
+        </div>
 
-          <div className="w-3/4 md:w-5/6">
-            <GitHubCalendar
-              username="figonzal1"
-              blockSize={15}
-              blockMargin={5}
-              year={year}
-              colorScheme="dark"
-              blockRadius={20}
-              fontSize={16}
-              labels={labelsEn}
-              style={{ color: "white" }}
-              renderBlock={(block, activity) =>
-                React.cloneElement(block, {
-                  "data-tooltip-id": "react-tooltip",
-                  "data-tooltip-html": `${activity.count} commits el ${activity.date}`,
-                })
-              }
-            />
-            <ReactTooltip id="react-tooltip" />
-          </div>
+        <div className="w-3/4 md:w-5/6">
+          <GitHubCalendar
+            username="figonzal1"
+            blockSize={15}
+            blockMargin={5}
+            year={year}
+            colorScheme="dark"
+            blockRadius={20}
+            fontSize={16}
+            labels={labelsEn}
+            style={{ color: "white" }}
+            renderBlock={(block, activity) =>
+              React.cloneElement(block, {
+                "data-tooltip-id": "react-tooltip",
+                "data-tooltip-html": `${activity.count} commits el ${activity.date}`,
+              })
+            }
+          />
+          <ReactTooltip id="react-tooltip" />
         </div>
       </div>
-    </>
+    </div>
   );
 };
 
