@@ -4,8 +4,6 @@ import ProjectCard from "./ProjectCard.astro";
 import type { ProjectProp } from "src/utils/types";
 
 import { projectSeed } from "../../utils/projectSeed";
-import { FaGithub } from "react-icons/fa6/index.js";
-import { SiGoogleplay } from "react-icons/si/index.js";
 ---
 
 {
@@ -16,16 +14,7 @@ import { SiGoogleplay } from "react-icons/si/index.js";
       description={project.description}
     >
       {project.buttons.map((button) => (
-        <PurpleButton link={button.link} slot="project-buttons">
-          {button.icon === FaGithub ? (
-            <FaGithub color="white" size={21} />
-          ) : (
-            <SiGoogleplay color="white" size={21} />
-          )}
-          <div class="hidden sm:block">
-            <h2 class="text-white ps-1">{button.title}</h2>
-          </div>
-        </PurpleButton>
+        <PurpleButton link={button.link} button={button} />
       ))}
     </ProjectCard>
   ))

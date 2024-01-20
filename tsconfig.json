@@ -10,7 +10,7 @@
     "paths": {
       "@components/*": ["src/components/*"],
       "@assets/*": ["src/assets/*"],
-      "@layouts/*": ["src/layouts/*"]
-    }
-  }
+      "@layouts/*": ["src/layouts/*"],
+    },
+  },
 }
