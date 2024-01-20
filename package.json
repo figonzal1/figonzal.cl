@@ -9,7 +9,7 @@
     "dev": "astro dev",
     "format": "npx prettier --write . --plugin=prettier-plugin-astro",
     "lint": "npx oxlint",
-    "build": "pnpm run lint && pnpm run tailwind && pnpm run format && astro check && astro build",
+    "build": "pnpm run lint && pnpm run format && pnpm run tailwind && astro check && astro build",
     "preview": "astro preview"
   },
   "dependencies": {
