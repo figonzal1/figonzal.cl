@@ -1,5 +1,8 @@
 ---
-const { link } = Astro.props;
+import { FaGithub } from "react-icons/fa6/index.js";
+import { SiGoogleplay } from "react-icons/si/index.js";
+
+const { link, button } = Astro.props;
 ---
 
 <a
@@ -8,5 +11,14 @@ const { link } = Astro.props;
   target="_blank"
   referrerpolicy="no-referrer"
 >
-  <slot />
+  {
+    button.icon === FaGithub ? (
+      <FaGithub color="white" size={21} />
+    ) : (
+      <SiGoogleplay color="white" size={21} />
+    )
+  }
+  <div class="hidden sm:block">
+    <h2 class="text-white ps-1">{button.title}</h2>
+  </div>
 </a>
