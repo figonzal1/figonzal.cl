@@ -1,5 +1,5 @@
-import { FaGithub } from "react-icons/fa6/index.js";
-import { SiGoogleplay } from "react-icons/si/index.js";
+import { FaGithub } from "react-icons/fa6";
+import { SiGoogleplay } from "react-icons/si";
 import type { ProjectProp } from "./types";
 import lqch from "@assets/images/projects/lqch.png";
 import aaid from "@assets/images/projects/aaid.png";
@@ -31,7 +31,7 @@ const createProject = (
   };
 };
 
-const GITHUB = "https://github.com/figonzal1";
+const GITHUB = "https://github.com/figonzal1/";
 const GOOGLE_PLAY = "https://play.google.com/store/apps/details?id=";
 
 const LQCH_GITHUB = GITHUB + "LastQuakeChile";

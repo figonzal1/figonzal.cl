@@ -1,10 +1,10 @@
-import { FaHome } from "react-icons/fa/index.js";
-import { GoProjectSymlink } from "react-icons/go/index.js";
-import { BiGitRepoForked, BiStar } from "react-icons/bi/index.js";
-import { ImBlog } from "react-icons/im/index.js";
+import { FaHome } from "react-icons/fa";
+import { GoProjectSymlink } from "react-icons/go";
+import { BiGitRepoForked, BiStar } from "react-icons/bi";
+import { ImBlog } from "react-icons/im";
 import { useState } from "react";
-import { MdClose } from "react-icons/md/index.js";
-import { FiMenu } from "react-icons/fi/index.js";
+import { MdClose } from "react-icons/md";
+import { FiMenu } from "react-icons/fi";
 
 import logo from "@assets/images/logo.png";
 import NavbarLink from "../NavbarLink";
