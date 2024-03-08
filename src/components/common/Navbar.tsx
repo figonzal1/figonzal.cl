@@ -64,6 +64,7 @@ const Navbar = ({ lang }: { lang: string }) => {
           className="flex justify-center items-center border-2 border-fpurple bg-fpurple-box hover:bg-fpurple/30 p-2 rounded-lg gap-1 px-4 py-2 transition-colors duration-150 ease-in-out"
           href="https://github.com/figonzal1/figonzal.cl"
           target="_blank"
+          rel="noreferrer"
           referrerPolicy="no-referrer"
         >
           <BiGitRepoForked size={18} color="white" />
