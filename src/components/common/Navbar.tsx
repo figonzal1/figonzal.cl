@@ -9,10 +9,13 @@ import { FiMenu } from "react-icons/fi";
 
 import logo from "@assets/images/logo.png";
 
-const Navbar = () => {
+const Navbar = ({ lang }: { lang: string }) => {
   const [expanded, setExpanded] = useState(false);
 
   const colorMenu = "#26d6ad";
+
+  const textMenusES = ["Inicio", "Proyectos", "Blog"];
+  const textMenusEN = ["Home", "Projects", "Blog"];
 
   return (
     <nav className="flex flex-col md:flex-row md:items-center px-16 md:px-24 py-6 mt-0 z-50 backdrop-blur-md fixed w-full">
@@ -39,14 +42,17 @@ const Navbar = () => {
       >
         <NavbarLink
           icon={<FaHome color="white" size={21} />}
-          name="Inicio"
-          link="/"
+          name={lang === "es" ? textMenusES[0] : textMenusEN[0]}
+          link={lang === "es" ? "/" : "/en"}
         />
 
         <NavbarLink
           icon={<GoProjectSymlink color="white" size={21} />}
-          name="Proyectos"
-          link="/proyectos"
+          name={lang === "es" ? textMenusES[1] : textMenusEN[1]}
+          link={(lang === "es"
+            ? "/" + textMenusES[1]
+            : "/en/" + textMenusEN[1]
+          ).toLocaleLowerCase()}
         />
         <NavbarLink
           icon={<ImBlog color="white" size={21} />}

@@ -1,15 +1,17 @@
 ---
-import Navbar from "@components/common/Navbar";
 import Footer from "@components/common/Footer.astro";
-import Header from "./Header.astro";
+import Header from "@components/common/Header.astro";
+import Navbar from "@components/common/Navbar";
+
+const { lang } = Astro.props;
 ---
 
-<html lang="es">
+<html lang={lang}>
   <Header />
   <body
     class="flex flex-col min-h-screen bg-black bg-gradient-to-br from-fgreen/20 to-fpurple/40 antialiased w-full"
   >
-    <Navbar client:load />
+    <Navbar lang={lang} client:load />
     <slot />
     <Footer />
   </body>
