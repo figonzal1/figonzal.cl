@@ -1,18 +1,21 @@
-import { FaHome } from "react-icons/fa/index.js";
-import { GoProjectSymlink } from "react-icons/go/index.js";
-import { BiGitRepoForked, BiStar } from "react-icons/bi/index.js";
-import { ImBlog } from "react-icons/im/index.js";
+import { FaHome } from "react-icons/fa";
+import { GoProjectSymlink } from "react-icons/go";
+import { BiGitRepoForked, BiStar } from "react-icons/bi";
+import { ImBlog } from "react-icons/im";
 import { useState } from "react";
 import NavbarLink from "./NavbarLink";
-import { MdClose } from "react-icons/md/index.js";
-import { FiMenu } from "react-icons/fi/index.js";
+import { MdClose } from "react-icons/md";
+import { FiMenu } from "react-icons/fi";
 
 import logo from "@assets/images/logo.png";
 
-const Navbar = () => {
+const Navbar = ({ lang }: { lang: string }) => {
   const [expanded, setExpanded] = useState(false);
 
   const colorMenu = "#26d6ad";
+
+  const textMenusES = ["Inicio", "Proyectos", "Blog"];
+  const textMenusEN = ["Home", "Projects", "Blog"];
 
   return (
     <nav className="flex flex-col md:flex-row md:items-center px-16 md:px-24 py-6 mt-0 z-50 backdrop-blur-md fixed w-full">
@@ -39,14 +42,17 @@ const Navbar = () => {
       >
         <NavbarLink
           icon={<FaHome color="white" size={21} />}
-          name="Inicio"
-          link="/"
+          name={lang === "es" ? textMenusES[0] : textMenusEN[0]}
+          link={lang === "es" ? "/" : "/en"}
         />
 
         <NavbarLink
           icon={<GoProjectSymlink color="white" size={21} />}
-          name="Proyectos"
-          link="/proyectos"
+          name={lang === "es" ? textMenusES[1] : textMenusEN[1]}
+          link={(lang === "es"
+            ? "/" + textMenusES[1]
+            : "/en/" + textMenusEN[1]
+          ).toLocaleLowerCase()}
         />
         <NavbarLink
           icon={<ImBlog color="white" size={21} />}
@@ -58,6 +64,7 @@ const Navbar = () => {
           className="flex justify-center items-center border-2 border-fpurple bg-fpurple-box hover:bg-fpurple/30 p-2 rounded-lg gap-1 px-4 py-2 transition-colors duration-150 ease-in-out"
           href="https://github.com/figonzal1/figonzal.cl"
           target="_blank"
+          rel="noreferrer"
           referrerPolicy="no-referrer"
         >
           <BiGitRepoForked size={18} color="white" />
