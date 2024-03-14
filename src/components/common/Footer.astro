@@ -4,6 +4,15 @@ import { ImFacebook, ImLinkedin2 } from "react-icons/im";
 import { SiGoogleplay, SiInstagram } from "react-icons/si";
 import { Image } from "astro:assets";
 import logo from "@assets/images/logo.png";
+
+const { lang } = Astro.props;
+
+let footerMsg = "";
+if (lang === "es") {
+  footerMsg = "Hecho con 🍵 y código por ";
+} else {
+  footerMsg = "Made with 🍵 & code by ";
+}
 ---
 
 <footer class="bg-fpurple/20 backdrop-blur-sm w-full">
@@ -65,14 +74,16 @@ import logo from "@assets/images/logo.png";
 
     <hr class="my-4 border-fpurple/30 rounded-full" />
 
-    <span class="block text-sm text-center"
-      >© <span id="year"></span>
-      <a
-        href="https://figonzal.cl/"
-        class="underline font-semibold hover:opacity-50 transition-opacity duration-150 ease-in-out"
-        >figonzal.cl</a
-      ></span
-    >
+    <span class="text-sm text-center flex flex-col justify-center">
+      <span id="year"></span>
+      <span
+        >{footerMsg}<a
+          href="https://figonzal.cl/"
+          class="underline font-semibold hover:opacity-50 transition-opacity duration-150 ease-in-out"
+          >figonzal.cl</a
+        >
+      </span>
+    </span>
   </div>
 
   <script>

@@ -13,6 +13,6 @@ const { lang } = Astro.props;
   >
     <Navbar lang={lang} client:load />
     <slot />
-    <Footer />
+    <Footer lang={lang} />
   </body>
 </html>
