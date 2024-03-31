@@ -1,20 +1,37 @@
 ---
 import Particle from "@components/common/Particle.astro";
+import IntroSection from "@components/home/IntroSection.astro";
 import AbstractSection from "@components/home/en/AbstractSection.astro";
-import IntroSection from "@components/home/en/IntroSection.astro";
-import SocialSection from "@components/home/en/SocialSection.astro";
-import TechStackSection from "@components/home/en/TechStackSection.astro";
+import SocialSection from "@components/home/socialsection/SocialSection.astro";
+import TechStackSection from "@components/home/techsection/TechStackSection.astro";
 import BaseLayout from "@layouts/BaseLayout.astro";
+import { labelsEn } from "src/utils/githubLabels";
 ---
 
 <BaseLayout lang="en">
   <div class="w-0 h-0">
     <Particle />
   </div>
-  <div>
-    <IntroSection />
-    <AbstractSection />
-    <TechStackSection />
-    <SocialSection />
-  </div>
+  <IntroSection
+    hello="Hello"
+    im="I 'm"
+    typeWritter={[
+      "Passionate about technology and innovation.",
+      "Android & AR developer",
+      "Computer Engineer",
+      "Open Source Contributor",
+    ]}
+  />
+  <AbstractSection />
+  <TechStackSection
+    lpTitle={["My", "Languages", "Frameworks"]}
+    dtTitle={["My", "Dev", "Tools"]}
+    ghTitle={["Coding", "Days"]}
+    commitMsg="commits on"
+    labels={labelsEn}
+  />
+  <SocialSection
+    titles={["My", "Socials"]}
+    subTitles={["Feel free to", "connect ", "with me"]}
+  />
 </BaseLayout>

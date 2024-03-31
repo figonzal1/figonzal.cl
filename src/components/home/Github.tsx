@@ -2,9 +2,9 @@ import React, { useEffect, useState } from "react";
 import GitHubCalendar from "react-github-calendar";
 import { Tooltip as ReactTooltip } from "react-tooltip";
 import "react-tooltip/dist/react-tooltip.css";
-import { labels } from "src/utils/githubLabels";
+import type { GithubProp } from "src/utils/types";
 
-const Github = () => {
+const Github = ({ commitMsg, labels }: GithubProp) => {
   const actualYear = new Date().getFullYear();
   const startYear = 2016;
 
@@ -60,7 +60,7 @@ const Github = () => {
             renderBlock={(block, activity) =>
               React.cloneElement(block, {
                 "data-tooltip-id": "react-tooltip",
-                "data-tooltip-html": `${activity.count} commits el ${activity.date}`,
+                "data-tooltip-html": `${activity.count} ${commitMsg} ${activity.date}`,
               })
             }
           />

@@ -1,31 +1,93 @@
 ---
+import { FaJava, FaPhp, FaGitAlt, FaGithub } from "react-icons/fa6";
+import {
+  SiAndroid,
+  SiKotlin,
+  SiCsharp,
+  SiJavascript,
+  SiTypescript,
+  SiSpringboot,
+  SiNextdotjs,
+  SiAdonisjs,
+  SiAstro,
+  SiAndroidstudio,
+  SiIntellijidea,
+  SiTeamcity,
+  SiVisualstudiocode,
+  SiDocker,
+  SiPostman,
+  SiLinux,
+  SiUnity,
+  SiSonarqube,
+} from "react-icons/si";
 import Github from "../Github";
-import LpFrameworks from "./LpFrameworks.astro";
-import DevTools from "./DevTools.astro";
+import ToolCard from "./ToolCard.astro";
+
+const { lpTitle, dtTitle, ghTitle, labels, commitMsg } = Astro.props;
 ---
 
 <section>
   <!-- FRAMEWORKS -->
   <div class="pt-24 lg:pt-56">
     <h1 class="text-2xl md:text-4xl text-white text-center">
-      Mis <span class="text-fgreen font-extrabold">Lenguajes & Frameworks</span>
+      {lpTitle[0]}
+      <span class="text-fgreen font-extrabold">{lpTitle[1]} & {lpTitle[2]}</span
+      >
     </h1>
-    <LpFrameworks />
+    <div class="flex flex-wrap justify-center gap-5 p-10 lg:px-44 xl:px-52">
+      <ToolCard title="Android" icon={SiAndroid} alt="Android" />
+      <ToolCard title="Kotlin" icon={SiKotlin} alt="Koltin" />
+      <ToolCard title="Java" icon={FaJava} alt="Java" />
+      <ToolCard title="Php" icon={FaPhp} alt="Php" />
+      <ToolCard title="C#" icon={SiCsharp} alt="Csharp" />
+      <ToolCard title="Javascript" icon={SiJavascript} alt="Javascript" />
+      <ToolCard title="Typescript" icon={SiTypescript} alt="Typescript" />
+      <ToolCard title="Spring Boot" icon={SiSpringboot} alt="Springboot" />
+      <ToolCard title="Next Js" icon={SiNextdotjs} alt="Nextdotjs" />
+      <ToolCard title="Adonis Js" icon={SiAdonisjs} alt="Adonisjs" />
+      <ToolCard title="Astro" icon={SiAstro} alt="Astro Build" />
+    </div>
   </div>
 
   <!-- TOOLS -->
   <div class="pt-14 md:pt-24">
     <h1 class="text-2xl md:text-4xl text-white text-center">
-      Mis <span class="text-fgreen font-extrabold">Dev Tools</span>
+      {dtTitle[0]}
+      <span class="text-fgreen font-extrabold">{dtTitle[1]} {dtTitle[2]}</span>
     </h1>
-    <DevTools />
+    <div class="flex flex-wrap justify-center gap-5 p-10 lg:px-44 xl:px-52">
+      <ToolCard
+        title="Android Studio"
+        icon={SiAndroidstudio}
+        alt="Android Studio"
+      />
+      <ToolCard
+        title="IntelliJ Idea"
+        icon={SiIntellijidea}
+        alt="Intellijidea"
+      />
+      <ToolCard title="Team City" icon={SiTeamcity} alt="Team city" />
+      <ToolCard
+        title="Vs Code"
+        icon={SiVisualstudiocode}
+        alt="Visual Studio code"
+      />
+      <ToolCard title="Git" icon={FaGitAlt} alt="Git" />
+      <ToolCard title="Github" icon={FaGithub} alt="Github" />
+      <ToolCard title="Docker" icon={SiDocker} alt="Docker" />
+      <ToolCard title="Postman" icon={SiPostman} alt="Postman" />
+      <ToolCard title="Linux" icon={SiLinux} alt="Linux" />
+      <ToolCard title="Unity" icon={SiUnity} alt="Unity" />
+      <ToolCard title="Sonarqube" icon={SiSonarqube} alt="Sonarqube" />
+    </div>
   </div>
 
   <!-- GITHUB SECTION -->
   <div class="flex flex-col py-24 gap-5 md:gap-10">
     <h1 class="text-2xl md:text-4xl dark:text-white text-center">
-      Días <span class="text-fgreen font-extrabold">Codeando</span>
+      {ghTitle[0]}
+      <span class="text-fgreen font-extrabold">{ghTitle[1]}</span>
     </h1>
-    <Github client:idle />
+    <Github client:idle commitMsg={commitMsg} labels={labels} />
   </div>
 </section>
