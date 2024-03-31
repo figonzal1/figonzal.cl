@@ -2,6 +2,8 @@
 import Typewriter from "typewriter-effect";
 import { Image } from "astro:assets";
 import homeMain from "@assets/images/home-main.svg";
+
+const { hello, im, typeWritter } = Astro.props;
 ---
 
 <section>
@@ -12,22 +14,18 @@ import homeMain from "@assets/images/home-main.svg";
       class="h-80 w-full text-left text-white text-2xl p-10 sm:p-16 lg:p-20 lg:w-1/2 lg:text-4xl"
     >
       <h1 class="pb-7">
-        Hola
+        {hello}
         <span class="inline-block animate-wave pe-4">👋🏻</span>
       </h1>
 
       <h1 class="pb-14">
-        Soy <strong class="text-fgreen">Felipe González</strong>
+        {im}
+        <strong class="text-fgreen">Felipe González</strong>
       </h1>
       <div class="text-fgreen font-bold">
         <Typewriter
           options={{
-            strings: [
-              "Apasionado por la tecnología e innovación",
-              "Desarrollador Android & AR",
-              "Ingeniero Informático",
-              "Colaborador Open Source",
-            ],
+            strings: typeWritter,
             autoStart: true,
             loop: true,
             delay: "natural",
