@@ -1,24 +1,12 @@
 ---
 import Particle from "@components/common/Particle.astro";
-import ProjectsList from "@components/projects/ProjectsList.astro";
+import ProjectSection from "@components/projects/ProjectSection.astro";
 import BaseLayout from "@layouts/BaseLayout.astro";
 ---
 
 <BaseLayout lang="es">
-  <section class="mb-auto">
-    <div class="w-0 h-0">
-      <Particle />
-    </div>
-    <div class="py-40">
-      <h1 class="text-2xl sm:text-4xl dark:text-white text-center">
-        Mis <span class="text-fgreen font-extrabold">Proyectos</span>
-      </h1>
-
-      <div
-        class="p-10 sm:p-24 lg:p-24 grid grid-cols-1 lg:grid-cols-2 2xl:grid-cols-3 gap-10"
-      >
-        <ProjectsList />
-      </div>
-    </div>
-  </section>
+  <div class="w-0 h-0">
+    <Particle />
+  </div>
+  <ProjectSection title={["Mis", "Proyectos"]} />
 </BaseLayout>
