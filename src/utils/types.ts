@@ -11,3 +11,16 @@ export type ProjectProp = {
     link: string;
   }[];
 };
+
+export type GithubProp = {
+  commitMsg: string;
+  labels: {
+    months: [];
+    weekdays: [];
+    totalCount: string;
+    legend: {
+      less: string;
+      more: string;
+    };
+  };
+};

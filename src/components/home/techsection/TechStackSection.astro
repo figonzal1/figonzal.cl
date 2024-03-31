@@ -23,7 +23,7 @@ import {
 import Github from "../Github";
 import ToolCard from "./ToolCard.astro";
 
-const { lpTitle, dtTitle, ghTitle } = Astro.props;
+const { lpTitle, dtTitle, ghTitle, labels, commitMsg } = Astro.props;
 ---
 
 <section>
@@ -88,6 +88,6 @@ const { lpTitle, dtTitle, ghTitle } = Astro.props;
       {ghTitle[0]}
       <span class="text-fgreen font-extrabold">{ghTitle[1]}</span>
     </h1>
-    <Github client:idle />
+    <Github client:idle commitMsg={commitMsg} labels={labels} />
   </div>
 </section>
