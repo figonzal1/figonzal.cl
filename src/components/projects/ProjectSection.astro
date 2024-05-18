@@ -4,7 +4,7 @@ import { projectSeed } from "src/utils/projectSeed";
 import type { ProjectProp } from "src/utils/types";
 import ProjectCard from "./ProjectCard.astro";
 
-const { title } = Astro.props;
+const { title, projects } = Astro.props;
 ---
 
 <section class="mb-auto">
@@ -18,7 +18,7 @@ const { title } = Astro.props;
       class="p-10 sm:p-24 lg:p-24 grid grid-cols-1 lg:grid-cols-2 2xl:grid-cols-3 gap-10"
     >
       {
-        projectSeed.map((project: ProjectProp) => (
+        projects.map((project: ProjectProp) => (
           <ProjectCard
             title={project.title}
             image={project.image}
