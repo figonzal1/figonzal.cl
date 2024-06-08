@@ -14,22 +14,22 @@
   },
   "dependencies": {
     "@astrojs/check": "^0.7.0",
-    "@astrojs/react": "^3.3.4",
+    "@astrojs/react": "^3.5.0",
     "@astrojs/tailwind": "^5.1.0",
-    "@types/react": "^18.3.2",
+    "@types/react": "^18.3.3",
     "@types/react-dom": "^18.3.0",
     "astro": "^3.6.5",
     "astro-particles": "^2.10.0",
     "astro-tooltips": "^0.6.2",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
-    "react-github-calendar": "^4.1.3",
+    "react-github-calendar": "^4.1.5",
     "react-icons": "^5.2.1",
-    "react-parallax-tilt": "^1.7.226",
+    "react-parallax-tilt": "^1.7.227",
     "react-tooltip": "^5.26.4",
     "sharp": "^0.33.4",
     "tailwind": "^4.0.0",
-    "tailwindcss": "^3.4.3",
+    "tailwindcss": "^3.4.4",
     "tsparticles": "^2.12.0",
     "tsparticles-engine": "^2.12.0",
     "typescript": "^5.4.5",
@@ -37,8 +37,8 @@
   },
   "devDependencies": {
     "gh-pages": "^6.1.1",
-    "oxlint": "^0.3.5",
-    "prettier": "^3.2.5",
-    "prettier-plugin-astro": "^0.13.0"
+    "oxlint": "^0.4.3",
+    "prettier": "^3.3.1",
+    "prettier-plugin-astro": "^0.14.0"
   }
 }
