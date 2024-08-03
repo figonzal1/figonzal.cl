@@ -12,7 +12,7 @@ const NavbarLink = ({
   return (
     <a
       href={link}
-      className="flex border-b-2 border-transparent hover:border-fgreen transition-colors duration-300 ease-in-out"
+      className="flex items-center border-b-2 border-transparent hover:border-fgreen transition-colors duration-300 ease-in-out"
     >
       {icon}
       <p className="ps-2 text-white text-xl">{name}</p>

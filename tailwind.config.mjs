@@ -9,9 +9,6 @@ export default {
       fontFamily: {
         sans: ["Raleway", ...defaultTheme.fontFamily.sans], // Agrega 'Raleway' al principio de la lista
       },
-      fontWeight: {
-        500: "500",
-      },
       colors: {
         fgreen: "#26d6ad",
         fpurple: "#5919cff8",

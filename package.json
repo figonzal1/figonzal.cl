@@ -5,17 +5,17 @@
   "private": true,
   "homepage": "https://figonzal.cl",
   "scripts": {
-    "tailwind": "npx tailwind build -i ./src/styles/tailwind.css -o public/styles.css -m",
     "dev": "astro dev",
-    "format": "npx prettier --write . --plugin=prettier-plugin-astro",
-    "lint": "npx oxlint",
-    "build": "pnpm run lint && pnpm run format && pnpm run tailwind && astro check && astro build",
+    "format": "pnpm dlx prettier --write . --plugin=prettier-plugin-astro",
+    "lint": "pnpm dlx oxlint",
+    "build": "pnpm run lint && pnpm run format && astro check && astro build",
     "preview": "astro preview"
   },
   "dependencies": {
-    "@astrojs/check": "^0.7.0",
-    "@astrojs/react": "^3.5.0",
+    "@astrojs/check": "^0.9.1",
+    "@astrojs/react": "^3.6.1",
     "@astrojs/tailwind": "^5.1.0",
+    "@fontsource-variable/raleway": "^5.0.20",
     "@types/react": "^18.3.3",
     "@types/react-dom": "^18.3.0",
     "astro": "^3.6.5",
@@ -23,22 +23,22 @@
     "astro-tooltips": "^0.6.2",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
-    "react-github-calendar": "^4.1.5",
+    "react-github-calendar": "^4.2.1",
     "react-icons": "^5.2.1",
-    "react-parallax-tilt": "^1.7.227",
-    "react-tooltip": "^5.26.4",
+    "react-parallax-tilt": "^1.7.234",
+    "react-tooltip": "^5.27.1",
     "sharp": "^0.33.4",
     "tailwind": "^4.0.0",
-    "tailwindcss": "^3.4.4",
+    "tailwindcss": "^3.4.7",
     "tsparticles": "^2.12.0",
     "tsparticles-engine": "^2.12.0",
-    "typescript": "^5.4.5",
+    "typescript": "^5.5.4",
     "typewriter-effect": "^2.21.0"
   },
   "devDependencies": {
     "gh-pages": "^6.1.1",
-    "oxlint": "^0.4.3",
-    "prettier": "^3.3.1",
-    "prettier-plugin-astro": "^0.14.0"
+    "oxlint": "^0.6.1",
+    "prettier": "^3.3.3",
+    "prettier-plugin-astro": "^0.14.1"
   }
 }
