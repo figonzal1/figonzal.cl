@@ -4,7 +4,7 @@ import { BiGitRepoForked, BiStar } from "react-icons/bi";
 import { ImBlog } from "react-icons/im";
 import { useState } from "react";
 import NavbarLink from "./NavbarLink";
-import { MdClose } from "react-icons/md";
+import { MdClose, MdOutlineWorkOutline } from "react-icons/md";
 import { FiMenu } from "react-icons/fi";
 
 import logo from "@assets/images/logo.png";
@@ -14,8 +14,8 @@ const Navbar = ({ lang }: { lang: string }) => {
 
   const colorMenu = "#26d6ad";
 
-  const textMenusES = ["Inicio", "Proyectos", "Blog"];
-  const textMenusEN = ["Home", "Projects", "Blog"];
+  const textMenusES = ["Inicio", "Clientes", "Proyectos", "Blog"];
+  const textMenusEN = ["Home", "Clients", "Projects", "Blog"];
 
   return (
     <nav className="flex flex-col md:flex-row md:items-center px-16 md:px-24 py-6 mt-0 z-50 backdrop-blur-md fixed w-full">
@@ -47,11 +47,20 @@ const Navbar = ({ lang }: { lang: string }) => {
         />
 
         <NavbarLink
-          icon={<GoProjectSymlink color="white" size={21} />}
+          icon={<MdOutlineWorkOutline color="white" size={21} />}
           name={lang === "es" ? textMenusES[1] : textMenusEN[1]}
           link={(lang === "es"
             ? "/" + textMenusES[1]
             : "/en/" + textMenusEN[1]
+          ).toLocaleLowerCase()}
+        />
+
+        <NavbarLink
+          icon={<GoProjectSymlink color="white" size={21} />}
+          name={lang === "es" ? textMenusES[2] : textMenusEN[2]}
+          link={(lang === "es"
+            ? "/" + textMenusES[2]
+            : "/en/" + textMenusEN[2]
           ).toLocaleLowerCase()}
         />
         <NavbarLink
