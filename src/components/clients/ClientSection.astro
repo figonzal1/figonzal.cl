@@ -1,9 +1,9 @@
 ---
+import type { ClientProp } from "src/utils/types";
+import ClientCard from "./ClientCard.astro";
 import PurpleButton from "@components/common/PurpleButton.astro";
-import type { ProjectProp } from "src/utils/types";
-import ProjectCard from "./ProjectCard.astro";
 
-const { title, projects } = Astro.props;
+const { title, clients } = Astro.props;
 ---
 
 <section class="mb-auto">
@@ -17,20 +17,20 @@ const { title, projects } = Astro.props;
       class="p-10 sm:p-24 lg:p-24 grid grid-cols-1 lg:grid-cols-2 2xl:grid-cols-3 gap-10"
     >
       {
-        projects.map((project: ProjectProp) => (
-          <ProjectCard
-            title={project.title}
-            image={project.image}
-            description={project.description}
+        clients.map((client: ClientProp) => (
+          <ClientCard
+            title={client.title}
+            image={client.image}
+            description={client.description}
           >
-            {project.buttons.map((button) => (
+            {client.buttons.map((button) => (
               <PurpleButton
                 title={button.title}
                 link={button.link}
                 icon={button.icon}
               />
             ))}
-          </ProjectCard>
+          </ClientCard>
         ))
       }
     </div>

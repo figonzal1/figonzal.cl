@@ -5,11 +5,15 @@ export type ProjectProp = {
   title: string;
   description: string;
   image: ImageMetadata;
-  buttons: {
-    title: string;
-    icon: IconType;
-    link: string;
-  }[];
+  buttons: Button[];
+};
+
+export type ClientProp = {
+  title: string;
+  description: string;
+  image: ImageMetadata;
+  buttons: Button[];
+  techStack: TechStack[];
 };
 
 export type GithubProp = {
@@ -23,4 +27,15 @@ export type GithubProp = {
       more: string;
     };
   };
+};
+
+export type Button = {
+  title: string;
+  icon: IconType;
+  link: string;
+};
+
+export type TechStack = {
+  title: string;
+  icon: IconType;
 };

@@ -1,0 +1,13 @@
+---
+import ClientSection from "@components/clients/ClientSection.astro";
+import Particle from "@components/common/Particle.astro";
+import BaseLayout from "@layouts/BaseLayout.astro";
+import { clientSeed } from "src/utils/clientSeed";
+---
+
+<BaseLayout lang="es">
+  <div class="w-0 h-0">
+    <Particle />
+  </div>
+  <ClientSection title={["Mis", "Clientes"]} clients={clientSeed} />
+</BaseLayout>

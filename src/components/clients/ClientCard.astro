@@ -1,0 +1,77 @@
+---
+import ToolCard from "@components/home/techsection/ToolCard.astro";
+import { Picture } from "astro:assets";
+import { FaReact } from "react-icons/fa";
+import {
+  SiAndroid,
+  SiKotlin,
+  SiCsharp,
+  SiJavascript,
+  SiTypescript,
+  SiSpringboot,
+  SiNextdotjs,
+  SiAdonisjs,
+  SiAstro,
+  SiAndroidstudio,
+  SiIntellijidea,
+  SiTeamcity,
+  SiVisualstudiocode,
+  SiDocker,
+  SiPostman,
+  SiLinux,
+  SiUnity,
+  SiSonarqube,
+  SiTailwindcss,
+  SiShadcnui,
+} from "react-icons/si";
+
+const { image, title, description } = Astro.props;
+---
+
+<div class="flex flex-col items-center">
+  <Picture
+    src={image}
+    alt=`Portada proyecto ${title}`
+    formats={["webp", "png"]}
+    fallbackFormat="png"
+    class="object-cover object-center rounded-lg shadow-lg opacity-90"
+  />
+  <div class="relative px-5 lg:px-10 -mt-5 lg:-mt-16 w-full">
+    <div
+      class="group flex flex-col justify-between backdrop-blur-md gap-4s bg-fpurple/5 p-3 sm:p-6 rounded-lg shadow-lg shadow-fpurple-box border-2 border-fpurple hover:scale-105 hover:lg:scale-110 transition-transform duration-150 ease-in-out"
+    >
+      <div
+        class="opacity-0 group-hover:opacity-85 absolute right-4 -bottom-3 border-2 border-fgreen/90 bg-fpurple shadow-md shadow-fpurple-box rounded-lg transition-all ease-in-out duration-300 delay-150"
+      >
+        <div class="flex flex-row gap-3 p-1">
+          <div title="Astro">
+            <SiAstro color="white" size={14} />
+          </div>
+          <div title="React">
+            <FaReact color="white" size={14} />
+          </div>
+          <div title="Tailwindcss">
+            <SiTailwindcss color="white" size={14} />
+          </div>
+          <div title="Shadcn/UI">
+            <SiShadcnui color="white" size={14} />
+          </div>
+        </div>
+      </div>
+      <h2
+        class="text-fgreen text-center text-sm sm:text-xl font-semibold uppercase leading-tight"
+      >
+        {title}
+      </h2>
+      <p
+        class="text-white text-sm hidden sm:visible sm:block leading-tight font-mono pt-2 pb-5"
+      >
+        {description}
+      </p>
+
+      <div class="pt-5 sm:py-0 flex justify-center gap-3">
+        <slot />
+      </div>
+    </div>
+  </div>
+</div>
