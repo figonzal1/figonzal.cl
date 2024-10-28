@@ -20,8 +20,9 @@ const { title, clients } = Astro.props;
         clients.map((client: ClientProp) => (
           <ClientCard
             title={client.title}
-            image={client.image}
             description={client.description}
+            coverImage={client.image}
+            techStack={client.techStack}
           >
             {client.buttons.map((button) => (
               <PurpleButton
