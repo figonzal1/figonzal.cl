@@ -63,7 +63,7 @@ const clientSeed: ClientProp[] = [
   ),
   createClient(
     "OTEC Progress",
-    "Landing page con integración mercado pago para compras online, centro de capacitación, La Serena, Chile.",
+    "Landing page OTEC Progress, centro de capacitación en La Serena, Chile, con integración de Mercado Pago.",
     progress,
     "https://www.progresscap.cl",
     [
