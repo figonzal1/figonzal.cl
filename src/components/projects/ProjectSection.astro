@@ -1,6 +1,6 @@
 ---
 import PurpleButton from "@components/common/PurpleButton.astro";
-import type { ProjectProp } from "src/utils/types";
+import type { ProjectProp, ProjectButton } from "src/utils/types";
 import ProjectCard from "./ProjectCard.astro";
 
 const { title, projects } = Astro.props;
@@ -20,10 +20,11 @@ const { title, projects } = Astro.props;
         projects.map((project: ProjectProp) => (
           <ProjectCard
             title={project.title}
-            image={project.image}
             description={project.description}
+            coverImage={project.image}
+            techStack={project.techStack}
           >
-            {project.buttons.map((button) => (
+            {project.linkButtons.map((button: ProjectButton) => (
               <PurpleButton
                 title={button.title}
                 link={button.link}

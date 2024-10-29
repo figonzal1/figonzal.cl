@@ -1,41 +1,77 @@
 import { FaGithub } from "react-icons/fa6";
-import { SiGoogleplay } from "react-icons/si";
-import type { ProjectProp } from "./types";
+import {
+  SiAndroid,
+  SiDocker,
+  SiGoogleplay,
+  SiSpringboot,
+} from "react-icons/si";
+import type { ProjectButton, ProjectProp, TechStack } from "./types";
 import lqch from "@assets/images/projects/lqch.png";
 import aaid from "@assets/images/projects/aaid.png";
 import evalua from "@assets/images/projects/evalua.png";
+import Constants from "./constants";
+import { translations } from "./translations";
 
 const createProject = (
   title: string,
   description: string,
   image: ImageMetadata,
-  githubLink: string,
-  appLink: string,
-) => {
+  linkButtons: ProjectButton[],
+  techStack: TechStack[],
+): ProjectProp => {
   return {
     title,
     description,
     image,
-    buttons: [
-      {
-        title: "Github",
-        icon: FaGithub,
-        link: githubLink,
-      },
-      {
-        title: "App",
-        icon: SiGoogleplay,
-        link: appLink,
-      },
-    ],
+    linkButtons,
+    techStack,
   };
 };
 
-const GITHUB = "https://github.com/figonzal1/";
-const GOOGLE_PLAY = "https://play.google.com/store/apps/details?id=";
+/**
+ * LQCH
+ */
+const LQCH_NAME_EN = "LastQuakeChile - Quakes in Chile";
+const LQCH_DESCRIPTION_EN =
+  "It is an app where you can find out about the latest earthquakes that have occurred in Chile and receive notifications quickly on your cell phone.";
+const LQCH_LINKS = {
+  github: Constants.GITHUB + "LastQuakeChile",
+  googlePlay: Constants.GOOGLE_PLAY + "cl.figonzal.lastquakechile",
+};
 
-const LQCH_GITHUB = GITHUB + "LastQuakeChile";
-const LQCH_GOOGLE_PLAY = GOOGLE_PLAY + "cl.figonzal.lastquakechile";
+const LQCH_TECH_STACK = [
+  {
+    title: "Android - Kotlin",
+    icon: SiAndroid,
+  },
+  {
+    title: "SpringBoot - Java",
+    icon: SiSpringboot,
+  },
+  {
+    title: "Docker",
+    icon: SiDocker,
+  },
+];
+
+const lqch_es = createProject(
+  translations.es.LQCH.LQCH_NAME,
+  translations.es.LQCH.LQCH_DESCRIPTION,
+  lqch,
+  [
+    {
+      title: "Github",
+      icon: FaGithub,
+      link: LQCH_LINKS.github,
+    },
+    {
+      title: "App",
+      icon: SiGoogleplay,
+      link: LQCH_LINKS.googlePlay,
+    },
+  ],
+  LQCH_TECH_STACK,
+);
 
 const AAID_GITHUB = GITHUB + "AAID";
 const AAID_GOOGLE_PLAY = GOOGLE_PLAY + "cl.figonzal.aaid";
@@ -44,26 +80,52 @@ const EVALUA_GITHUB = GITHUB + "Evaluatool";
 const EVALUA_GOOGLE_PLAY = GOOGLE_PLAY + "cl.figonzal.evaluatool";
 
 const projectSeed: ProjectProp[] = [
-  createProject(
-    "LastQuakeChile - Sismos en Chile",
-    "Es una app donde podrás conocer los últimos sismos ocurridos en Chile y recibir notificaciones rápidamente en tu celular.",
-    lqch,
-    LQCH_GITHUB,
-    LQCH_GOOGLE_PLAY,
-  ),
+  lqch_es,
   createProject(
     "AAID",
-    "Esta aplicación permite al usuario encontrar el código AAID de su dispositivo Android con la opción de copiarlo fácilmente y compartirlo a través de otras aplicaciones.",
+    "App para encontrar el código AAID de su dispositivo Android, puedes compartirlo a través de otras aplicaciones.",
     aaid,
-    AAID_GITHUB,
-    AAID_GOOGLE_PLAY,
+    [
+      {
+        title: "Github",
+        icon: FaGithub,
+        link: AAID_GITHUB,
+      },
+      {
+        title: "App",
+        icon: SiGoogleplay,
+        link: AAID_GOOGLE_PLAY,
+      },
+    ],
+    [
+      {
+        title: "Android",
+        icon: SiAndroid,
+      },
+    ],
   ),
   createProject(
     "EvalúaTool - Calculadora v2 CL",
-    "Aplicación móvil que facilita el cálculo de puntuaciones de evaluaciones pertenecientes a la batería de evaluaciones psicopedagógicas Evalúa - Chile Versión 2.0",
+    "App para simplificar evaluaciones de la batería de evaluaciones psicopedagógicas Evalúa - Chile V2.0",
     evalua,
-    EVALUA_GITHUB,
-    EVALUA_GOOGLE_PLAY,
+    [
+      {
+        title: "Github",
+        icon: FaGithub,
+        link: EVALUA_GITHUB,
+      },
+      {
+        title: "App",
+        icon: SiGoogleplay,
+        link: EVALUA_GOOGLE_PLAY,
+      },
+    ],
+    [
+      {
+        title: "Android - Kotlin",
+        icon: SiAndroid,
+      },
+    ],
   ),
 ];
 
@@ -72,22 +134,70 @@ const projectSeedEn: ProjectProp[] = [
     "LastQuakeChile - Quakes in Chile",
     "It is an app where you can find out about the latest earthquakes that have occurred in Chile and receive notifications quickly on your cell phone.",
     lqch,
-    LQCH_GITHUB,
-    LQCH_GOOGLE_PLAY,
+    [
+      {
+        title: "Github",
+        icon: FaGithub,
+        link: LQCH_GITHUB,
+      },
+      {
+        title: "App",
+        icon: SiGoogleplay,
+        link: LQCH_GOOGLE_PLAY,
+      },
+    ],
+    [
+      {
+        title: "Android - Kotlin",
+        icon: SiAndroid,
+      },
+    ],
   ),
   createProject(
     "AAID",
     "This application allows the user to find the AAID code of their Android device with the option to easily copy it and share it through other applications.",
     aaid,
-    AAID_GITHUB,
-    AAID_GOOGLE_PLAY,
+    [
+      {
+        title: "Github",
+        icon: FaGithub,
+        link: AAID_GITHUB,
+      },
+      {
+        title: "App",
+        icon: SiGoogleplay,
+        link: AAID_GOOGLE_PLAY,
+      },
+    ],
+    [
+      {
+        title: "Android",
+        icon: SiAndroid,
+      },
+    ],
   ),
   createProject(
     "EvalúaTool - Calculator v2 CL",
     "Mobile application that facilitates the calculation of evaluation scores belonging to the battery of psychopedagogical evaluations Evalúa - Chile Version 2.0",
     evalua,
-    EVALUA_GITHUB,
-    EVALUA_GOOGLE_PLAY,
+    [
+      {
+        title: "Github",
+        icon: FaGithub,
+        link: EVALUA_GITHUB,
+      },
+      {
+        title: "App",
+        icon: SiGoogleplay,
+        link: EVALUA_GOOGLE_PLAY,
+      },
+    ],
+    [
+      {
+        title: "Android",
+        icon: SiAndroid,
+      },
+    ],
   ),
 ];
 
