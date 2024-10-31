@@ -3,7 +3,7 @@ import type { ProjectButton, ProjectProp } from "src/utils/types";
 import ClientCard from "./ClientCard.astro";
 import PurpleButton from "@components/common/PurpleButton.astro";
 
-const { title, clients } = Astro.props;
+const { title, clients, lang } = Astro.props;
 ---
 
 <section class="mb-auto">
@@ -17,23 +17,28 @@ const { title, clients } = Astro.props;
       class="p-10 sm:p-24 lg:p-24 grid grid-cols-1 lg:grid-cols-2 2xl:grid-cols-3 gap-10"
     >
       {
-        /*
-        clients.map((client: ProjectProp) => (
-          <ClientCard
-            title={client.title}
-            description={client.description}
-            coverImage={client.image}
-            techStack={client.techStack}
-          >
-            {client.linkButtons.map((button: ProjectButton) => (
-              <PurpleButton
-                title={button.title}
-                link={button.link}
-                icon={button.icon}
-              />
-            ))}
-          </ClientCard>
-        ))*/
+        clients.map((client: ProjectProp) => {
+          const title = lang === "es" ? client.nameEs : client.nameEn;
+          const description =
+            lang === "es" ? client.descriptionEs : client.descriptionEn;
+
+          return (
+            <ClientCard
+              title={title}
+              description={description}
+              coverImage={client.coverImage}
+              techStack={client.techStack}
+            >
+              {client.buttonLinks.map((button: ProjectButton) => (
+                <PurpleButton
+                  title={button.title}
+                  link={button.link}
+                  icon={button.icon}
+                />
+              ))}
+            </ClientCard>
+          );
+        })
       }
     </div>
   </div>

@@ -1,20 +1,20 @@
 import { SiGithub, SiGoogleplay } from "react-icons/si";
 import { Constants } from "../constants";
 import { TECH_STACKS } from "./stackProvider";
-import { translations } from "../translations";
 
 import lqch from "@assets/images/projects/lqch.png";
 import aaid from "@assets/images/projects/aaid.png";
 import evalua from "@assets/images/projects/evalua.png";
 
 import type { ProjectProp, ProjectProvider } from "../types";
+import { projectTranslations } from "../translations";
 
 const projectProvider: ProjectProvider = {
   LQCH: {
-    nameEs: translations.es.LQCH.NAME,
-    nameEn: translations.en.LQCH.NAME,
-    descriptionEs: translations.es.LQCH.DESCRIPTION,
-    descriptionEn: translations.en.LQCH.DESCRIPTION,
+    nameEs: projectTranslations.es.LQCH.NAME,
+    nameEn: projectTranslations.en.LQCH.NAME,
+    descriptionEs: projectTranslations.es.LQCH.DESCRIPTION,
+    descriptionEn: projectTranslations.en.LQCH.DESCRIPTION,
     coverImage: lqch,
     buttonLinks: [
       {
@@ -32,13 +32,14 @@ const projectProvider: ProjectProvider = {
       TECH_STACKS.ANDROID,
       TECH_STACKS.SPRING_BOOT,
       TECH_STACKS.DOCKER,
+      TECH_STACKS.GITHUB_ACTIONS,
     ],
   },
   AAID: {
-    nameEs: translations.es.AAID.NAME,
-    nameEn: translations.en.AAID.NAME,
-    descriptionEs: translations.es.AAID.DESCRIPTION,
-    descriptionEn: translations.en.AAID.DESCRIPTION,
+    nameEs: projectTranslations.es.AAID.NAME,
+    nameEn: projectTranslations.en.AAID.NAME,
+    descriptionEs: projectTranslations.es.AAID.DESCRIPTION,
+    descriptionEn: projectTranslations.en.AAID.DESCRIPTION,
     coverImage: aaid,
     buttonLinks: [
       {
@@ -55,10 +56,10 @@ const projectProvider: ProjectProvider = {
     techStack: [TECH_STACKS.ANDROID],
   },
   EVALUA: {
-    nameEs: translations.es.EVALUA.NAME,
-    nameEn: translations.en.EVALUA.NAME,
-    descriptionEs: translations.es.EVALUA.DESCRIPTION,
-    descriptionEn: translations.en.EVALUA.DESCRIPTION,
+    nameEs: projectTranslations.es.EVALUA.NAME,
+    nameEn: projectTranslations.en.EVALUA.NAME,
+    descriptionEs: projectTranslations.es.EVALUA.DESCRIPTION,
+    descriptionEn: projectTranslations.en.EVALUA.DESCRIPTION,
     coverImage: evalua,
     buttonLinks: [
       {

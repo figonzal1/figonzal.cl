@@ -7,6 +7,11 @@ export type ProjectProvider = {
   EVALUA: ProjectProp;
 };
 
+export type ClientProvider = {
+  AMAI: ProjectProp;
+  PROGRESS: ProjectProp;
+};
+
 export type ProjectProp = {
   nameEs: string;
   nameEn: string;
