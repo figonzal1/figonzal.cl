@@ -5,7 +5,7 @@ import AbstractSection from "@components/home/en/AbstractSection.astro";
 import SocialSection from "@components/home/socialsection/SocialSection.astro";
 import TechStackSection from "@components/home/techsection/TechStackSection.astro";
 import BaseLayout from "@layouts/BaseLayout.astro";
-import { labelsEn } from "src/utils/githubLabels";
+import { githubMonthLabelsEn } from "src/utils/translations";
 ---
 
 <BaseLayout lang="en">
@@ -28,7 +28,7 @@ import { labelsEn } from "src/utils/githubLabels";
     dtTitle={["My", "Dev", "Tools"]}
     ghTitle={["Coding", "Days"]}
     commitMsg="commits on"
-    labels={labelsEn}
+    labels={githubMonthLabelsEn}
   />
   <SocialSection
     titles={["My", "Socials"]}

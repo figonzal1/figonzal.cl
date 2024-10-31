@@ -3,7 +3,7 @@ import PurpleButton from "@components/common/PurpleButton.astro";
 import type { ProjectProp, ProjectButton } from "src/utils/types";
 import ProjectCard from "./ProjectCard.astro";
 
-const { title, projects } = Astro.props;
+const { title, projects, lang } = Astro.props;
 ---
 
 <section class="mb-auto">
@@ -17,22 +17,28 @@ const { title, projects } = Astro.props;
       class="p-10 sm:p-24 lg:p-24 grid grid-cols-1 lg:grid-cols-2 2xl:grid-cols-3 gap-10"
     >
       {
-        projects.map((project: ProjectProp) => (
-          <ProjectCard
-            title={project.title}
-            description={project.description}
-            coverImage={project.image}
-            techStack={project.techStack}
-          >
-            {project.linkButtons.map((button: ProjectButton) => (
-              <PurpleButton
-                title={button.title}
-                link={button.link}
-                icon={button.icon}
-              />
-            ))}
-          </ProjectCard>
-        ))
+        projects.map((project: ProjectProp) => {
+          const title = lang === "es" ? project.nameEs : project.nameEn;
+          const description =
+            lang === "es" ? project.descriptionEs : project.descriptionEn;
+
+          return (
+            <ProjectCard
+              title={title}
+              description={description}
+              coverImage={project.coverImage}
+              techStack={project.techStack}
+            >
+              {project.buttonLinks.map((button: ProjectButton) => (
+                <PurpleButton
+                  title={button.title}
+                  link={button.link}
+                  icon={button.icon}
+                />
+              ))}
+            </ProjectCard>
+          );
+        })
       }
     </div>
   </div>

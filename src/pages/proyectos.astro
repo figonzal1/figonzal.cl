@@ -2,12 +2,18 @@
 import Particle from "@components/common/Particle.astro";
 import ProjectSection from "@components/projects/ProjectSection.astro";
 import BaseLayout from "@layouts/BaseLayout.astro";
-import { projectSeed } from "src/utils/projectSeed";
+import { projectSeed } from "src/utils/provider/projectProvider";
+
+const lang = "es";
 ---
 
-<BaseLayout lang="es">
+<BaseLayout lang={lang}>
   <div class="w-0 h-0">
     <Particle />
   </div>
-  <ProjectSection title={["Mis", "Proyectos"]} projects={projectSeed} />
+  <ProjectSection
+    title={["Mis", "Proyectos"]}
+    projects={projectSeed}
+    lang={lang}
+  />
 </BaseLayout>

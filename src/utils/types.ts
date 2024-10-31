@@ -1,12 +1,31 @@
 import type { ImageMetadata } from "astro";
 import type { IconType } from "react-icons";
 
+export type ProjectProvider = {
+  LQCH: ProjectProp;
+  AAID: ProjectProp;
+  EVALUA: ProjectProp;
+};
+
 export type ProjectProp = {
+  nameEs: string;
+  nameEn: string;
+  descriptionEn: string;
+  descriptionEs: string;
+  coverImage: ImageMetadata;
+  buttonLinks: ProjectButton[];
+  techStack: ProjectStack[];
+};
+
+export type ProjectButton = {
   title: string;
-  description: string;
-  image: ImageMetadata;
-  linkButtons: ProjectButton[];
-  techStack: TechStack[];
+  icon: IconType;
+  link: string;
+};
+
+export type ProjectStack = {
+  title: string;
+  icon: IconType;
 };
 
 export type GithubProp = {
@@ -20,15 +39,4 @@ export type GithubProp = {
       more: string;
     };
   };
-};
-
-export type ProjectButton = {
-  title: string;
-  icon: IconType;
-  link: string;
-};
-
-export type TechStack = {
-  title: string;
-  icon: IconType;
 };

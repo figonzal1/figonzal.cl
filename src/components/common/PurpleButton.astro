@@ -8,7 +8,7 @@ const { title, link, icon: Icon } = Astro.props;
   target="_blank"
   referrerpolicy="no-referrer"
 >
-  <Icon color="white" size={21} />
+  <Icon color="white" size={21} alt={title} />
   <div class="hidden sm:block">
     <h2 class="text-white ps-1">{title}</h2>
   </div>
