@@ -15,9 +15,9 @@ export default defineConfig({
     prefixDefaultLocale: false,
   },
   //Disable 4 dev
-  /*vite: {
+  vite: {
     ssr: {
       noExternal: ["react-github-calendar"],
     },
-  },*/
+  },
 });
