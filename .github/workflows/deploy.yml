@@ -2,7 +2,8 @@ name: GitHub Pages Astro CI
 
 on:
   push:
-    branches: [gh-pages]
+    tags:
+      - "v*.*.*"
   workflow_dispatch:
 
 # Permite clonar el repositorio y desplegar el proyecto
@@ -16,12 +17,11 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout your repository using git
-        uses: actions/checkout@v4
+        uses: actions/checkout@v4.2.2
       - name: Install, build, and upload your site
-        uses: withastro/action@v2
+        uses: withastro/action@v3.0.2
         with:
-          node-version: 20 # La versión específica de Node que debe utilizarse para compilar tu proyecto. Por defecto es la 18. (opcional)
-          package-manager: pnpm@latest # El gestor de paquetes de Node que debe instalar las dependencias y compilar tu proyecto. Automáticamente detectadas con base en tu archivo lockfile. (opcional)
+          node-version: 22
 
   deploy:
     needs: build
@@ -32,4 +32,4 @@ jobs:
     steps:
       - name: Deploy to GitHub Pages
         id: deployment
-        uses: actions/deploy-pages@v4
+        uses: actions/deploy-pages@v4.0.5
