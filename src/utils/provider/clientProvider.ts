@@ -18,7 +18,7 @@ const clientProvider: ClientProvider = {
       {
         title: "Web",
         icon: CgWebsite,
-        link: "https://www.new.centroamai.cl/",
+        link: "https://lopez-eguiluz-ltda.github.io/centroamai.cl/",
       },
     ],
     techStack: [

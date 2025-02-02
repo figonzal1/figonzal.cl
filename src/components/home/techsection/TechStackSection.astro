@@ -3,7 +3,7 @@ import { FaJava, FaPhp, FaGitAlt, FaGithub } from "react-icons/fa6";
 import {
   SiAndroid,
   SiKotlin,
-  SiCsharp,
+  SiSharp,
   SiJavascript,
   SiTypescript,
   SiSpringboot,
@@ -13,7 +13,6 @@ import {
   SiAndroidstudio,
   SiIntellijidea,
   SiTeamcity,
-  SiVisualstudiocode,
   SiDocker,
   SiPostman,
   SiLinux,
@@ -22,6 +21,7 @@ import {
 } from "react-icons/si";
 import Github from "../Github";
 import ToolCard from "./ToolCard.astro";
+import { VscVscode } from "react-icons/vsc";
 
 const { lpTitle, dtTitle, ghTitle, labels, commitMsg } = Astro.props;
 ---
@@ -38,7 +38,7 @@ const { lpTitle, dtTitle, ghTitle, labels, commitMsg } = Astro.props;
       <ToolCard title="Kotlin" icon={SiKotlin} alt="Koltin" />
       <ToolCard title="Java" icon={FaJava} alt="Java" />
       <ToolCard title="Php" icon={FaPhp} alt="Php" />
-      <ToolCard title="C#" icon={SiCsharp} alt="Csharp" />
+      <ToolCard title="C#" icon={SiSharp} alt="Csharp" />
       <ToolCard title="Javascript" icon={SiJavascript} alt="Javascript" />
       <ToolCard title="Typescript" icon={SiTypescript} alt="Typescript" />
       <ToolCard title="Spring Boot" icon={SiSpringboot} alt="Springboot" />
@@ -66,11 +66,7 @@ const { lpTitle, dtTitle, ghTitle, labels, commitMsg } = Astro.props;
         alt="Intellijidea"
       />
       <ToolCard title="Team City" icon={SiTeamcity} alt="Team city" />
-      <ToolCard
-        title="Vs Code"
-        icon={SiVisualstudiocode}
-        alt="Visual Studio code"
-      />
+      <ToolCard title="Vs Code" icon={VscVscode} alt="Visual Studio code" />
       <ToolCard title="Git" icon={FaGitAlt} alt="Git" />
       <ToolCard title="Github" icon={FaGithub} alt="Github" />
       <ToolCard title="Docker" icon={SiDocker} alt="Docker" />
