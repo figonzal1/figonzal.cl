@@ -4,12 +4,14 @@ import {
   SiAstro,
   SiDocker,
   SiGithubactions,
+  SiGraphql,
   SiMercadopago,
   SiPhp,
   SiReact,
   SiShadcnui,
   SiSpringboot,
   SiTailwindcss,
+  SiWordpress,
 } from "react-icons/si";
 
 export const TECH_STACKS = {
@@ -56,5 +58,13 @@ export const TECH_STACKS = {
   MERCADO_PAGO: {
     title: "Mercado Pago",
     icon: SiMercadopago,
+  },
+  WORDPRESS: {
+    title: "Wordpress",
+    icon: SiWordpress,
+  },
+  GRAPHQL: {
+    title: "Graphql",
+    icon: SiGraphql,
   },
 };

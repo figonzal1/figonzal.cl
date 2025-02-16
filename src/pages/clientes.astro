@@ -2,7 +2,7 @@
 import ClientSection from "@components/clients/ClientSection.astro";
 import Particle from "@components/common/Particle.astro";
 import BaseLayout from "@layouts/BaseLayout.astro";
-import { clientSeed } from "src/utils/provider/clientProvider";
+import { clientSeeder } from "@utils/seeders/clientSeeder";
 
 const lang = "es";
 ---
@@ -13,7 +13,7 @@ const lang = "es";
   </div>
   <ClientSection
     title={["Clientes", "Profesionales"]}
-    clients={clientSeed}
+    clients={clientSeeder}
     lang={lang}
   />
 </BaseLayout>

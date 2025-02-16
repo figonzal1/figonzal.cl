@@ -1,16 +1,16 @@
 import { SiGithub, SiGoogleplay } from "react-icons/si";
 import { Constants } from "../constants";
-import { TECH_STACKS } from "./stackProvider";
+import { TECH_STACKS } from "./stackSeeder";
 
 import lqch from "@assets/images/projects/lqch.png";
 import aaid from "@assets/images/projects/aaid.png";
 import evalua from "@assets/images/projects/evalua.png";
 
-import type { ProjectProp, ProjectProvider } from "../types";
+import type { ProjectProp } from "../types";
 import { projectTranslations } from "../translations";
 
-const projectProvider: ProjectProvider = {
-  LQCH: {
+export const projectSeeder: ProjectProp[] = [
+  {
     nameEs: projectTranslations.es.LQCH.NAME,
     nameEn: projectTranslations.en.LQCH.NAME,
     descriptionEs: projectTranslations.es.LQCH.DESCRIPTION,
@@ -35,7 +35,7 @@ const projectProvider: ProjectProvider = {
       TECH_STACKS.GITHUB_ACTIONS,
     ],
   },
-  AAID: {
+  {
     nameEs: projectTranslations.es.AAID.NAME,
     nameEn: projectTranslations.en.AAID.NAME,
     descriptionEs: projectTranslations.es.AAID.DESCRIPTION,
@@ -55,7 +55,7 @@ const projectProvider: ProjectProvider = {
     ],
     techStack: [TECH_STACKS.ANDROID],
   },
-  EVALUA: {
+  {
     nameEs: projectTranslations.es.EVALUA.NAME,
     nameEn: projectTranslations.en.EVALUA.NAME,
     descriptionEs: projectTranslations.es.EVALUA.DESCRIPTION,
@@ -75,10 +75,4 @@ const projectProvider: ProjectProvider = {
     ],
     techStack: [TECH_STACKS.ANDROID],
   },
-};
-
-export const projectSeed: ProjectProp[] = [
-  projectProvider.LQCH,
-  projectProvider.AAID,
-  projectProvider.EVALUA,
 ];

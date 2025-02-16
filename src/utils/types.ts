@@ -1,15 +1,10 @@
 import type { ImageMetadata } from "astro";
 import type { IconType } from "react-icons";
 
-export type ProjectProvider = {
+export type ProjectSeeder = {
   LQCH: ProjectProp;
   AAID: ProjectProp;
   EVALUA: ProjectProp;
-};
-
-export type ClientProvider = {
-  AMAI: ProjectProp;
-  PROGRESS: ProjectProp;
 };
 
 export type ProjectProp = {

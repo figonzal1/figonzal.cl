@@ -8,7 +8,8 @@
     "dev": "astro dev",
     "format": "pnpm dlx prettier --write . --plugin=prettier-plugin-astro",
     "lint": "pnpm dlx oxlint",
-    "build": "pnpm run lint && pnpm run format && astro check && astro build",
+    "build:full": "pnpm run lint && pnpm run format && astro check && astro build",
+    "build": "astro check && astro build",
     "preview": "astro preview"
   },
   "dependencies": {
@@ -25,7 +26,7 @@
     "react-dom": "^18.3.1",
     "react-github-calendar": "^4.5.5",
     "react-icons": "^5.4.0",
-    "react-parallax-tilt": "^1.7.277",
+    "react-parallax-tilt": "^1.7.283",
     "react-tooltip": "^5.28.0",
     "sharp": "^0.33.5",
     "tailwind": "^4.0.0",
@@ -36,8 +37,8 @@
     "typewriter-effect": "^2.21.0"
   },
   "devDependencies": {
-    "oxlint": "^0.15.9",
-    "prettier": "^3.4.2",
+    "oxlint": "^0.15.11",
+    "prettier": "^3.5.1",
     "prettier-plugin-astro": "^0.14.1"
   },
   "packageManager": "pnpm@9.15.4"
