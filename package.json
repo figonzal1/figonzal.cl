@@ -14,7 +14,7 @@
   },
   "dependencies": {
     "@astrojs/check": "^0.9.4",
-    "@astrojs/react": "^4.2.0",
+    "@astrojs/react": "^4.2.1",
     "@astrojs/tailwind": "^6.0.0",
     "@fontsource-variable/raleway": "^5.1.1",
     "@types/react": "^18.3.18",
@@ -25,21 +25,21 @@
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
     "react-github-calendar": "^4.5.5",
-    "react-icons": "^5.4.0",
-    "react-parallax-tilt": "^1.7.283",
+    "react-icons": "^5.5.0",
+    "react-parallax-tilt": "^1.7.284",
     "react-tooltip": "^5.28.0",
     "sharp": "^0.33.5",
     "tailwind": "^4.0.0",
     "tailwindcss": "^3.4.17",
     "tsparticles": "^2.12.0",
     "tsparticles-engine": "^2.12.0",
-    "typescript": "^5.7.3",
+    "typescript": "^5.8.2",
     "typewriter-effect": "^2.21.0"
   },
   "devDependencies": {
-    "oxlint": "^0.15.11",
-    "prettier": "^3.5.1",
+    "oxlint": "^0.15.12",
+    "prettier": "^3.5.2",
     "prettier-plugin-astro": "^0.14.1"
   },
-  "packageManager": "pnpm@9.15.4"
+  "packageManager": "pnpm@10.5.2"
 }
