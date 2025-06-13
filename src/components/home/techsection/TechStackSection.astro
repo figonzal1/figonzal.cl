@@ -3,77 +3,105 @@ import { FaJava, FaPhp, FaGitAlt, FaGithub } from "react-icons/fa6";
 import {
   SiAndroid,
   SiKotlin,
-  SiSharp,
   SiJavascript,
   SiTypescript,
   SiSpringboot,
   SiNextdotjs,
-  SiAdonisjs,
   SiAstro,
   SiAndroidstudio,
   SiIntellijidea,
-  SiTeamcity,
   SiDocker,
   SiPostman,
   SiLinux,
-  SiUnity,
   SiSonarqube,
+  SiGithubactions,
+  SiNestjs,
+  SiPython,
+  SiFlutter,
+  SiKubernetes,
+  SiAmazonwebservices,
+  SiReact,
+  SiTailwindcss,
 } from "react-icons/si";
 import Github from "../Github";
 import ToolCard from "./ToolCard.astro";
 import { VscVscode } from "react-icons/vsc";
 
-const { lpTitle, dtTitle, ghTitle, labels, commitMsg } = Astro.props;
+const { 
+  languagesTitle = ["", ""], 
+  frameworksTitle = ["", ""], 
+  toolsTitle = ["", ""],
+  devopsTitle = ["", ""],
+  ghTitle = ["", ""],
+  commitMsg = "commits",
+  labels = []
+} = Astro.props;
 ---
 
 <section>
-  <!-- FRAMEWORKS -->
-  <div class="pt-24 lg:pt-56">
+  <!-- LENGUAJES DE PROGRAMACIÓN -->
+  <div class="pt-24 lg:pt-32">
     <h1 class="text-2xl md:text-4xl text-white text-center font-medium">
-      {lpTitle[0]}
-      <span class="text-fgreen font-medium">{lpTitle[1]} & {lpTitle[2]}</span>
+      {languagesTitle[0]}
+      <span class="text-fgreen font-medium"> {languagesTitle[1]}</span>
     </h1>
     <div class="flex flex-wrap justify-center gap-5 p-10 lg:px-44 xl:px-52">
-      <ToolCard title="Android" icon={SiAndroid} alt="Android" />
-      <ToolCard title="Kotlin" icon={SiKotlin} alt="Koltin" />
+      <ToolCard title="Kotlin" icon={SiKotlin} alt="Kotlin" />
       <ToolCard title="Java" icon={FaJava} alt="Java" />
-      <ToolCard title="Php" icon={FaPhp} alt="Php" />
-      <ToolCard title="C#" icon={SiSharp} alt="Csharp" />
-      <ToolCard title="Javascript" icon={SiJavascript} alt="Javascript" />
-      <ToolCard title="Typescript" icon={SiTypescript} alt="Typescript" />
-      <ToolCard title="Spring Boot" icon={SiSpringboot} alt="Springboot" />
-      <ToolCard title="Next Js" icon={SiNextdotjs} alt="Nextdotjs" />
-      <ToolCard title="Adonis Js" icon={SiAdonisjs} alt="Adonisjs" />
-      <ToolCard title="Astro" icon={SiAstro} alt="Astro Build" />
+      <ToolCard title="TypeScript" icon={SiTypescript} alt="TypeScript" />
+      <ToolCard title="JavaScript" icon={SiJavascript} alt="JavaScript" />
+      <ToolCard title="PHP" icon={FaPhp} alt="PHP" />
+      <ToolCard title="Python" icon={SiPython} alt="Python" />
+      <ToolCard title="Flutter" icon={SiFlutter} alt="Flutter" />
     </div>
   </div>
 
-  <!-- TOOLS -->
+  <!-- FRAMEWORKS Y PLATAFORMAS -->
   <div class="pt-14 md:pt-24">
     <h1 class="text-2xl md:text-4xl text-white text-center font-medium">
-      {dtTitle[0]}
-      <span class="text-fgreen font-medium">{dtTitle[1]} {dtTitle[2]}</span>
+      {frameworksTitle[0]}
+      <span class="text-fgreen font-medium"> {frameworksTitle[1]}</span>
     </h1>
     <div class="flex flex-wrap justify-center gap-5 p-10 lg:px-44 xl:px-52">
-      <ToolCard
-        title="Android Studio"
-        icon={SiAndroidstudio}
-        alt="Android Studio"
-      />
-      <ToolCard
-        title="IntelliJ Idea"
-        icon={SiIntellijidea}
-        alt="Intellijidea"
-      />
-      <ToolCard title="Team City" icon={SiTeamcity} alt="Team city" />
-      <ToolCard title="Vs Code" icon={VscVscode} alt="Visual Studio code" />
+      <ToolCard title="Android" icon={SiAndroid} alt="Android" />
+      <ToolCard title="Spring Boot" icon={SiSpringboot} alt="Spring Boot" />
+      <ToolCard title="NestJS" icon={SiNestjs} alt="NestJS" />
+      <ToolCard title="Next.js" icon={SiNextdotjs} alt="Next.js" />
+      <ToolCard title="Astro" icon={SiAstro} alt="Astro" />
+      <ToolCard title="React" icon={SiReact} alt="React" />
+      <ToolCard title="Tailwind CSS" icon={SiTailwindcss} alt="Tailwind CSS" />
+    </div>
+  </div>
+
+  <!-- HERRAMIENTAS DE DESARROLLO -->
+  <div class="pt-14 md:pt-24">
+    <h1 class="text-2xl md:text-4xl text-white text-center font-medium">
+      {toolsTitle[0]}
+      <span class="text-fgreen font-medium"> {toolsTitle[1]}</span>
+    </h1>
+    <div class="flex flex-wrap justify-center gap-5 p-10 lg:px-44 xl:px-52">
+      <ToolCard title="VS Code" icon={VscVscode} alt="VS Code" />
+      <ToolCard title="Android Studio" icon={SiAndroidstudio} alt="Android Studio" />
+      <ToolCard title="IntelliJ IDEA" icon={SiIntellijidea} alt="IntelliJ IDEA" />
       <ToolCard title="Git" icon={FaGitAlt} alt="Git" />
-      <ToolCard title="Github" icon={FaGithub} alt="Github" />
-      <ToolCard title="Docker" icon={SiDocker} alt="Docker" />
+      <ToolCard title="GitHub" icon={FaGithub} alt="GitHub" />
       <ToolCard title="Postman" icon={SiPostman} alt="Postman" />
       <ToolCard title="Linux" icon={SiLinux} alt="Linux" />
-      <ToolCard title="Unity" icon={SiUnity} alt="Unity" />
-      <ToolCard title="Sonarqube" icon={SiSonarqube} alt="Sonarqube" />
+    </div>
+  </div>
+
+  <!-- DEVOPS Y CLOUD -->
+  <div class="pt-14 md:pt-24">
+    <h1 class="text-2xl md:text-4xl text-white text-center font-medium">
+      {devopsTitle[0]}
+      <span class="text-fgreen font-medium"> {devopsTitle[1]}</span>
+    </h1>
+    <div class="flex flex-wrap justify-center gap-5 p-10 lg:px-44 xl:px-52">
+      <ToolCard title="AWS" icon={SiAmazonwebservices} alt="AWS" />
+      <ToolCard title="Docker" icon={SiDocker} alt="Docker" />
+      <ToolCard title="Kubernetes" icon={SiKubernetes} alt="Kubernetes" />
+      <ToolCard title="GitHub Actions" icon={SiGithubactions} alt="GitHub Actions" />
+      <ToolCard title="SonarQube" icon={SiSonarqube} alt="SonarQube" />
     </div>
   </div>
 
@@ -81,7 +109,7 @@ const { lpTitle, dtTitle, ghTitle, labels, commitMsg } = Astro.props;
   <div class="flex flex-col py-24 gap-5 md:gap-10">
     <h1 class="text-2xl md:text-4xl text-white text-center font-medium">
       {ghTitle[0]}
-      <span class="text-fgreen font-medium">{ghTitle[1]}</span>
+      <span class="text-fgreen font-medium"> {ghTitle[1]}</span>
     </h1>
     <Github client:idle commitMsg={commitMsg} labels={labels} />
   </div>

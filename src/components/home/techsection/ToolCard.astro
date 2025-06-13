@@ -6,10 +6,12 @@ const { title, icon: Icon, alt } = Astro.props;
   class="flex items-center justify-center p-4 sm:p-7 opacity-90 border-2 border-fpurple shadow-fpurple-box shadow-lg rounded-lg overflow-hidden transition-transform duration-300 ease-in-out hover:scale-110 backdrop-blur-sm"
   title={title}
 >
-  <div class="hidden sm:block">
-    <Icon color="white" size={64} alt={alt} />
-  </div>
-  <div class="sm:hidden">
-    <Icon color="white" size={32} alt={alt} />
+  <div class="flex items-center justify-center w-full h-full">
+    <div class="hidden sm:block">
+      <Icon color="white" size={64} alt={alt} />
+    </div>
+    <div class="sm:hidden">
+      <Icon color="white" size={32} alt={alt} />
+    </div>
   </div>
 </div>
