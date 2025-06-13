@@ -27,14 +27,14 @@ import Github from "../Github";
 import ToolCard from "./ToolCard.astro";
 import { VscVscode } from "react-icons/vsc";
 
-const { 
-  languagesTitle = ["", ""], 
-  frameworksTitle = ["", ""], 
+const {
+  languagesTitle = ["", ""],
+  frameworksTitle = ["", ""],
   toolsTitle = ["", ""],
   devopsTitle = ["", ""],
   ghTitle = ["", ""],
   commitMsg = "commits",
-  labels = []
+  labels = [],
 } = Astro.props;
 ---
 
@@ -81,8 +81,16 @@ const {
     </h1>
     <div class="flex flex-wrap justify-center gap-5 p-10 lg:px-44 xl:px-52">
       <ToolCard title="VS Code" icon={VscVscode} alt="VS Code" />
-      <ToolCard title="Android Studio" icon={SiAndroidstudio} alt="Android Studio" />
-      <ToolCard title="IntelliJ IDEA" icon={SiIntellijidea} alt="IntelliJ IDEA" />
+      <ToolCard
+        title="Android Studio"
+        icon={SiAndroidstudio}
+        alt="Android Studio"
+      />
+      <ToolCard
+        title="IntelliJ IDEA"
+        icon={SiIntellijidea}
+        alt="IntelliJ IDEA"
+      />
       <ToolCard title="Git" icon={FaGitAlt} alt="Git" />
       <ToolCard title="GitHub" icon={FaGithub} alt="GitHub" />
       <ToolCard title="Postman" icon={SiPostman} alt="Postman" />
@@ -100,7 +108,11 @@ const {
       <ToolCard title="AWS" icon={SiAmazonwebservices} alt="AWS" />
       <ToolCard title="Docker" icon={SiDocker} alt="Docker" />
       <ToolCard title="Kubernetes" icon={SiKubernetes} alt="Kubernetes" />
-      <ToolCard title="GitHub Actions" icon={SiGithubactions} alt="GitHub Actions" />
+      <ToolCard
+        title="GitHub Actions"
+        icon={SiGithubactions}
+        alt="GitHub Actions"
+      />
       <ToolCard title="SonarQube" icon={SiSonarqube} alt="SonarQube" />
     </div>
   </div>
