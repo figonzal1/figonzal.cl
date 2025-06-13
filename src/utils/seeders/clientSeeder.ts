@@ -1,6 +1,6 @@
 import { CgWebsite } from "react-icons/cg";
 
-import amai from "@assets/images/clients/centroamai.png";
+import mundi from "@assets/images/clients/centromundi.png";
 import progress from "@assets/images/clients/progresscap.png";
 import sanignacio from "@assets/images/clients/sanignacio.png";
 import { TECH_STACKS } from "./stackSeeder";
@@ -8,18 +8,18 @@ import type { ProjectProp } from "@utils/types";
 
 export const clientSeeder: ProjectProp[] = [
   {
-    nameEs: "Centro Amaï",
-    nameEn: "Amaï Center",
+    nameEs: "Centro Mundi",
+    nameEn: "Mundi Center",
     descriptionEs:
-      "Landing page moderna y funcional para el Centro Amaï, centro médico terapéutico ubicado en La Serena, Chile.",
+      "Landing page moderna para mundi.cl, centro multidisciplinario para el neurodesarrollo ubicado en La Serena, Chile.",
     descriptionEn:
-      "Modern and functional landing page for the Amaï Center, a medical therapy center located in La Serena, Chile.",
-    coverImage: amai,
+      "Modern and functional landing page for mundi.cl, a multidisciplinary center for neurodevelopment located in La Serena, Chile.",
+    coverImage: mundi,
     buttonLinks: [
       {
         title: "Web",
         icon: CgWebsite,
-        link: "https://lopez-eguiluz-ltda.github.io/centroamai.cl/",
+        link: "https://www.mundi.cl",
       },
     ],
     techStack: [

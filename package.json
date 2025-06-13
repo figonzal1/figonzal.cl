@@ -1,7 +1,7 @@
 {
   "name": "figonzal.cl",
   "type": "module",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "private": true,
   "homepage": "https://figonzal.cl",
   "scripts": {
@@ -14,9 +14,9 @@
   },
   "dependencies": {
     "@astrojs/check": "^0.9.4",
-    "@astrojs/react": "^4.2.2",
+    "@astrojs/react": "^4.3.0",
     "@astrojs/tailwind": "^6.0.2",
-    "@fontsource-variable/raleway": "^5.2.5",
+    "@fontsource-variable/raleway": "^5.2.6",
     "@types/react": "^18.3.18",
     "@types/react-dom": "^18.3.5",
     "astro": "^3.6.5",
@@ -24,22 +24,22 @@
     "astro-tooltips": "^0.6.2",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
-    "react-github-calendar": "^4.5.6",
+    "react-github-calendar": "^4.5.7",
     "react-icons": "^5.5.0",
-    "react-parallax-tilt": "^1.7.287",
-    "react-tooltip": "^5.28.0",
-    "sharp": "^0.33.5",
+    "react-parallax-tilt": "^1.7.297",
+    "react-tooltip": "^5.29.0",
+    "sharp": "^0.34.2",
     "tailwind": "^4.0.0",
     "tailwindcss": "^3.4.17",
     "tsparticles": "^2.12.0",
     "tsparticles-engine": "^2.12.0",
-    "typescript": "^5.8.2",
-    "typewriter-effect": "^2.21.0"
+    "typescript": "^5.8.3",
+    "typewriter-effect": "^2.22.0"
   },
   "devDependencies": {
-    "oxlint": "^0.16.3",
+    "oxlint": "^1.1.0",
     "prettier": "^3.5.3",
     "prettier-plugin-astro": "^0.14.1"
   },
-  "packageManager": "pnpm@10.7.0"
+  "packageManager": "pnpm@10.12.1"
 }
