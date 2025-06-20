@@ -1,6 +1,6 @@
 ---
 import Typewriter from "typewriter-effect";
-import { Image } from "astro:assets";
+import { Picture } from "astro:assets";
 import homeMain from "@assets/images/home-main.svg";
 
 const { hello, im, typeWritter } = Astro.props;
@@ -36,7 +36,15 @@ const { hello, im, typeWritter } = Astro.props;
       </div>
     </div>
     <div class="lg:pe-20 hidden lg:block">
-      <Image src={homeMain} class="max-h-[450px] opacity-90" alt="Home" />
+      <Picture
+        src={homeMain}
+        formats={["webp"]}
+        fallbackFormat="svg"
+        class="max-h-[450px] opacity-90"
+        alt="Home"
+        loading="eager"
+        decoding="async"
+      />
     </div>
   </div>
 </section>

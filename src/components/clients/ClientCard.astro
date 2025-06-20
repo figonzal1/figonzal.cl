@@ -9,9 +9,11 @@ const { title, description, coverImage, techStack } = Astro.props;
   <Picture
     src={coverImage}
     alt={title}
-    formats={["webp", "png"]}
+    formats={["webp"]}
     fallbackFormat="png"
     class="object-cover object-left rounded-lg shadow-lg opacity-90 h-64"
+    loading="lazy"
+    decoding="async"
   />
   <div class="relative px-5 lg:px-10 -mt-5 lg:-mt-16 w-full">
     <div
