@@ -2,7 +2,7 @@
 import { FaGithub } from "react-icons/fa6";
 import { ImFacebook, ImLinkedin2 } from "react-icons/im";
 import { SiGoogleplay, SiInstagram } from "react-icons/si";
-import { Image } from "astro:assets";
+import { Picture } from "astro:assets";
 import logo from "@assets/images/logo.png";
 
 const { lang } = Astro.props;
@@ -20,8 +20,16 @@ if (lang === "es") {
     <div
       class="flex flex-col justify-center items-center sm:justify-between sm:flex-row gap-5"
     >
-      <a href="https://www.figonzal.cl/">
-        <Image src={logo} height={32} alt="Figonzal.cl Logo" />
+      <a href="https://www.figonzal.cl/" aria-label="Inicio Figonzal.cl">
+        <Picture
+          src={logo}
+          formats={["webp"]}
+          fallbackFormat="png"
+          height={32}
+          alt="Figonzal.cl Logo"
+          loading="lazy"
+          decoding="async"
+        />
       </a>
 
       <div class="flex items-center justify-center gap-5">

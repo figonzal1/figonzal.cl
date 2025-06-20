@@ -1,7 +1,7 @@
 {
   "name": "figonzal.cl",
   "type": "module",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "private": true,
   "homepage": "https://figonzal.cl",
   "scripts": {
@@ -26,8 +26,8 @@
     "react-dom": "^18.3.1",
     "react-github-calendar": "^4.5.7",
     "react-icons": "^5.5.0",
-    "react-parallax-tilt": "^1.7.297",
-    "react-tooltip": "^5.29.0",
+    "react-parallax-tilt": "^1.7.298",
+    "react-tooltip": "^5.29.1",
     "sharp": "^0.34.2",
     "tailwind": "^4.0.0",
     "tailwindcss": "^3.4.17",
@@ -37,7 +37,7 @@
     "typewriter-effect": "^2.22.0"
   },
   "devDependencies": {
-    "oxlint": "^1.1.0",
+    "oxlint": "^1.2.0",
     "prettier": "^3.5.3",
     "prettier-plugin-astro": "^0.14.1"
   },

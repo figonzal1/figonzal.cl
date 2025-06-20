@@ -1,6 +1,6 @@
 ---
 import Footer from "@components/common/Footer.astro";
-import Header from "@components/common/Header.astro";
+import Head from "@components/common/Head.astro";
 import Navbar from "@components/common/Navbar";
 
 import "@fontsource-variable/raleway";
@@ -10,7 +10,7 @@ const { lang } = Astro.props;
 ---
 
 <html lang={lang}>
-  <Header />
+  <Head />
   <body
     class="flex flex-col min-h-screen bg-black bg-gradient-to-br from-fgreen/20 to-fpurple/40 antialiased w-full"
   >
