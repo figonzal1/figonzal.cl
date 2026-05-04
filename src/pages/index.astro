@@ -5,6 +5,7 @@ import IntroSection from "@components/home/IntroSection.astro";
 import SocialSection from "@components/home/socialsection/SocialSection.astro";
 import TechStackSection from "@components/home/techsection/TechStackSection.astro";
 import BaseLayout from "@layouts/BaseLayout.astro";
+import Scene3D from "@components/threejs/Scene3D.jsx";
 import { githubMonthLabels } from "src/utils/translations";
 ---
 
@@ -12,16 +13,29 @@ import { githubMonthLabels } from "src/utils/translations";
   <div class="w-0 h-0">
     <Particle />
   </div>
-  <IntroSection
-    hello="Hola"
-    im="Soy"
-    typeWritter={[
-      "Apasionado por la tecnología e innovación",
-      "Desarrollador Android & AR",
-      "Ingeniero Informático",
-      "Colaborador Open Source",
-    ]}
-  />
+  
+  <section class="min-h-screen flex flex-col lg:flex-row items-center justify-center pt-20 lg:pt-0 gap-10">
+    <div class="w-full lg:w-1/2 px-6 lg:px-16">
+      <IntroSection
+        hello="Hola"
+        im="Soy"
+        typeWritter={[
+          "Apasionado por la tecnología e innovación",
+          "Desarrollador Android & AR",
+          "Ingeniero Informático",
+          "Colaborador Open Source",
+        ]}
+      />
+    </div>
+    <div class="w-full lg:w-1/2 h-[500px] lg:h-screen">
+      <Scene3D 
+        name="Felipe González" 
+        title="Ingeniero Informático" 
+        client:load 
+      />
+    </div>
+  </section>
+  
   <AbstractSection />
   <TechStackSection
     languagesTitle={["Lenguajes de", "Programación"]}
