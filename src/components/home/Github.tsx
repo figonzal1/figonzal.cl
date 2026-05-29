@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useMemo, useState } from "react";
 import { GitHubCalendar } from "react-github-calendar";
 import { Tooltip as ReactTooltip } from "react-tooltip";
 import "react-tooltip/dist/react-tooltip.css";
@@ -9,21 +9,15 @@ const Github = ({ commitMsg, labels }: GithubProp) => {
   const startYear = 2016;
 
   const [year, setYear] = useState(actualYear);
-  const [years, setYears] = useState<Array<{ value: number; label: string }>>(
-    [],
-  );
 
-  useEffect(() => {
-    const yearsArray = Array.from(
-      { length: actualYear - startYear + 1 },
-      (_, i) => ({
+  const years = useMemo(
+    () =>
+      Array.from({ length: actualYear - startYear + 1 }, (_, i) => ({
         value: actualYear - i,
         label: (actualYear - i).toString(),
-      }),
-    );
-
-    setYears(yearsArray);
-  }, [actualYear]);
+      })),
+    [actualYear],
+  );
 
   const handleChange = (event: React.ChangeEvent<HTMLSelectElement>) => {
     setYear(Number(event.target.value));
@@ -31,12 +25,12 @@ const Github = ({ commitMsg, labels }: GithubProp) => {
 
   return (
     <div className="flex justify-center">
-      <div className="flex flex-col items-center gap-5 w-full max-w-screen-lg xl:max-w-screen-xl">
+      <div className="flex w-full max-w-screen-lg flex-col items-center gap-5 xl:max-w-screen-xl">
         <div className="w-3/4 md:w-5/6">
           <select
             value={year}
             onChange={handleChange}
-            className="w-24 border-2 border-fpurple text-sm rounded-lg block p-2.5 bg-fpurple-box text-white"
+            className="border-fpurple bg-fpurple-box block w-24 rounded-lg border-2 p-2.5 text-sm text-white"
           >
             {years.map((option) => (
               <option key={option.value} value={option.value}>
@@ -57,11 +51,17 @@ const Github = ({ commitMsg, labels }: GithubProp) => {
             fontSize={16}
             labels={labels}
             style={{ color: "white" }}
-            renderBlock={(block: React.ReactElement, activity: { count: number; date: string }) =>
-              React.cloneElement(block as React.ReactElement<Record<string, string>>, {
-                "data-tooltip-id": "react-tooltip",
-                "data-tooltip-html": `${activity.count} ${commitMsg} ${activity.date}`,
-              })
+            renderBlock={(
+              block: React.ReactElement,
+              activity: { count: number; date: string },
+            ) =>
+              React.cloneElement(
+                block as React.ReactElement<Record<string, string>>,
+                {
+                  "data-tooltip-id": "react-tooltip",
+                  "data-tooltip-html": `${activity.count} ${commitMsg} ${activity.date}`,
+                },
+              )
             }
           />
           <ReactTooltip id="react-tooltip" />

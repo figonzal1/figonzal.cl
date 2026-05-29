@@ -41,8 +41,8 @@ const ogImage = "/og.png";
     src="https://www.googletagmanager.com/gtag/js?id=G-FD9MPPVMLL"></script>
   <script is:inline type="text/javascript">
     window.dataLayer = window.dataLayer || [];
-    function gtag() {
-      dataLayer.push(arguments);
+    function gtag(...args) {
+      dataLayer.push(args);
     }
     gtag("js", new Date());
 

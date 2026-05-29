@@ -6,17 +6,17 @@ import profile from "@assets/images/profile.png";
 
 <section>
   <div
-    class="flex flex-col xl:flex-row justify-evenly items-center p-10 md:pt-56 md:px-20 gap-10 md:gap-20 text-white"
+    class="flex flex-col items-center justify-evenly gap-10 p-10 text-white md:gap-20 md:px-20 md:pt-56 xl:flex-row"
   >
     <div
-      class="w-full xl:w-3/4 2xl:w-1/2 flex flex-col justify-center items-start gap-10 backdrop-blur-sm bg-fgreen/5 p-5 rounded-lg"
+      class="bg-fgreen/5 flex w-full flex-col items-start justify-center gap-10 rounded-lg p-5 backdrop-blur-sm xl:w-3/4 2xl:w-1/2"
     >
-      <h1 class="text-2xl md:text-4xl text-center xl:text-left px-5 w-full">
+      <h1 class="w-full px-5 text-center text-2xl md:text-4xl xl:text-left">
         A little <span class="text-fgreen">review</span> about me
       </h1>
 
       <div
-        class="flex flex-col justify-center items-start text-justify px-5 gap-2 md:gap-5 md:text-lg"
+        class="flex flex-col items-start justify-center gap-2 px-5 text-justify md:gap-5 md:text-lg"
       >
         <p>
           <span id="year_ago"></span> years ago I discovered programming and it has
@@ -39,7 +39,7 @@ import profile from "@assets/images/profile.png";
 
         <p>
           Lately I've been interacting with new tools and areas like:&nbsp;
-          <span class="text-fgreen italic font-bold">UE5, Unity & AR/VR</span>
+          <span class="text-fgreen font-bold italic">UE5, Unity & AR/VR</span>
         </p>
       </div>
     </div>
@@ -49,7 +49,7 @@ import profile from "@assets/images/profile.png";
         <Picture
           src={profile}
           formats={["webp", "png"]}
-          class="rounded-full border-2 border-fgreen border-solid hover:shadow-fgreen duration-150 ease-in-out hover:scale-105"
+          class="border-fgreen hover:shadow-fgreen rounded-full border-2 border-solid duration-150 ease-in-out hover:scale-105"
           alt="Avatar"
           fallbackFormat="png"
         />
@@ -58,7 +58,7 @@ import profile from "@assets/images/profile.png";
   </div>
 
   <script>
-    let diffAnno = new Date().getFullYear() - 2013;
+    const diffAnno = new Date().getFullYear() - 2013;
 
     const yearElement = document.getElementById("year_ago");
     if (yearElement) {
