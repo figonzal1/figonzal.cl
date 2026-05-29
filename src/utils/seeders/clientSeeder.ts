@@ -3,6 +3,7 @@ import { CgWebsite } from "react-icons/cg";
 import mundi from "@assets/images/clients/centromundi.png";
 import progress from "@assets/images/clients/progresscap.png";
 import sanignacio from "@assets/images/clients/sanignacio.png";
+import vyespa from "@assets/images/clients/vyespa.png";
 import { TECH_STACKS } from "./stackSeeder";
 import type { ProjectProp } from "@utils/types";
 
@@ -76,6 +77,34 @@ export const clientSeeder: ProjectProp[] = [
       TECH_STACKS.TAILWIND,
       TECH_STACKS.SHADCN_UI,
       TECH_STACKS.GITHUB_ACTIONS,
+    ],
+  },
+  {
+    nameEs: "VyE SPA",
+    nameEn: "VyE SPA",
+    descriptionEs:
+      "Sistema de seguimiento de órdenes y envíos para empresa de transporte. Gestiona el ciclo de vida completo de los envíos con trazabilidad en tiempo real.",
+    descriptionEn:
+      "Order and shipment tracking system for a transport company. Manages the full shipment lifecycle with real-time traceability.",
+    coverImage: vyespa,
+    buttonLinks: [
+      {
+        title: "App",
+        icon: CgWebsite,
+        link: "https://app.tucomercioseguro.cl",
+      },
+      {
+        title: "Seguimiento",
+        icon: CgWebsite,
+        link: "https://seguimiento.tucomercioseguro.cl",
+      },
+    ],
+    techStack: [
+      TECH_STACKS.NESTJS,
+      TECH_STACKS.ASTRO,
+      TECH_STACKS.REACT,
+      TECH_STACKS.TAILWIND,
+      TECH_STACKS.TYPESCRIPT,
     ],
   },
 ];
