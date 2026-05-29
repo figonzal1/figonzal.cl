@@ -45,8 +45,8 @@ importers:
         specifier: 19.2.6
         version: 19.2.6(react@19.2.6)
       react-github-calendar:
-        specifier: 4.5.11
-        version: 4.5.11(react@19.2.6)
+        specifier: 5.0.6
+        version: 5.0.6(react-dom@19.2.6(react@19.2.6))(react@19.2.6)
       react-icons:
         specifier: 5.6.0
         version: 5.6.0(react@19.2.6)
@@ -54,8 +54,8 @@ importers:
         specifier: 1.7.328
         version: 1.7.328(react-dom@19.2.6(react@19.2.6))(react@19.2.6)
       react-tooltip:
-        specifier: 5.30.1
-        version: 5.30.1(react-dom@19.2.6(react@19.2.6))(react@19.2.6)
+        specifier: 6.0.5
+        version: 6.0.5(react-dom@19.2.6(react@19.2.6))(react@19.2.6)
       sharp:
         specifier: 0.34.5
         version: 0.34.5
@@ -411,6 +411,18 @@ packages:
 
   '@floating-ui/dom@1.7.6':
     resolution: {integrity: sha512-9gZSAI5XM36880PPMm//9dfiEngYoC6Am2izES1FF406YFsjvyBMmeJ2g4SAju3xWwtuynNRFL2s9hgxpLI5SQ==}
+
+  '@floating-ui/react-dom@2.1.8':
+    resolution: {integrity: sha512-cC52bHwM/n/CxS87FH0yWdngEZrjdtLW/qVruo68qg+prK7ZQ4YGdut2GyDVpoGeAYe/h899rVeOVm6Oi40k2A==}
+    peerDependencies:
+      react: '>=16.8.0'
+      react-dom: '>=16.8.0'
+
+  '@floating-ui/react@0.27.19':
+    resolution: {integrity: sha512-31B8h5mm8YxotlE7/AU/PhNAl8eWxAmjL/v2QOxroDNkTFLk3Uu82u63N3b6TXa4EGJeeZLVcd/9AlNlVqzeog==}
+    peerDependencies:
+      react: '>=17.0.0'
+      react-dom: '>=17.0.0'
 
   '@floating-ui/utils@0.2.11':
     resolution: {integrity: sha512-RiB/yIh78pcIxl6lLMG0CgBXAZ2Y0eVHqMPYugu+9U0AeT6YBeiJpf7lbdJNIugFP5SIjwNRgo4DhR1Qxi26Gg==}
@@ -1864,9 +1876,6 @@ packages:
     resolution: {integrity: sha512-77PSwercCZU2Fc4sX94eF8k8Pxte6JAwL4/ICZLFjJLqegs7kCuAsqqj/70NQF6TvDpgFjkubQB2FW2ZZddvQg==}
     engines: {node: '>=8'}
 
-  classnames@2.5.1:
-    resolution: {integrity: sha512-saHYOzhIQs6wy2sVxTM6bUDsQO4F50V9RQ22qBpEdCW+I+/Wmke2HOl6lS6dTpdxVhb88/I6+Hs+438c3lfUow==}
-
   cliui@8.0.1:
     resolution: {integrity: sha512-BSeNnyus75C4//NQ9gQt1/csTXyo/8Sb+afLAkzAptFuMsod9HFokGNudZpi/oQV73hnVK+sR+5PVRMd+Dr7YQ==}
     engines: {node: '>=12'}
@@ -2561,8 +2570,8 @@ packages:
   raf@3.4.1:
     resolution: {integrity: sha512-Sq4CW4QhwOHE8ucn6J34MqtZCeWFP2aQSmrlroYgqAV1PjStIhJXxYuTgUIfkEk7zTLjmIjLmU5q+fbD1NnOJA==}
 
-  react-activity-calendar@2.7.15:
-    resolution: {integrity: sha512-sPO4tDJp+sRbV8F/LhUZ/woHmi4dg0Phd+Kt1Jw0orSfGfEqGCm7fFXiTIAvuuAwpwxqPEYEnfNzOLEfUrdg1A==}
+  react-activity-calendar@3.2.0:
+    resolution: {integrity: sha512-v+ZD61h7RB76YMDh1aGAZuoXsSymSixKMOMusMoYWxhDXkFUX6hiftHin/tWqIS9zSNA/NN+vzYDK4hPF0wuxQ==}
     peerDependencies:
       react: ^18.0.0 || ^19.0.0
 
@@ -2571,8 +2580,8 @@ packages:
     peerDependencies:
       react: ^19.2.6
 
-  react-github-calendar@4.5.11:
-    resolution: {integrity: sha512-tDUjAIYILYtPmPUrA/KKuCcGY9A0PcRQEjnOGcAoqV2qeaibh3IQ+YznQOYr78PsBfLIVtq4nZYYM3QadjGu+Q==}
+  react-github-calendar@5.0.6:
+    resolution: {integrity: sha512-BXgk1blzmkXjzc3CJRtSxscNuL0y/pHHVihmY+H+8bak0Syg2G/7gCM4Ja6CzE5wtABDv6N97kKSufWqMazq/g==}
     peerDependencies:
       react: ^18.0.0 || ^19.0.0
 
@@ -2594,8 +2603,8 @@ packages:
     resolution: {integrity: sha512-QgT5//D3jfjJb6Gsjxv0Slpj23ip+HtOpnNgnb2S5zU3CB26G/IDPGoy4RJB42wzFE46DRsstbW6tKHoKbhAxw==}
     engines: {node: '>=0.10.0'}
 
-  react-tooltip@5.30.1:
-    resolution: {integrity: sha512-1lSPLQXuVooePxadUpmcwLgOsF1mIty7UZTJ9XnyfX4drOzStYs4JMXnazcDLguQr41W5OUZddOp9kfvArdpEQ==}
+  react-tooltip@6.0.5:
+    resolution: {integrity: sha512-ExlIuWZWMB1yB7XHqZ6EUOyL4vCR9Qca2U9jtnvSGvoq32L3dVUG0Kdgh9fJooiAqFO+luljNKBmaivF6VcJyQ==}
     peerDependencies:
       react: '>=16.14.0'
       react-dom: '>=16.14.0'
@@ -2745,6 +2754,9 @@ packages:
     resolution: {integrity: sha512-XDpWUOPC6FEibaLzjfe0ucaV0YrOjYotGJO1WpF0Zd+n6ZGEQUsSugaoLq9QkEZtAfQIxT42UChcssDVPP3+/w==}
     engines: {node: '>=16'}
     hasBin: true
+
+  tabbable@6.4.0:
+    resolution: {integrity: sha512-05PUHKSNE8ou2dwIxTngl4EzcnsCDZGJ/iCLtDflR/SHB/ny14rXc+qU5P4mG9JkusiV7EivzY9Mhm55AzAvCg==}
 
   tailwindcss@4.3.0:
     resolution: {integrity: sha512-y6nxMGB1nMW9R6k96e5gdIFzcfL/gTJRNaqGes1YvkLnPVXzWgbqFF2yLC0T8G774n24cx3Pe8XrKoniCOAH+Q==}
@@ -3475,6 +3487,20 @@ snapshots:
     dependencies:
       '@floating-ui/core': 1.7.5
       '@floating-ui/utils': 0.2.11
+
+  '@floating-ui/react-dom@2.1.8(react-dom@19.2.6(react@19.2.6))(react@19.2.6)':
+    dependencies:
+      '@floating-ui/dom': 1.7.6
+      react: 19.2.6
+      react-dom: 19.2.6(react@19.2.6)
+
+  '@floating-ui/react@0.27.19(react-dom@19.2.6(react@19.2.6))(react@19.2.6)':
+    dependencies:
+      '@floating-ui/react-dom': 2.1.8(react-dom@19.2.6(react@19.2.6))(react@19.2.6)
+      '@floating-ui/utils': 0.2.11
+      react: 19.2.6
+      react-dom: 19.2.6(react@19.2.6)
+      tabbable: 6.4.0
 
   '@floating-ui/utils@0.2.11': {}
 
@@ -4835,8 +4861,6 @@ snapshots:
 
   ci-info@4.4.0: {}
 
-  classnames@2.5.1: {}
-
   cliui@8.0.1:
     dependencies:
       string-width: 4.2.3
@@ -5708,20 +5732,25 @@ snapshots:
     dependencies:
       performance-now: 2.1.0
 
-  react-activity-calendar@2.7.15(react@19.2.6):
+  react-activity-calendar@3.2.0(react-dom@19.2.6(react@19.2.6))(react@19.2.6):
     dependencies:
+      '@floating-ui/react': 0.27.19(react-dom@19.2.6(react@19.2.6))(react@19.2.6)
       date-fns: 4.3.0
       react: 19.2.6
+    transitivePeerDependencies:
+      - react-dom
 
   react-dom@19.2.6(react@19.2.6):
     dependencies:
       react: 19.2.6
       scheduler: 0.27.0
 
-  react-github-calendar@4.5.11(react@19.2.6):
+  react-github-calendar@5.0.6(react-dom@19.2.6(react@19.2.6))(react@19.2.6):
     dependencies:
       react: 19.2.6
-      react-activity-calendar: 2.7.15(react@19.2.6)
+      react-activity-calendar: 3.2.0(react-dom@19.2.6(react@19.2.6))(react@19.2.6)
+    transitivePeerDependencies:
+      - react-dom
 
   react-icons@5.6.0(react@19.2.6):
     dependencies:
@@ -5736,10 +5765,10 @@ snapshots:
 
   react-refresh@0.18.0: {}
 
-  react-tooltip@5.30.1(react-dom@19.2.6(react@19.2.6))(react@19.2.6):
+  react-tooltip@6.0.5(react-dom@19.2.6(react@19.2.6))(react@19.2.6):
     dependencies:
       '@floating-ui/dom': 1.7.6
-      classnames: 2.5.1
+      clsx: 2.1.1
       react: 19.2.6
       react-dom: 19.2.6(react@19.2.6)
 
@@ -5983,6 +6012,8 @@ snapshots:
       csso: 5.0.5
       picocolors: 1.1.1
       sax: 1.6.0
+
+  tabbable@6.4.0: {}
 
   tailwindcss@4.3.0: {}
 
