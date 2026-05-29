@@ -18,10 +18,4 @@ export default defineConfig({
   routing: {
     prefixDefaultLocale: false,
   },
-  //Disable 4 dev
-  vite: {
-    ssr: {
-      noExternal: ["react-github-calendar"],
-    },
-  },
 });

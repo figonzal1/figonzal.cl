@@ -123,6 +123,6 @@ const {
       {ghTitle[0]}
       <span class="text-fgreen font-medium"> {ghTitle[1]}</span>
     </h1>
-    <Github client:idle commitMsg={commitMsg} labels={labels} />
+    <Github client:only="react" commitMsg={commitMsg} labels={labels} />
   </div>
 </section>
