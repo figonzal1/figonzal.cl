@@ -18,8 +18,8 @@ const Navbar = ({ lang }: { lang: string }) => {
   const textMenusEN = ["Home", "Clients", "Projects", "Blog"];
 
   return (
-    <nav className="flex flex-col md:flex-row md:items-center px-16 md:px-24 py-6 mt-0 z-50 backdrop-blur-md fixed w-full">
-      <div className="flex justify-between items-center">
+    <nav className="fixed z-50 mt-0 flex w-full flex-col px-16 py-6 backdrop-blur-md md:flex-row md:items-center md:px-24">
+      <div className="flex items-center justify-between">
         <img className="h-7" src={logo.src} alt="Figonzal.cl logo" />
         <button
           className="md:hidden"
@@ -36,7 +36,7 @@ const Navbar = ({ lang }: { lang: string }) => {
       </div>
 
       <div
-        className={`flex flex-col justify-between items-start pt-10 gap-5 md:flex-row md:items-center md:ms-auto md:pt-0 md:gap-10 ${
+        className={`flex flex-col items-start justify-between gap-5 pt-10 md:ms-auto md:flex-row md:items-center md:gap-10 md:pt-0 ${
           expanded ? "" : "hidden md:flex"
         }`}
       >
@@ -70,7 +70,7 @@ const Navbar = ({ lang }: { lang: string }) => {
         />
 
         <a
-          className="flex justify-center items-center border-2 border-fpurple bg-fpurple-box hover:bg-fpurple/30 p-2 rounded-lg gap-1 px-4 py-2 transition-colors duration-150 ease-in-out"
+          className="border-fpurple bg-fpurple-box hover:bg-fpurple/30 flex items-center justify-center gap-1 rounded-lg border-2 p-2 px-4 py-2 transition-colors duration-150 ease-in-out"
           href="https://github.com/figonzal1/figonzal.cl"
           target="_blank"
           rel="noreferrer"

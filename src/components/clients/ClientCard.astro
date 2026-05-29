@@ -11,33 +11,33 @@ const { title, description, coverImage, techStack } = Astro.props;
     alt={title}
     formats={["webp"]}
     fallbackFormat="png"
-    class="object-cover object-left rounded-lg shadow-lg opacity-90 h-64"
+    class="h-64 rounded-lg object-cover object-left opacity-90 shadow-lg"
     loading="lazy"
     decoding="async"
   />
-  <div class="relative px-5 lg:px-10 -mt-5 lg:-mt-16 w-full">
+  <div class="relative -mt-5 w-full px-5 lg:-mt-16 lg:px-10">
     <div
-      class="group flex flex-col justify-start gap-4 backdrop-blur-lg max-h-52 2xl:h-52 bg-fpurple/5 p-3 sm:p-6 rounded-lg shadow-lg shadow-fpurple-box border-2 border-fpurple hover:scale-105 hover:lg:scale-110 transition-transform duration-150 ease-in-out"
+      class="group bg-fpurple/5 shadow-fpurple-box border-fpurple flex max-h-52 flex-col justify-start gap-4 rounded-lg border-2 p-3 shadow-lg backdrop-blur-lg transition-transform duration-150 ease-in-out hover:scale-105 sm:p-6 hover:lg:scale-110 2xl:h-52"
     >
       <FloatingTools techStack={techStack} />
 
       <h2
-        class="text-fgreen text-center text-sm sm:text-xl font-semibold uppercase leading-tight"
+        class="text-fgreen text-center text-sm leading-tight font-semibold uppercase sm:text-xl"
       >
         {title}
       </h2>
 
       <div
-        class="text-white text-sm font-mono tracking-tight leading-tight text-pretty truncate"
+        class="truncate font-mono text-sm leading-tight tracking-tight text-pretty text-white"
       >
         <p
-          class="text-center 2xl:text-left line-clamp-3 break-normal hyphens-auto"
+          class="line-clamp-3 text-center break-normal hyphens-auto 2xl:text-left"
         >
           {description}
         </p>
       </div>
 
-      <div class="mt-auto sm:py-0 flex justify-center gap-3">
+      <div class="mt-auto flex justify-center gap-3 sm:py-0">
         <slot />
       </div>
     </div>

@@ -12,7 +12,7 @@ const { lang } = Astro.props;
 <html lang={lang}>
   <Head />
   <body
-    class="flex flex-col min-h-screen bg-black bg-gradient-to-br from-fgreen/20 to-fpurple/40 antialiased w-full"
+    class="from-fgreen/20 to-fpurple/40 flex min-h-screen w-full flex-col bg-black bg-gradient-to-br antialiased"
   >
     <Navbar lang={lang} client:load />
     <slot />
