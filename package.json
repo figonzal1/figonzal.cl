@@ -6,9 +6,8 @@
   "homepage": "https://figonzal.cl",
   "scripts": {
     "dev": "astro dev",
-    "format": "pnpm dlx prettier --write . --plugin=prettier-plugin-astro",
-    "lint": "pnpm dlx oxlint",
-    "build:full": "pnpm run lint && pnpm run format && astro check && astro build",
+    "format": "prettier --write .",
+    "lint": "oxlint --fix && estlint . --fix",
     "build": "astro check && astro build",
     "preview": "astro preview"
   },
@@ -35,9 +34,18 @@
     "typewriter-effect": "2.22.0"
   },
   "devDependencies": {
+    "eslint": "^10.4.0",
+    "eslint-config-prettier": "^10.1.8",
+    "eslint-plugin-astro": "^1.7.0",
+    "eslint-plugin-jsx-a11y": "^6.10.2",
+    "eslint-plugin-oxlint": "^1.67.0",
+    "eslint-plugin-react": "^7.37.5",
+    "eslint-plugin-react-hooks": "^7.1.1",
     "oxlint": "1.67.0",
     "prettier": "3.8.3",
-    "prettier-plugin-astro": "0.14.1"
+    "prettier-plugin-astro": "0.14.1",
+    "prettier-plugin-tailwindcss": "^0.8.0",
+    "typescript-eslint": "^8.60.0"
   },
   "packageManager": "pnpm@11.4.0"
 }
