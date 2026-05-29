@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import GitHubCalendar from "react-github-calendar";
+import { GitHubCalendar } from "react-github-calendar";
 import { Tooltip as ReactTooltip } from "react-tooltip";
 import "react-tooltip/dist/react-tooltip.css";
 import type { GithubProp } from "src/utils/types";
@@ -57,8 +57,8 @@ const Github = ({ commitMsg, labels }: GithubProp) => {
             fontSize={16}
             labels={labels}
             style={{ color: "white" }}
-            renderBlock={(block, activity) =>
-              React.cloneElement(block, {
+            renderBlock={(block: React.ReactElement, activity: { count: number; date: string }) =>
+              React.cloneElement(block as React.ReactElement<Record<string, string>>, {
                 "data-tooltip-id": "react-tooltip",
                 "data-tooltip-html": `${activity.count} ${commitMsg} ${activity.date}`,
               })
