@@ -1,0 +1,63 @@
+---
+import PurpleButton from "@components/common/PurpleButton.astro";
+import ProjectCard from "@components/projects/ProjectCard.astro";
+import { projectSeeder } from "@utils/seeders/projectSeeder";
+import type { ProjectProp, ProjectButton } from "@utils/types";
+
+interface Props {
+  title: [string, string];
+  lang: string;
+  ctaLabel: string;
+  ctaHref: string;
+}
+
+const { title, lang, ctaLabel, ctaHref } = Astro.props;
+
+// Muestra los proyectos destacados en la home; enlaza al detalle por categoría
+const featured = projectSeeder.slice(0, 3);
+---
+
+<section class="px-10 py-14">
+  <h2 class="text-center text-2xl font-medium text-white md:text-4xl">
+    {title[0]}
+    <span class="text-fgreen font-medium">{title[1]}</span>
+  </h2>
+
+  <div
+    class="mx-auto grid max-w-6xl grid-cols-1 gap-10 p-10 md:grid-cols-2 2xl:grid-cols-3"
+  >
+    {
+      featured.map((project: ProjectProp) => {
+        const name = lang === "es" ? project.nameEs : project.nameEn;
+        const description =
+          lang === "es" ? project.descriptionEs : project.descriptionEn;
+
+        return (
+          <ProjectCard
+            title={name}
+            description={description}
+            coverImage={project.coverImage}
+            techStack={project.techStack}
+          >
+            {project.buttonLinks.map((button: ProjectButton) => (
+              <PurpleButton
+                title={button.title}
+                link={button.link}
+                icon={button.icon}
+              />
+            ))}
+          </ProjectCard>
+        );
+      })
+    }
+  </div>
+
+  <div class="flex justify-center">
+    <a
+      href={ctaHref}
+      class="border-fgreen text-fgreen hover:bg-fgreen/10 rounded-lg border-2 px-6 py-2 font-medium transition-colors duration-150 ease-in-out"
+    >
+      {ctaLabel}
+    </a>
+  </div>
+</section>

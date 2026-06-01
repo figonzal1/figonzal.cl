@@ -6,15 +6,37 @@ interface Props {
   title?: string;
   description?: string;
   canonical?: string;
+  /** URLs absolutas de las versiones es/en de esta misma página (hreflang) */
+  alternateEs?: string;
+  alternateEn?: string;
 }
 
 const {
   title = "figonzal.cl | Portafolio",
   description = "Sitio profesional de felipe gonzález - figonzal.cl",
   canonical = "https://www.figonzal.cl",
+  alternateEs,
+  alternateEn,
 } = Astro.props;
 
 const ogImage = "/og.png";
+
+// Schema.org Person: ayuda a Google a entender de quién es el portfolio
+const personSchema = {
+  "@context": "https://schema.org",
+  "@type": "Person",
+  name: "Felipe González Alarcón",
+  url: "https://www.figonzal.cl",
+  jobTitle: "Ingeniero Informático",
+  image: "https://www.figonzal.cl/og.png",
+  sameAs: [
+    "https://github.com/figonzal1",
+    "https://www.linkedin.com/in/figonzal/",
+    "https://www.instagram.com/figonzal.cl",
+    "https://facebook.com/figonzal1",
+    "https://play.google.com/store/apps/dev?id=4650587366054768148",
+  ],
+};
 ---
 
 <head>
@@ -25,6 +47,16 @@ const ogImage = "/og.png";
   <meta name="generator" content={Astro.generator} />
 
   <link rel="canonical" href={canonical} />
+
+  {
+    alternateEs && alternateEn && (
+      <>
+        <link rel="alternate" hreflang="es" href={alternateEs} />
+        <link rel="alternate" hreflang="en" href={alternateEn} />
+        <link rel="alternate" hreflang="x-default" href={alternateEs} />
+      </>
+    )
+  }
 
   <title>{title}</title>
 
@@ -77,4 +109,10 @@ const ogImage = "/og.png";
       });
     });
   </script>
+
+  <script
+    is:inline
+    type="application/ld+json"
+    set:html={JSON.stringify(personSchema)}
+  />
 </head>
