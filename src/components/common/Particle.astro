@@ -44,6 +44,8 @@
     },
   };
 
-  await loadAll(tsParticles);
-  await tsParticles.load({ id: "tsparticles", options });
+  void (async () => {
+    await loadAll(tsParticles);
+    await tsParticles.load({ id: "tsparticles", options });
+  })();
 </script>
