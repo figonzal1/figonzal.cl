@@ -7,7 +7,7 @@
   "scripts": {
     "dev": "astro dev",
     "format": "prettier --write .",
-    "lint": "oxlint --fix && estlint . --fix",
+    "lint": "oxlint --fix && eslint . --fix",
     "build": "astro check && astro build",
     "preview": "astro preview"
   },
