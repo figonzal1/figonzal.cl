@@ -57,7 +57,7 @@ export default [
   },
 
   // Desactiva en ESLint las reglas que oxlint ya verifica
-  oxlintPlugin.configs["flat/recommended"],
+  ...oxlintPlugin.configs["flat/recommended"],
 
   // Desactiva reglas de formato que maneja Prettier (siempre último)
   eslintConfigPrettier,
