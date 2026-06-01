@@ -6,7 +6,7 @@ Personal portfolio site (figonzal.cl) built with Astro (SSG) + React islands, de
 
 ## Commands
 
-- Package manager is **pnpm** (not npm/yarn).
+- Package manager is **pnpm** (not npm/yarn). Always use the scripts defined in `package.json` (`pnpm format`, `pnpm build`, `pnpm lint`, …) — do not run tools via `npx`.
 - `pnpm build` runs `astro check && astro build` — `astro check` type-checks `.astro` files, so the build fails on type errors. Run it to validate changes.
 - `pnpm format` — Prettier (`--write .`). Always run after edits; `prettier-plugin-tailwindcss` reorders Tailwind classes and `prettier-plugin-astro` handles `.astro` files.
 - `pnpm lint` — oxlint + eslint with `--fix`.

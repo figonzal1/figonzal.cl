@@ -44,8 +44,26 @@
     },
   };
 
-  void (async () => {
-    await loadAll(tsParticles);
-    await tsParticles.load({ id: "tsparticles", options });
-  })();
+  let loaded = false;
+  let container: Awaited<ReturnType<typeof tsParticles.load>>;
+
+  async function initParticles() {
+    // Limpia la instancia previa: evita duplicados y partículas
+    // remanentes al navegar a una página que no las usa.
+    container?.destroy();
+    container = undefined;
+
+    // Particle no está en todas las páginas: solo recrea si hay contenedor.
+    if (!document.getElementById("tsparticles")) return;
+
+    if (!loaded) {
+      await loadAll(tsParticles);
+      loaded = true;
+    }
+
+    container = await tsParticles.load({ id: "tsparticles", options });
+  }
+
+  // Dispara en la carga inicial y tras cada view transition
+  document.addEventListener("astro:page-load", () => void initParticles());
 </script>

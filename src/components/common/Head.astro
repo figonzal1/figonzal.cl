@@ -1,5 +1,6 @@
 ---
 import { Tooltips } from "astro-tooltips";
+import { ClientRouter } from "astro:transitions";
 
 interface Props {
   title?: string;
@@ -26,6 +27,8 @@ const ogImage = "/og.png";
   <link rel="canonical" href={canonical} />
 
   <title>{title}</title>
+
+  <ClientRouter />
 
   <!-- Facebook Meta Tags -->
   <meta property="fb:app_id" content="740961793640508" />
@@ -57,5 +60,21 @@ const ogImage = "/og.png";
     gtag("js", new Date());
 
     gtag("config", "G-FD9MPPVMLL");
+
+    // Con view transitions las navegaciones son SPA: gtag ya registra el
+    // pageview inicial vía config, así que enviamos uno en cada navegación
+    // posterior (omitimos la carga inicial para no duplicarlo).
+    let firstLoad = true;
+    document.addEventListener("astro:page-load", () => {
+      if (firstLoad) {
+        firstLoad = false;
+        return;
+      }
+      gtag("event", "page_view", {
+        page_path: location.pathname,
+        page_location: location.href,
+        page_title: document.title,
+      });
+    });
   </script>
 </head>
