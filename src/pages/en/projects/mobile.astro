@@ -7,13 +7,19 @@ import { projectSeeder } from "src/utils/seeders/projectSeeder";
 const lang = "en";
 ---
 
-<BaseLayout lang={lang}>
+<BaseLayout
+  lang={lang}
+  title="Mobile Projects | figonzal.cl"
+  description="Android mobile applications developed by Felipe González."
+  canonical="https://www.figonzal.cl/en/projects/mobile"
+>
   <div class="h-0 w-0">
     <Particle />
   </div>
   <ProjectSection
-    title={["My", "Projects"]}
+    title={["Mobile", "Projects"]}
     projects={projectSeeder}
     lang={lang}
+    activeCategory="mobile"
   />
 </BaseLayout>

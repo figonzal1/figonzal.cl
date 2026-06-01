@@ -58,10 +58,7 @@ const Navbar = ({ lang }: { lang: string }) => {
         <NavbarLink
           icon={<GoProjectSymlink color="white" size={21} />}
           name={lang === "es" ? textMenusES[2] : textMenusEN[2]}
-          link={(lang === "es"
-            ? "/" + textMenusES[2]
-            : "/en/" + textMenusEN[2]
-          ).toLocaleLowerCase()}
+          link={lang === "es" ? "/proyectos/movil" : "/en/projects/mobile"}
         />
         <NavbarLink
           icon={<ImBlog color="white" size={21} />}

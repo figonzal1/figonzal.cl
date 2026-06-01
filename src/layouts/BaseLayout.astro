@@ -6,11 +6,11 @@ import Navbar from "@components/common/Navbar";
 import "@fontsource-variable/raleway";
 import "@styles/tailwind.css";
 
-const { lang } = Astro.props;
+const { lang, title, description, canonical } = Astro.props;
 ---
 
 <html lang={lang}>
-  <Head />
+  <Head title={title} description={description} canonical={canonical} />
   <body
     class="from-fgreen/20 to-fpurple/40 flex min-h-screen w-full flex-col bg-black bg-gradient-to-br antialiased"
   >

@@ -1,0 +1,25 @@
+---
+import Particle from "@components/common/Particle.astro";
+import ProjectSection from "@components/projects/ProjectSection.astro";
+import BaseLayout from "@layouts/BaseLayout.astro";
+import { projectSeeder } from "src/utils/seeders/projectSeeder";
+
+const lang = "es";
+---
+
+<BaseLayout
+  lang={lang}
+  title="Proyectos Web | figonzal.cl"
+  description="Proyectos web desarrollados por Felipe González: aplicaciones y sitios web."
+  canonical="https://www.figonzal.cl/proyectos/web"
+>
+  <div class="h-0 w-0">
+    <Particle />
+  </div>
+  <ProjectSection
+    title={["Proyectos", "Web"]}
+    projects={projectSeeder}
+    lang={lang}
+    activeCategory="web"
+  />
+</BaseLayout>

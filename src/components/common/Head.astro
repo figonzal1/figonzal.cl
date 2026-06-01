@@ -1,8 +1,18 @@
 ---
 import { Tooltips } from "astro-tooltips";
 
-const title = "figonzal.cl | Portafolio";
-const description = "Sitio profesional de felipe gonzález - figonzal.cl";
+interface Props {
+  title?: string;
+  description?: string;
+  canonical?: string;
+}
+
+const {
+  title = "figonzal.cl | Portafolio",
+  description = "Sitio profesional de felipe gonzález - figonzal.cl",
+  canonical = "https://www.figonzal.cl",
+} = Astro.props;
+
 const ogImage = "/og.png";
 ---
 
@@ -13,13 +23,13 @@ const ogImage = "/og.png";
   <meta name="description" content={description} />
   <meta name="generator" content={Astro.generator} />
 
-  <link rel="canonical" href="https://www.figonzal.cl" />
+  <link rel="canonical" href={canonical} />
 
   <title>{title}</title>
 
   <!-- Facebook Meta Tags -->
   <meta property="fb:app_id" content="740961793640508" />
-  <meta property="og:url" content="https://www.figonzal.cl" />
+  <meta property="og:url" content={canonical} />
   <meta property="og:type" content="website" />
   <meta property="og:title" content={title} />
   <meta property="og:description" content={description} />

@@ -1,5 +1,5 @@
 ---
-import type { ProjectButton, ProjectProp } from "src/utils/types";
+import type { ProjectButton, ClientProp } from "src/utils/types";
 import ClientCard from "./ClientCard.astro";
 import PurpleButton from "@components/common/PurpleButton.astro";
 
@@ -17,7 +17,7 @@ const { title, clients, lang } = Astro.props;
       class="grid grid-cols-1 gap-10 p-10 sm:p-24 lg:grid-cols-2 lg:p-24 2xl:grid-cols-3"
     >
       {
-        clients.map((client: ProjectProp) => {
+        clients.map((client: ClientProp) => {
           const title = lang === "es" ? client.nameEs : client.nameEn;
           const description =
             lang === "es" ? client.descriptionEs : client.descriptionEn;

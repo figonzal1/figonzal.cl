@@ -5,9 +5,9 @@ import progress from "@assets/images/clients/progresscap.png";
 import sanignacio from "@assets/images/clients/sanignacio.png";
 import vyespa from "@assets/images/clients/vyespa.png";
 import { TECH_STACKS } from "./stackSeeder";
-import type { ProjectProp } from "@utils/types";
+import type { ClientProp } from "@utils/types";
 
-export const clientSeeder: ProjectProp[] = [
+export const clientSeeder: ClientProp[] = [
   {
     nameEs: "Centro Mundi",
     nameEn: "Mundi Center",

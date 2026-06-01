@@ -4,16 +4,22 @@ import ProjectSection from "@components/projects/ProjectSection.astro";
 import BaseLayout from "@layouts/BaseLayout.astro";
 import { projectSeeder } from "src/utils/seeders/projectSeeder";
 
-const lang = "es";
+const lang = "en";
 ---
 
-<BaseLayout lang={lang}>
+<BaseLayout
+  lang={lang}
+  title="Web Projects | figonzal.cl"
+  description="Web projects developed by Felipe González: web applications and websites."
+  canonical="https://www.figonzal.cl/en/projects/web"
+>
   <div class="h-0 w-0">
     <Particle />
   </div>
   <ProjectSection
-    title={["Mis", "Proyectos"]}
+    title={["Web", "Projects"]}
     projects={projectSeeder}
     lang={lang}
+    activeCategory="web"
   />
 </BaseLayout>
