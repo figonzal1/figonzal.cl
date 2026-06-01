@@ -1,5 +1,4 @@
-onlyBuiltDependencies:
-  - core-js
-  - esbuild
-  - sharp
-  - tsparticles-engine
+allowBuilds:
+  "@tsparticles/engine": true
+  esbuild: true
+  sharp: true

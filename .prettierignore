@@ -1,0 +1,10 @@
+dist/
+.astro/
+node_modules/
+pnpm-lock.yaml
+public/
+src/assets/
+*.min.js
+*.min.css
+.agents/
+.claude/

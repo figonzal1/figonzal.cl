@@ -1,11 +1,15 @@
 import { defineConfig } from "astro/config";
 
 import react from "@astrojs/react";
-import tailwind from "@astrojs/tailwind";
+import sitemap from "@astrojs/sitemap";
+import tailwindcss from "@tailwindcss/vite";
 
 // https://astro.build/config
 export default defineConfig({
-  integrations: [react(), tailwind()],
+  integrations: [react(), sitemap()],
+  vite: {
+    plugins: [tailwindcss()],
+  },
   site: "https://www.figonzal.cl",
   server: {
     host: "0.0.0.0",
@@ -18,10 +22,8 @@ export default defineConfig({
   routing: {
     prefixDefaultLocale: false,
   },
-  //Disable 4 dev
-  vite: {
-    ssr: {
-      noExternal: ["react-github-calendar"],
-    },
+  redirects: {
+    "/proyectos": "/proyectos/movil",
+    "/en/projects": "/en/projects/mobile",
   },
 });

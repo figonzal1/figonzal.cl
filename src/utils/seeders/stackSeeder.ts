@@ -6,11 +6,13 @@ import {
   SiGithubactions,
   SiGraphql,
   SiMercadopago,
+  SiNestjs,
   SiPhp,
   SiReact,
   SiShadcnui,
   SiSpringboot,
   SiTailwindcss,
+  SiTypescript,
   SiWordpress,
 } from "react-icons/si";
 
@@ -66,5 +68,13 @@ export const TECH_STACKS = {
   GRAPHQL: {
     title: "Graphql",
     icon: SiGraphql,
+  },
+  NESTJS: {
+    title: "NestJS",
+    icon: SiNestjs,
+  },
+  TYPESCRIPT: {
+    title: "TypeScript",
+    icon: SiTypescript,
   },
 };

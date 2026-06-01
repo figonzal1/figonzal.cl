@@ -1,9 +1,9 @@
 ---
-import { FaJava, FaPhp, FaGitAlt, FaGithub } from "react-icons/fa6";
+import { FaJava, FaPhp, FaGitAlt, FaGithub, FaAws } from "react-icons/fa6";
 import {
   SiAndroid,
+  SiAngular,
   SiKotlin,
-  SiJavascript,
   SiTypescript,
   SiSpringboot,
   SiNextdotjs,
@@ -11,15 +11,14 @@ import {
   SiAndroidstudio,
   SiIntellijidea,
   SiDocker,
-  SiPostman,
+  SiBruno,
   SiLinux,
-  SiSonarqube,
+  SiSonarqubeserver,
   SiGithubactions,
   SiNestjs,
   SiPython,
   SiFlutter,
   SiKubernetes,
-  SiAmazonwebservices,
   SiReact,
   SiTailwindcss,
 } from "react-icons/si";
@@ -41,7 +40,7 @@ const {
 <section>
   <!-- LENGUAJES DE PROGRAMACIÓN -->
   <div class="pt-24 lg:pt-32">
-    <h1 class="text-2xl md:text-4xl text-white text-center font-medium">
+    <h1 class="text-center text-2xl font-medium text-white md:text-4xl">
       {languagesTitle[0]}
       <span class="text-fgreen font-medium"> {languagesTitle[1]}</span>
     </h1>
@@ -49,7 +48,6 @@ const {
       <ToolCard title="Kotlin" icon={SiKotlin} alt="Kotlin" />
       <ToolCard title="Java" icon={FaJava} alt="Java" />
       <ToolCard title="TypeScript" icon={SiTypescript} alt="TypeScript" />
-      <ToolCard title="JavaScript" icon={SiJavascript} alt="JavaScript" />
       <ToolCard title="PHP" icon={FaPhp} alt="PHP" />
       <ToolCard title="Python" icon={SiPython} alt="Python" />
       <ToolCard title="Flutter" icon={SiFlutter} alt="Flutter" />
@@ -58,7 +56,7 @@ const {
 
   <!-- FRAMEWORKS Y PLATAFORMAS -->
   <div class="pt-14 md:pt-24">
-    <h1 class="text-2xl md:text-4xl text-white text-center font-medium">
+    <h1 class="text-center text-2xl font-medium text-white md:text-4xl">
       {frameworksTitle[0]}
       <span class="text-fgreen font-medium"> {frameworksTitle[1]}</span>
     </h1>
@@ -68,6 +66,7 @@ const {
       <ToolCard title="NestJS" icon={SiNestjs} alt="NestJS" />
       <ToolCard title="Next.js" icon={SiNextdotjs} alt="Next.js" />
       <ToolCard title="Astro" icon={SiAstro} alt="Astro" />
+      <ToolCard title="Angular" icon={SiAngular} alt="Angular" />
       <ToolCard title="React" icon={SiReact} alt="React" />
       <ToolCard title="Tailwind CSS" icon={SiTailwindcss} alt="Tailwind CSS" />
     </div>
@@ -75,7 +74,7 @@ const {
 
   <!-- HERRAMIENTAS DE DESARROLLO -->
   <div class="pt-14 md:pt-24">
-    <h1 class="text-2xl md:text-4xl text-white text-center font-medium">
+    <h1 class="text-center text-2xl font-medium text-white md:text-4xl">
       {toolsTitle[0]}
       <span class="text-fgreen font-medium"> {toolsTitle[1]}</span>
     </h1>
@@ -93,19 +92,19 @@ const {
       />
       <ToolCard title="Git" icon={FaGitAlt} alt="Git" />
       <ToolCard title="GitHub" icon={FaGithub} alt="GitHub" />
-      <ToolCard title="Postman" icon={SiPostman} alt="Postman" />
+      <ToolCard title="Bruno" icon={SiBruno} alt="Bruno" />
       <ToolCard title="Linux" icon={SiLinux} alt="Linux" />
     </div>
   </div>
 
   <!-- DEVOPS Y CLOUD -->
   <div class="pt-14 md:pt-24">
-    <h1 class="text-2xl md:text-4xl text-white text-center font-medium">
+    <h1 class="text-center text-2xl font-medium text-white md:text-4xl">
       {devopsTitle[0]}
       <span class="text-fgreen font-medium"> {devopsTitle[1]}</span>
     </h1>
     <div class="flex flex-wrap justify-center gap-5 p-10 lg:px-44 xl:px-52">
-      <ToolCard title="AWS" icon={SiAmazonwebservices} alt="AWS" />
+      <ToolCard title="AWS" icon={FaAws} alt="AWS" />
       <ToolCard title="Docker" icon={SiDocker} alt="Docker" />
       <ToolCard title="Kubernetes" icon={SiKubernetes} alt="Kubernetes" />
       <ToolCard
@@ -113,16 +112,16 @@ const {
         icon={SiGithubactions}
         alt="GitHub Actions"
       />
-      <ToolCard title="SonarQube" icon={SiSonarqube} alt="SonarQube" />
+      <ToolCard title="SonarQube" icon={SiSonarqubeserver} alt="SonarQube" />
     </div>
   </div>
 
   <!-- GITHUB SECTION -->
-  <div class="flex flex-col py-24 gap-5 md:gap-10">
-    <h1 class="text-2xl md:text-4xl text-white text-center font-medium">
+  <div class="flex flex-col gap-5 py-24 md:gap-10">
+    <h1 class="text-center text-2xl font-medium text-white md:text-4xl">
       {ghTitle[0]}
       <span class="text-fgreen font-medium"> {ghTitle[1]}</span>
     </h1>
-    <Github client:idle commitMsg={commitMsg} labels={labels} />
+    <Github client:only="react" commitMsg={commitMsg} labels={labels} />
   </div>
 </section>

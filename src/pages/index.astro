@@ -1,6 +1,7 @@
 ---
 import Particle from "@components/common/Particle.astro";
 import AbstractSection from "@components/home/AbstractSection.astro";
+import FeaturedProjects from "@components/home/FeaturedProjects.astro";
 import IntroSection from "@components/home/IntroSection.astro";
 import SocialSection from "@components/home/socialsection/SocialSection.astro";
 import TechStackSection from "@components/home/techsection/TechStackSection.astro";
@@ -8,8 +9,13 @@ import BaseLayout from "@layouts/BaseLayout.astro";
 import { githubMonthLabels } from "src/utils/translations";
 ---
 
-<BaseLayout lang="es">
-  <div class="w-0 h-0">
+<BaseLayout
+  lang="es"
+  canonical="https://www.figonzal.cl/"
+  alternateEs="https://www.figonzal.cl/"
+  alternateEn="https://www.figonzal.cl/en"
+>
+  <div class="h-0 w-0">
     <Particle />
   </div>
   <IntroSection
@@ -23,6 +29,12 @@ import { githubMonthLabels } from "src/utils/translations";
     ]}
   />
   <AbstractSection />
+  <FeaturedProjects
+    title={["Proyectos", "Destacados"]}
+    lang="es"
+    ctaLabel="Ver todos los proyectos"
+    ctaHref="/proyectos/web"
+  />
   <TechStackSection
     languagesTitle={["Lenguajes de", "Programación"]}
     frameworksTitle={["Frameworks y", "Plataformas"]}

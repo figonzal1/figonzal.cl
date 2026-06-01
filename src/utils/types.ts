@@ -7,7 +7,9 @@ export type ProjectSeeder = {
   EVALUA: ProjectProp;
 };
 
-export type ProjectProp = {
+export type ProjectCategory = "web" | "mobile";
+
+export type ClientProp = {
   nameEs: string;
   nameEn: string;
   descriptionEn: string;
@@ -15,6 +17,10 @@ export type ProjectProp = {
   coverImage: ImageMetadata;
   buttonLinks: ProjectButton[];
   techStack: ProjectStack[];
+};
+
+export type ProjectProp = ClientProp & {
+  category: ProjectCategory;
 };
 
 export type ProjectButton = {

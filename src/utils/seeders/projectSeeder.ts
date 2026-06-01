@@ -1,15 +1,38 @@
 import { SiGithub, SiGoogleplay } from "react-icons/si";
+import { CgWebsite } from "react-icons/cg";
 import { Constants } from "../constants";
 import { TECH_STACKS } from "./stackSeeder";
 
 import lqch from "@assets/images/projects/lqch.png";
 import aaid from "@assets/images/projects/aaid.png";
 import evalua from "@assets/images/projects/evalua.png";
+import nickpaint from "@assets/images/projects/nickpaint.png";
 
 import type { ProjectProp } from "../types";
 import { projectTranslations } from "../translations";
 
 export const projectSeeder: ProjectProp[] = [
+  {
+    nameEs: projectTranslations.es.NICKPAINT.NAME,
+    nameEn: projectTranslations.en.NICKPAINT.NAME,
+    descriptionEs: projectTranslations.es.NICKPAINT.DESCRIPTION,
+    descriptionEn: projectTranslations.en.NICKPAINT.DESCRIPTION,
+    coverImage: nickpaint,
+    buttonLinks: [
+      {
+        title: "Web",
+        icon: CgWebsite,
+        link: "https://nickpaint.figonzal.cl/",
+      },
+    ],
+    techStack: [
+      TECH_STACKS.ASTRO,
+      TECH_STACKS.REACT,
+      TECH_STACKS.TAILWIND,
+      TECH_STACKS.TYPESCRIPT,
+    ],
+    category: "web",
+  },
   {
     nameEs: projectTranslations.es.LQCH.NAME,
     nameEn: projectTranslations.en.LQCH.NAME,
@@ -34,6 +57,7 @@ export const projectSeeder: ProjectProp[] = [
       TECH_STACKS.DOCKER,
       TECH_STACKS.GITHUB_ACTIONS,
     ],
+    category: "mobile",
   },
   {
     nameEs: projectTranslations.es.AAID.NAME,
@@ -54,6 +78,7 @@ export const projectSeeder: ProjectProp[] = [
       },
     ],
     techStack: [TECH_STACKS.ANDROID],
+    category: "mobile",
   },
   {
     nameEs: projectTranslations.es.EVALUA.NAME,
@@ -74,5 +99,6 @@ export const projectSeeder: ProjectProp[] = [
       },
     ],
     techStack: [TECH_STACKS.ANDROID],
+    category: "mobile",
   },
 ];

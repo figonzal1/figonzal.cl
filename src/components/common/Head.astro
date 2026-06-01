@@ -1,9 +1,42 @@
 ---
 import { Tooltips } from "astro-tooltips";
+import { ClientRouter } from "astro:transitions";
 
-const title = "figonzal.cl | Portafolio";
-const description = "Sitio profesional de felipe gonzález - figonzal.cl";
+interface Props {
+  title?: string;
+  description?: string;
+  canonical?: string;
+  /** URLs absolutas de las versiones es/en de esta misma página (hreflang) */
+  alternateEs?: string;
+  alternateEn?: string;
+}
+
+const {
+  title = "figonzal.cl | Portafolio",
+  description = "Sitio profesional de felipe gonzález - figonzal.cl",
+  canonical = "https://www.figonzal.cl",
+  alternateEs,
+  alternateEn,
+} = Astro.props;
+
 const ogImage = "/og.png";
+
+// Schema.org Person: ayuda a Google a entender de quién es el portfolio
+const personSchema = {
+  "@context": "https://schema.org",
+  "@type": "Person",
+  name: "Felipe González Alarcón",
+  url: "https://www.figonzal.cl",
+  jobTitle: "Ingeniero Informático",
+  image: "https://www.figonzal.cl/og.png",
+  sameAs: [
+    "https://github.com/figonzal1",
+    "https://www.linkedin.com/in/figonzal/",
+    "https://www.instagram.com/figonzal.cl",
+    "https://facebook.com/figonzal1",
+    "https://play.google.com/store/apps/dev?id=4650587366054768148",
+  ],
+};
 ---
 
 <head>
@@ -13,13 +46,25 @@ const ogImage = "/og.png";
   <meta name="description" content={description} />
   <meta name="generator" content={Astro.generator} />
 
-  <link rel="canonical" href="https://www.figonzal.cl" />
+  <link rel="canonical" href={canonical} />
+
+  {
+    alternateEs && alternateEn && (
+      <>
+        <link rel="alternate" hreflang="es" href={alternateEs} />
+        <link rel="alternate" hreflang="en" href={alternateEn} />
+        <link rel="alternate" hreflang="x-default" href={alternateEs} />
+      </>
+    )
+  }
 
   <title>{title}</title>
 
+  <ClientRouter />
+
   <!-- Facebook Meta Tags -->
   <meta property="fb:app_id" content="740961793640508" />
-  <meta property="og:url" content="https://www.figonzal.cl" />
+  <meta property="og:url" content={canonical} />
   <meta property="og:type" content="website" />
   <meta property="og:title" content={title} />
   <meta property="og:description" content={description} />
@@ -41,11 +86,33 @@ const ogImage = "/og.png";
     src="https://www.googletagmanager.com/gtag/js?id=G-FD9MPPVMLL"></script>
   <script is:inline type="text/javascript">
     window.dataLayer = window.dataLayer || [];
-    function gtag() {
-      dataLayer.push(arguments);
+    function gtag(...args) {
+      dataLayer.push(args);
     }
     gtag("js", new Date());
 
     gtag("config", "G-FD9MPPVMLL");
+
+    // Con view transitions las navegaciones son SPA: gtag ya registra el
+    // pageview inicial vía config, así que enviamos uno en cada navegación
+    // posterior (omitimos la carga inicial para no duplicarlo).
+    let firstLoad = true;
+    document.addEventListener("astro:page-load", () => {
+      if (firstLoad) {
+        firstLoad = false;
+        return;
+      }
+      gtag("event", "page_view", {
+        page_path: location.pathname,
+        page_location: location.href,
+        page_title: document.title,
+      });
+    });
   </script>
+
+  <script
+    is:inline
+    type="application/ld+json"
+    set:html={JSON.stringify(personSchema)}
+  />
 </head>

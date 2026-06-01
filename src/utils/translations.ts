@@ -15,6 +15,11 @@ export const projectTranslations = {
       DESCRIPTION:
         "App para simplificar evaluaciones de la batería de evaluaciones psicopedagógicas Evalúa - Chile V2.0",
     },
+    NICKPAINT: {
+      NAME: "NickPaint - Editor de nicks BBCode",
+      DESCRIPTION:
+        "Editor de colores para nicknames en BBCode inspirado en MSN Plus!: gradientes, presets, efectos de texto y vista previa en vivo.",
+    },
   },
   en: {
     LQCH: {
@@ -31,6 +36,11 @@ export const projectTranslations = {
       NAME: "EvalúaTool - Calculator v2 CL",
       DESCRIPTION:
         "App to simplify the battery of psychopedagogical evaluations Evalúa - Chile V2.0",
+    },
+    NICKPAINT: {
+      NAME: "NickPaint - BBCode Nickname Editor",
+      DESCRIPTION:
+        "BBCode nickname color editor inspired by MSN Plus!: gradients, presets, text effects, and live preview.",
     },
   },
 };
