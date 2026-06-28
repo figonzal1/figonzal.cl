@@ -5,6 +5,25 @@ import BaseLayout from "@layouts/BaseLayout.astro";
 import { clientSeeder } from "@utils/seeders/clientSeeder";
 
 const lang = "es";
+
+const breadcrumbJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  itemListElement: [
+    {
+      "@type": "ListItem",
+      position: 1,
+      name: "Inicio",
+      item: "https://www.figonzal.cl/",
+    },
+    {
+      "@type": "ListItem",
+      position: 2,
+      name: "Clientes",
+      item: "https://www.figonzal.cl/clientes",
+    },
+  ],
+};
 ---
 
 <BaseLayout
@@ -14,6 +33,7 @@ const lang = "es";
   canonical="https://www.figonzal.cl/clientes"
   alternateEs="https://www.figonzal.cl/clientes"
   alternateEn="https://www.figonzal.cl/en/clients"
+  breadcrumbJsonLd={breadcrumbJsonLd}
 >
   <div class="h-0 w-0">
     <Particle />

@@ -63,7 +63,7 @@ const Navbar = ({ lang }: { lang: string }) => {
         <NavbarLink
           icon={<ImBlog color="white" size={21} />}
           name="Blog"
-          link="https://figonzal.hashnode.dev/"
+          link="https://blog.figonzal.cl/"
         />
 
         <a
