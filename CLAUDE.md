@@ -11,10 +11,12 @@ Personal portfolio site (figonzal.cl) built with Astro (SSG) + React islands, de
 - `pnpm format` — Prettier (`--write .`). Always run after edits; `prettier-plugin-tailwindcss` reorders Tailwind classes and `prettier-plugin-astro` handles `.astro` files.
 - `pnpm lint` — oxlint + eslint with `--fix`.
 - `pnpm dev` — local server at `localhost:4321`.
+- Node is pinned to **24.15.0** (`mise.toml`, matched by the deploy workflow) — use it locally so builds match CI.
 
 ## Architecture
 
 - **i18n:** `es` is the default locale (no URL prefix); `en` lives under `/en/`. Pages are duplicated per locale (e.g. `src/pages/proyectos/web.astro` + `src/pages/en/projects/web.astro`), each passing `lang="es"|"en"` to components.
+- **Route redirects:** `astro.config.mjs` redirects `/proyectos → /proyectos/movil` and `/en/projects → /en/projects/mobile`. Update these if you rename/restructure project pages.
 - **Content lives in data, not components.** Projects, clients, and tech stacks are defined in `src/utils/seeders/*.ts`; their translated strings are in `src/utils/translations.ts`. To add/edit content, change the seeder + translations — don't hardcode in components.
 - **Path aliases** (tsconfig): `@components/*`, `@assets/*`, `@layouts/*`, `@styles/*`, `@utils/*`.
 - **SEO:** per-page `title`/`description`/`canonical` flow from each page → `BaseLayout` → `Head.astro`. New pages should pass these props (the `canonical` default points to the homepage). `@astrojs/sitemap` generates the sitemap at build.
